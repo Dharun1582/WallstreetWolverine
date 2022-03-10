@@ -3,7 +3,7 @@
     justify-content: center;
     min-height: 10wh;
   }
-  .insthead
+.insthead
 {
     position: relative;
     font-size: 5rem;
@@ -35,3 +35,8 @@
         width: 100%;
     }
 }
+@media only screen and (max-width: 767px) {
+    .insthead{
+      font-size: 2.7rem;
+    }
+  }
