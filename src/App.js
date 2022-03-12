@@ -46,7 +46,7 @@ const AllRoutes = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<Login />} />
       <Route path="/market" element={<Market />} />
-      <Route path="/stock" element={<StockMain />} />
+      <Route path="/stock/:name" element={<StockMain />} />
       <Route path="/*" element={<PageNotFound />} />
     </Routes>
   );

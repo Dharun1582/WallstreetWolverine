@@ -1,0 +1,94 @@
+/* Media Queries */
+
+
+.head{
+    font-family: sans-serif;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+  
+.container {
+    display: grid;
+    column-gap: 50px;
+    /* grid-template-columns: auto auto auto auto; */
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 75%;
+    margin: auto;
+  }
+
+
+
+.card {
+    color: black;
+    background-color: #fff; 
+    text-align: left;
+    border-radius: 0.5rem;
+    box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgb(252, 252, 252);
+    padding-bottom: 1rem;
+
+
+  }
+  
+
+  img {
+    border-radius: 0.5rem 0.5rem 0 0;
+    width: 100%;
+    object-fit: cover;
+    /* max-height: 300px; */
+    aspect-ratio: 4/3;
+  }
+
+
+
+/*   
+  .card h3 {
+      padding: 4px;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+  }
+  
+  .card a {
+    color: inherit;
+  }
+  .card p{
+    padding: 4px;
+
+  } */
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(230, 224, 224, 0.938);
+    transform: scale(1.1);
+}
+  
+/* Above Tablet */
+@media only screen and (min-width: 1024px) {
+    .container{
+        grid-template-columns: auto auto auto;
+        row-gap: 80px;
+    }
+}
+
+/* Both Tablet and Mobile */
+@media only screen and (max-width: 1023px) {
+  .container{
+    grid-template-columns: auto;
+    row-gap: 50px;
+}
+}
+
+/* Tablet only */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .container{
+        grid-template-columns: auto auto;
+        row-gap: 50px;
+    }
+}
+
+/* Mobile only */
+@media only screen and (max-width: 767px) {
+    .container{
+        grid-template-columns: auto;
+        row-gap: 50px;
+    }
+}
