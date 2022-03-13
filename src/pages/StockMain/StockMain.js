@@ -5,9 +5,6 @@ import Button from './../../components/Button/Button';
 import {useParams} from 'react-router-dom'
 
 
-
-
-
 function StockMain() {
 
   let {name}=useParams();
