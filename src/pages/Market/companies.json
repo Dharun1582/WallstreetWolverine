@@ -1,0 +1,33 @@
+[
+    {
+        "id":1,
+        "name":"Infosys",
+        "stockPrice":2345
+    },
+    {
+        "id":2,
+        "name":"TCS",
+        "stockPrice":2345
+    },
+    {
+        "id":3,
+        "name":"HCL",
+        "stockPrice":2345
+    },
+
+    {
+        "id":4,
+        "name":"Wipro",
+        "stockPrice":2345
+    },
+    {
+        "id":5,
+        "name":"Google",
+        "stockPrice":2345
+    },
+    {
+        "id":6,
+        "name":"Amazon",
+        "stockPrice":2345
+    }
+]
