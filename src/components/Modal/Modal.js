@@ -36,7 +36,7 @@ function Modal(props) {
                         <button className={`${styles.closeModal}`} onClick={toggleModal}>
                             x
                         </button>
-                        <h2>Company</h2>
+                        <h2>{company}</h2>
                         <p>Current price per stock : </p>
                         <p>Time :</p>
                         <p>No. of Stocks :</p>
