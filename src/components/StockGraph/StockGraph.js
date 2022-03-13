@@ -15,8 +15,7 @@ class StockGraph extends React.Component {
   render() {
     return (
       <div>
-        {/* <h1>{this.state.company}</h1> */}
-        <h1>Company</h1>
+        <h1>{this.state.company}</h1>
         <Plot
           data={[
             {

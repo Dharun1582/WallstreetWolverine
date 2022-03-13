@@ -8,6 +8,7 @@ import StockGraph from '../../components/StockGraph/StockGraph';
 function StockMain() {
 
   let {name}=useParams();
+
   return (
     <div className={`${styles.container}`}>
       <StockGraph name={name}/>
