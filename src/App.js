@@ -19,6 +19,7 @@ import Login from "./pages/Login/Login";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Market from "./pages/Market/Market";
 import StockMain from "./pages/StockMain/StockMain";
+import Rules from "./pages/Rules/Rules";
 const StyledApp = styled.div``;
 
 function App() {
@@ -47,6 +48,7 @@ const AllRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/market" element={<Market />} />
       <Route path="/stock" element={<StockMain />} />
+      <Route path="/rules" element={<Rules />} />
       <Route path="/*" element={<PageNotFound />} />
     </Routes>
   );

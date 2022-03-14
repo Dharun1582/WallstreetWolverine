@@ -6,7 +6,7 @@
 .insthead
 {
     position: relative;
-    font-size: 5rem;
+    font-size: 4rem;
     color: #0000;
     -webkit-text-stroke: 2px #a906b8 ;
 }
@@ -37,6 +37,6 @@
 }
 @media only screen and (max-width: 767px) {
     .insthead{
-      font-size: 2.7rem;
+      font-size: 2.4rem;
     }
   }
