@@ -3,13 +3,12 @@ import styles from "../Instructions/Instructions.module.css"
 import Heading from "../../components/Heading/Heading.js";
 const IconPath = `${process.env.PUBLIC_URL}/assets/images/Instructions/`;
 
-
 function Rules() {
   return (
     <div className={styles.mainbox}>  
       <Heading text={"RULES"}/>
       <div className={styles.contentbox}>
-        <div className={styles.subcontentbox}>
+        <div className={styles.subcontentbox} tabIndex="-1">
         <div className={styles.instructionbox}>
             <div>
               <img src={IconPath+'upicon.png'} className={styles.icon}></img>

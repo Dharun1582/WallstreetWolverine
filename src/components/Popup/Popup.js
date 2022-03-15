@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import React, {useState} from 'react'
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import styles from "./Popup.module.css";
@@ -29,7 +29,7 @@ const Popup = () => {
           modal: `${styles.customModal}`,
         }}>
             <div className={styles.contentbox}>
-            <div className={styles.subcontentbox}>
+            <div className={styles.subcontentbox} tabIndex="-1">
                 <h1 className={styles.head}>INSTRUCTIONS</h1>
                 <div className={styles.instructionbox}>
                     <p className={styles.instruction}><span>&#x25B2;</span>Wallstreet Wolverine is an imaginary stock exchange event with 6 companies across various sectors.</p>

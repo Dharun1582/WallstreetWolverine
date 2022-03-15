@@ -1,15 +1,16 @@
 import React from 'react'
 import styles from "./Instructions.module.css"
 import Heading from "../../components/Heading/Heading.js";
+import BgAnim from "../../components/BackgroundAnimation/BackgroundAnimation.js";
 const IconPath = `${process.env.PUBLIC_URL}/assets/images/Instructions/`;
-
 
 function Instructions() {
   return (
-    <div className={styles.mainbox}>     
+    <div className={styles.mainbox}> 
+      <BgAnim/>    
       <Heading text={"INSTRUCTIONS"}/>
       <div className={styles.contentbox}>
-        <div className={styles.subcontentbox}>
+        <div className={styles.subcontentbox} tabIndex="-1">
         <div className={styles.instructionbox}>
             <div>
               <img src={IconPath+'upicon.png'} className={styles.icon}></img>
