@@ -1,0 +1,67 @@
+/* a different styling */
+/* .button {
+  padding: var(--mb-2) var(--mb-4);
+  border-width: 1px;
+  color: var(--white);
+  border-color: var(--primary);
+  border-radius: 3px;
+  box-shadow: inset 0px 1px 0px 0px var(--primary);
+  text-shadow: inset 0px 1px 0px var(--primary);
+  background: linear-gradient(rgb(214, 138, 157), var(--primary));
+  transition: 0.2s all;
+  cursor: pointer;
+  font-size: 1rem;
+  min-width: 150px;
+}
+
+.button:hover {
+  opacity: 0.8;
+} */
+
+.button {
+    background-color: rgb(0, 156, 222); 
+    border: none;
+    color: white;
+    padding: 15px 35px;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 20px;
+  }
+  
+ .button:hover{
+     font-weight: bolder;
+    cursor: pointer;
+ }
+
+  /* Media Queries */
+
+/* Above Tablet */
+@media only screen and (min-width: 1024px) {
+
+    /* .button:hover{
+        background-color: white;
+        color: rgb(0, 156, 222);
+        font-weight: bold;
+    } */
+}
+
+/* Both Tablet and Mobile */
+@media only screen and (max-width: 1023px) {
+   
+}
+
+/* Tablet only */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .button{
+        padding: 12px 30px;
+    }
+}
+
+/* Mobile only */
+@media only screen and (max-width: 767px) {
+    .button{
+        padding: 10px 25px;
+    }
+}
