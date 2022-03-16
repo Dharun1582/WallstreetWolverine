@@ -1,0 +1,71 @@
+.form_container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-self: center;
+  margin: var(--mb-1) 0;
+}
+
+.heading {
+  text-align: left;
+}
+
+.form_container > input,
+.form_container > select,
+.textarea {
+  background-color: #090c10;
+  outline: var(--bg) !important;
+  border: 1px solid #090c10;
+  border-radius: 0.3rem;
+  font-size: 1.2rem;
+  padding: var(--mb-1);
+  margin: var(--mb-1) 0;
+  color: var(--text);
+}
+
+.form_container > select {
+  cursor: pointer;
+}
+
+.form_container > input:focus,
+.form_container > select:focus,
+.textarea:focus {
+  border: 1px solid var(--primary) !important;
+}
+
+.textarea {
+  resize: vertical;
+  font-family: var(--normalFont);
+  height: 150px;
+}
+
+.sidenote {
+  font-size: 12px;
+}
+
+.info {
+  font-size: 0.8rem;
+  text-align: left;
+  opacity: 0.5;
+}
+
+/* Media Queries */
+
+/* Above Tablet */
+@media only screen and (min-width: 1024px) {
+}
+
+/* Both Tablet and Mobile */
+@media only screen and (max-width: 1023px) {
+  .form_container {
+    width: 100%;
+  }
+}
+
+/* Tablet only */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* Mobile only */
+@media only screen and (max-width: 767px) {
+}
