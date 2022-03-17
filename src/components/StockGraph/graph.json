@@ -1,0 +1,187 @@
+[
+    {
+        "Time": [
+            "06.00",
+            "06.30",
+            "07.00",
+            "07.30",
+            "08.00",
+            "08.30",
+            "09.00",
+            "09.30",
+            "10.00",
+            "10.30"
+        ],
+        "CokaCula": [
+            590,
+            587,
+            585,
+            588,
+            592,
+            586,
+            589,
+            590,
+            587,
+            591
+        ],
+        "HettanPetroleum": [
+            270,
+            271,
+            275,
+            273,
+            272,
+            273,
+            274,
+            272,
+            272,
+            273
+        ],
+        "Vedophene": [
+            101,
+            100,
+            98,
+            97,
+            99,
+            100,
+            101,
+            99,
+            99,
+            98
+        ],
+        "Abibas": [
+            1219,
+            1220,
+            1222,
+            1223,
+            1221,
+            1220,
+            1219,
+            1219,
+            1220,
+            1221
+        ],
+        "LycaLabs": [
+            5,
+            7,
+            5,
+            6,
+            7,
+            8,
+            9,
+            7,
+            8,
+            7
+        ],
+        "Yechier": [
+            200,
+            201,
+            199,
+            197,
+            199,
+            200,
+            202,
+            200,
+            199,
+            198
+        ]
+    },
+    {
+        "Time": "10.30-11.00",
+        "Coka cula": 583,
+        "Hettan Petroleum": 268,
+        "Vedophene": 98,
+        "Abibas": 1219,
+        "Lyca Labs": 11,
+        "Yechier": 170
+    },
+    {
+        "Time": "11.00-11.30",
+        "Coka cula": 575,
+        "Hettan Petroleum": 268,
+        "Vedophene": 96,
+        "Abibas": 1230,
+        "Lyca Labs": 10,
+        "Yechier": 165
+    },
+    {
+        "Time": "11.30-12.00",
+        "Coka cula": 575,
+        "Hettan Petroleum": 265,
+        "Vedophene": 96,
+        "Abibas": 1225,
+        "Lyca Labs": 15,
+        "Yechier": 180
+    },
+    {
+        "Time": "12.00-12.30",
+        "Coka cula": 534,
+        "Hettan Petroleum": 261,
+        "Vedophene": 99,
+        "Abibas": 1220,
+        "Lyca Labs": 20,
+        "Yechier": 190
+    },
+    {
+        "Time": "12.30-01.00",
+        "Coka cula": 536,
+        "Hettan Petroleum": 267,
+        "Vedophene": 99,
+        "Abibas": 1220,
+        "Lyca Labs": 17,
+        "Yechier": 200
+    },
+    {
+        "Time": "01.00-01.30",
+        "Coka cula": 529,
+        "Hettan Petroleum": 259,
+        "Vedophene": 101,
+        "Abibas": 1260,
+        "Lyca Labs": 15,
+        "Yechier": 200
+    },
+    {
+        "Time": "01.30-02.00",
+        "Coka cula": 529,
+        "Hettan Petroleum": 231,
+        "Vedophene": 100,
+        "Abibas": 1255,
+        "Lyca Labs": 26,
+        "Yechier": 200
+    },
+    {
+        "Time": "02.00-02.30",
+        "Coka cula": 533,
+        "Hettan Petroleum": 236,
+        "Vedophene": 110,
+        "Abibas": 1240,
+        "Lyca Labs": 30,
+        "Yechier": 190
+    },
+    {
+        "Time": "02.30-03.00",
+        "Coka cula": 527,
+        "Hettan Petroleum": 233,
+        "Vedophene": 110,
+        "Abibas": 1245,
+        "Lyca Labs": 25,
+        "Yechier": 194
+    },
+    {
+        "Time": "03.00-03.30",
+        "Coka cula": 524,
+        "Hettan Petroleum": 230,
+        "Vedophene": 112,
+        "Abibas": 1244,
+        "Lyca Labs": 21,
+        "Yechier": 180
+    },
+    {
+        "Time": "03.30-04.00",
+        "Coka cula": 524,
+        "Hettan Petroleum": 230,
+        "Vedophene": 114,
+        "Abibas": 1290,
+        "Lyca Labs": 27,
+        "Yechier": 150
+    }
+]
