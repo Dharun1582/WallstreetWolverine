@@ -56,15 +56,16 @@ function Navbar() {
   </div>
   
   <div className="nav-links">
-    <a href="//github.io/jo_geek" target="_blank">Github</a>
-    <a href="/market" target="_blank">Market</a>
-    <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">LinkedIn</a>
-    <a href="https://codepen.io/jo_Geek/" target="_blank">Codepen</a>
-    <a href="https://jsfiddle.net/user/jo_Geek/" target="_blank">JsFiddle</a>
+    <a href="/market">Market</a>
+    <a href="">Check Credit</a>
+    <a href="/instructions" target="_blank">Instructions</a>
+    <a href="/rules" target="_blank">Rules</a>
+    <a href="/contact" target="_blank">Contacts</a>
+    <a href="" target="_blank">Feedback</a>
+    <a href="/login">Login</a>
+
   </div>
 </div> 
-
-
       </div>
 
 

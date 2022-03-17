@@ -20,6 +20,7 @@ import Login from "./pages/Login/Login";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Market from "./pages/Market/Market";
 import StockMain from "./pages/StockMain/StockMain";
+import Rules from './pages/Rules/Rules'
 import SimpleLoader from "./components/SimpleLoader/SimpleLoader";
 const StyledApp = styled.div``;
 
@@ -51,6 +52,7 @@ const AllRoutes = () => {
       <Route path="/stock/:name" element={<StockMain />} />
       <Route path="/stock" element={<StockMain />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/rules" element={<Rules />} />
       <Route path="/*" element={<PageNotFound />} />
     </Routes>
   );

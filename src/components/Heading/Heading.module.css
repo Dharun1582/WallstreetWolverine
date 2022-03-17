@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     min-height: 10wh;
+    width: 100%;
   }
 .insthead
 {

@@ -3,11 +3,12 @@ import styles from "./Market.module.css"
 import {Link} from 'react-router-dom';
 import companies from "./companies.json"
 import NewsFeed from '../../components/NewsFeed/NewsFeed';
+import Heading from "../../components/Heading/Heading.js";
 
 
 function Header(){
   return(
-    <h1 className={`${styles.head}`}>Market</h1>
+    <Heading text={"MARKET"}/>
   )
 }
 
