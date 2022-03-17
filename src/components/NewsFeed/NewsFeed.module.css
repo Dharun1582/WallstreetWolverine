@@ -1,0 +1,28 @@
+.newsfeed{
+    /* border:2px solid white; */
+    text-align: left;
+}
+
+/* Media Queries */
+
+/* Above Tablet */
+@media only screen and (min-width: 1024px) {
+    .newsfeed{
+        width: 80%;
+        margin: auto;
+        /* border: 2px solid black; */
+        /* flex-grow: 1; */
+    }
+}
+
+/* Both Tablet and Mobile */
+@media only screen and (max-width: 1023px) {
+}
+
+/* Tablet only */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* Mobile only */
+@media only screen and (max-width: 767px) {
+}

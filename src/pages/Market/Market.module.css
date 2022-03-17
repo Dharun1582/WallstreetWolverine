@@ -6,6 +6,11 @@
     padding-top: 10px;
     padding-bottom: 20px;
 }
+
+.uppercontainer{
+  display: flex;
+  flex-direction: row;
+}
   
 .container {
     display: grid;
@@ -13,10 +18,9 @@
     /* grid-template-columns: auto auto auto auto; */
     padding-top: 40px;
     padding-bottom: 40px;
-    width: 75%;
-    margin: auto;
+    width: 60%;
+    margin:auto;
   }
-
 
 
 .card {
@@ -26,8 +30,6 @@
     border-radius: 0.5rem;
     box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgb(252, 252, 252);
     padding-bottom: 1rem;
-
-
   }
   
 
@@ -40,8 +42,6 @@
   }
 
 
-
- 
   .card h3 {
     padding: 4px;
     margin-top: 1rem;
@@ -49,9 +49,7 @@
     text-align: center;
   }
   
-  /* .card a {
-    color: inherit;
-  } */
+
   .card p{
     padding: 4px;
     text-align: center;
@@ -67,6 +65,12 @@
     .container{
         grid-template-columns: auto auto auto;
         row-gap: 80px;
+        /* border: 2px solid black; */
+        padding-top: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+        /* flex-grow: 8; */
     }
 }
 
@@ -75,14 +79,24 @@
   .container{
     grid-template-columns: auto;
     row-gap: 50px;
+
 }
+  .uppercontainer{
+    flex-direction: column;
+  }
+
+  .stocksheading{
+    padding-top: 25px;
+  }
 }
 
 /* Tablet only */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .container{
         grid-template-columns: auto auto;
-        row-gap: 50px;
+        row-gap: 70px;
+        width: 70%;
+        column-gap: 90px;
     }
 }
 
@@ -92,4 +106,12 @@
         grid-template-columns: auto;
         row-gap: 50px;
     }
+    img{
+      max-height: 100px;
+    }
+    .card{
+      padding-bottom: 0.5rem;
+    }
+
+
 }
