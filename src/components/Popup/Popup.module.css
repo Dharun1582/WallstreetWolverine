@@ -1,3 +1,13 @@
+.customOverlay{
+    color: transparent;
+}
+.customModal {
+    width: 90%;
+    background-color: #230374;
+    border-radius: 20px;
+    border: 1px solid #e1e2e2;
+    scroll-behavior: smooth;
+}
 .head{
   text-align: center;
   padding-bottom: 7px;
@@ -5,39 +15,6 @@
   margin-bottom: 5px;
   letter-spacing: 0.2rem;
 }
-
-.regButton {
-  background-color: rgb(0, 156, 222); 
-    border: none;
-    color: white;
-    padding: 15px 35px;
-    margin-top: 10px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14px;
-    border-radius: 20px;
-}
-
-.regButton:hover {
-  font-weight: bolder;
-    cursor: pointer;
-}
-
-.buttonContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.regButton:disabled {
-  cursor: not-allowed;
-}
-
-.regButton:enabled {
-  cursor: pointer;
-}
-
 .contentbox{
     display:inline-flex;
     flex-direction: column;
@@ -60,6 +37,8 @@
 }
 .subcontentbox{
   padding:0px 20px;
+  border: none;
+  outline: none;
 }
 .instructionbox{
     margin: 0px 5px;
@@ -86,12 +65,12 @@
 .instructionbox:nth-child(even) span{
   color:rgb(231, 15, 0);
 }
-.lastbox {
+.lastbox{
   text-align: center;
   margin-top: 20px;
   font-size: 0.9rem;
 }
-.checkbox {
+.checkbox{
   height: 16px;
   width: 16px;
   margin-right: 5px;
@@ -132,9 +111,6 @@
 
 /* Tablet only */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .regButton{
-        padding: 12px 30px;
-    }
 }
 
 /* Mobile only */
@@ -147,8 +123,5 @@
   }
   .head{
     font-size: 1.4rem;
-  }
-  .regButton {
-    padding: 10px 25px;
   }
 }

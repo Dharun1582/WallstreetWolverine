@@ -49,6 +49,7 @@ const AllRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/market" element={<Market />} />
       <Route path="/stock/:name" element={<StockMain />} />
+      <Route path="/stock" element={<StockMain />} />
       <Route path="/register" element={<Register />} />
       <Route path="/*" element={<PageNotFound />} />
     </Routes>
