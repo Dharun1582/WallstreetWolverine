@@ -15,10 +15,12 @@ import Navbar from "./components/Navbar/Navbar";
 import Profile from "./pages/Profile/Profile";
 import Instructions from "./pages/Instructions/Instructions";
 import Contact from "./pages/Contact/Contact";
+import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Market from "./pages/Market/Market";
 import StockMain from "./pages/StockMain/StockMain";
+import SimpleLoader from "./components/SimpleLoader/SimpleLoader";
 const StyledApp = styled.div``;
 
 function App() {
@@ -47,6 +49,7 @@ const AllRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/market" element={<Market />} />
       <Route path="/stock/:name" element={<StockMain />} />
+      <Route path="/register" element={<Register />} />
       <Route path="/*" element={<PageNotFound />} />
     </Routes>
   );
