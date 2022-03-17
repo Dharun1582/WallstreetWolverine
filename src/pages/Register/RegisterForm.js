@@ -13,6 +13,7 @@ import { validateForm  } from "../../validators/registerFormValidator";
 import { ReactNotifications, Store } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
 import "animate.css"
+import { useNavigate } from "react-router-dom";
 const registerDetailsFormat = {
     name: "",
     kId: "",
@@ -31,7 +32,7 @@ const loginDetailsFormat = {
 }
 
 function RegisterForm({ pageType }) {
-   
+    const navigate = useNavigate()
     const [checked, setChecked] = useState(false);
     const [isDisabled, setIsDisabled] = useState(true);
     let reCaptchaRef = useRef(null);
@@ -94,11 +95,22 @@ function RegisterForm({ pageType }) {
                 })
                 return;
             } else {
-                // show login notification
+                Store.addNotification({
+                    title: "Login successful!",
+                    type: "success",
+                    insert: "bottom",
+                    container: "top-right",
+                    animationIn: ["animate__animated", "animate__fadeIn"],
+                    animationOut: ["animate__animated", "animate__fadeOut"],
+                    dismiss: {
+                        duration: 3000,
+                        onScreen: true
+                    }
+                })
+                navigate('/profile')
+                return
             }
         }
-        
-        
     };
 
     if (isModalOpen) {
