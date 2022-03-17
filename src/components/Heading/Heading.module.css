@@ -1,0 +1,42 @@
+.headbox{
+    display: flex;
+    justify-content: center;
+    min-height: 10wh;
+  }
+.insthead
+{
+    position: relative;
+    font-size: 4rem;
+    color: #0000;
+    -webkit-text-stroke: 2px #a906b8 ;
+}
+.insthead::before
+{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #e92efb;
+    -webkit-text-stroke: 0px#f17efc ;
+    border-right: 2px solid #e92efb;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+@keyframes animate
+{
+    0%,10%,100%
+    {
+        width: 0;
+    }
+    70%,90%
+    {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .insthead{
+      font-size: 2.4rem;
+    }
+  }

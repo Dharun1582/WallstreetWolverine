@@ -1,9 +1,17 @@
-import React from 'react'
-import styles from "./Login.module.css"
-
-function Login() {
+import { useState, createContext, useEffect, useRef } from "react";
+import styles from './../Register/Register.module.css'
+import RegisterForm from "./../Register/RegisterForm";
+const Login = () => {
   return (
-    <div>Login</div>
+    <div className={`${styles.login_wrapper_main}`}>
+      <div className={`${styles.login_wrapper}`}>
+        <div className={`${styles.register_container}`}>
+          <div className={`${styles.registerFormContainer}`}>
+            <RegisterForm pageType="Login" />
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
