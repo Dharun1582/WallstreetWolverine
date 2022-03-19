@@ -10,6 +10,7 @@ function StockMain() {
 
   let {name}=useParams();
 
+
   return (
     <>
       <Heading text={"MARKET"}/>
@@ -17,6 +18,7 @@ function StockMain() {
         <StockGraph name={name}/>
         <br/>
         <Modal name={name}/>
+        <br/>
       </div>
     </>
     

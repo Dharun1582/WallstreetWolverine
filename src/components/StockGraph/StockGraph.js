@@ -1,7 +1,7 @@
-import { tickFormat } from 'd3';
+import { timeHours } from 'd3';
 import React from 'react';
 import Plot from 'react-plotly.js';
-// import { d3 } from 'plotly.js';
+import Modal from '../Modal/Modal';
 import graph from './graph.json'
 
 class StockGraph extends React.Component {
@@ -10,66 +10,58 @@ class StockGraph extends React.Component {
     super(props);
     this.state = {
       company: props.name,
-      stockChartXValues: [1,2,3,4,5,6,7,8,9,10] ,
-      stockChartYValues: graph[0][props.name],
+      index: 0,
+      stockChartXValues: [1, 2, 3, 4, 5, 6],
+      stockChartXLabels: [1, 2, 3, 4, 5, 6],
+      stockChartYValues: [],
     }
-    
+
   }
 
+
+  loadData = () => {
+    if (this.state.index < graph.length) {
+      this.setState(
+        {
+          stockChartYValues: graph[this.state.index][this.state.company],
+          stockChartXLabels: graph[this.state.index].Time,
+          index: this.state.index + 1
+        },
+      );
+    }
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/users')
+      .then(response => response.json())
+      .then(res => {
+        if (res && res.i) {
+          console.log(res);
+          console.log(res.i);
+          this.setState(
+            { index: res.i },
+          );
+          this.loadData();
+        }
+      });
+    // this.setState(
+    //   {
+    //     stockChartYValues: graph[this.state.index][this.state.company],
+    //     stockChartXLabels: graph[this.state.index].Time,
+    //     index: this.state.index + 1
+    //   },
+    // );
+  }
   // ["1.00-1.30", "1.30-2.00", "2.00-2.30", "2.30-3.00", "3.00-3.30", "3.30-4.00", "4.00-4.30", "4.30-5.00", "5.30-6.00", "6.30-7.00"]
   // [450, 350, 680, 770, 560, 450, 650, 430, 430, 340]
-  loadData = () => {
-    var x = this.stockChartXValues, y = this.stockChartYValues;
-    x.push(graph[0].Time);
-    y.push(graph[0].Abibas);
-    this.setState(
-      {
-        stockChartXValues: x,
-        stockChartYValues: y,
-      }
-    );
-  }
 
-  lDt = () => {
-    this.setState = {
-      stockChartYValues: graph[0].this.company,
-    }
-  }
-  // drawData = () => {
-  //   d3.csv("./graph.csv", (allRows) => {
-  //     console.log(allRows);
-  //     var x = [], y = [];
-  //     for (var i = 0; i < allRows.length; i++) {
-  //       var row = allRows[i];
-  //       x.push(row['Time']);
-  //       y.push(row['Abibas']);
-  //     }
-  //     this.setState(
-  //       {
-  //         stockChartXValues: x,
-  //         stockChartYValues: y,
-  //       }
-  //     );
-  //   });
-
-  // }
-
-//   load = () => {
-//     fetch(  )
-//         .then( response => response.json() )
-//         .then( responseText => {
-//             console.log(responseText);
-//         })
-// };
-
-// ["05.30-06.00","06.00-06.30","06.30-07.00","07.00-07.30","07.30-08.00","08.00-08.30","08.30-09.00","09.00-09.30","09.30-10.00","10.00-10.30",""]
+  // ["05.30-06.00","06.00-06.30","06.30-07.00","07.00-07.30","07.30-08.00","08.00-08.30","08.30-09.00","09.00-09.30","09.30-10.00","10.00-10.30",""]
 
   render() {
     // this.loadData();
-    // console.log(graph);
     return (
       <div>
-        {/* <button onClick={this.lDt}>Click</button> */}
+        <button onClick={this.loadData}>Click</button>
         <h1>{this.state.company}</h1>
         <Plot
           data={[
@@ -97,10 +89,13 @@ class StockGraph extends React.Component {
               titlefont: {
                 size: 13,
               },
+              type: '',
+              // type: timeHours,
+              // range: [this.state.stockChartXValues[0], this.state.stockChartXValues[5], ],
               color: "white",
               tickmode: "array",
-              tickvals: [1,2,3,4,5,6,7,8,9,10],
-              ticktext: graph[0].Time,
+              tickvals: [1, 2, 3, 4, 5, 6],
+              ticktext: this.state.stockChartXLabels,
               tickfont: {
                 size: 10,
               }
@@ -123,6 +118,9 @@ class StockGraph extends React.Component {
             responsive: true,
           }}
         />
+        <br />
+        {/* <button>clickme</button> */}
+        {/* <Modal name={this.state.company} /> */}
       </div >
     )
   }
