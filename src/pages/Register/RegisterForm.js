@@ -152,7 +152,7 @@ function RegisterForm({ pageType }) {
                 </div>
             </>
         );
-    } else {
+    } else if (pageType === 'Login') {
         return (
             <>
                 {loader && <SimpleLoader message={"Logging in"} />}

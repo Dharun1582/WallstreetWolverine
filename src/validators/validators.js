@@ -32,7 +32,36 @@ export const validateDept = (dept) => {
 
 export const validatePassword = (password) => {
     // password logic
-    return true   
+    const digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];  
+    let ok = true
+    if (password.length < 8) {
+        ok = false
+    }
+    let hasUpperCase, hasLowerCase, hasDigits
+    for (let i = 0; i < digits.length; ++i) {
+        let digit = digits[i]
+        for (let j = 0; j < password.length; ++j) {
+            if (password.charAt(j) === digit) {
+                hasDigits = true
+                break
+            }
+        }
+        if (hasDigits) break
+    }
+    hasLowerCase = hasUpperCase = false
+    for (let i = 0; i < password.length; ++i) {
+        let ch = password.charAt(i)
+        if (ch === ch.toUpperCase()) {
+            hasUpperCase = true
+        }
+        if (ch === ch.toLowerCase()) {
+            hasLowerCase = true
+        }
+    }
+    if (hasLowerCase && hasUpperCase && ok && hasDigits) {
+        return true
+    }
+    return false
 }
 
 export const validateConfirmPassword = (password, confirmPassword) => {  

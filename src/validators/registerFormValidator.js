@@ -1,5 +1,6 @@
 import { validateName, validateKID, validateContact, validateEmail, validateInstitute, validateDept, validatePassword, validateConfirmPassword } from "./validators";
 
+// exported to RegisterForm.js
 export const validateForm = (args) => {
     let pageType = args.pageType
     let name = args.name
@@ -43,11 +44,12 @@ export const validateForm = (args) => {
                 message: "Invalid department type"
             }
         }
-        if (!validatePassword(args.password)) {
+        if (!validatePassword(args.password)) { 
             return {
                 status: false,
-                message: "Invalid password"  // "password should be atleast 8 characters"
+                message: "Password must be atleast 8 characters long and must have a combination of uppercase, lowercase and digit characters"
             }
+        
         } 
     
         if (!validateConfirmPassword(args.password, args.confirmPassword)) {
@@ -56,10 +58,9 @@ export const validateForm = (args) => {
                 message: "Passwords don't match"
             }
         } else {
+            // should add logic here for the case when entered fields are not in the database 
             return {
-                 // should add logic here for the case when entered fields are not in the database 
                 status: true    
-                
             }
         }
     } else if (pageType === 'Login') {
@@ -83,3 +84,4 @@ export const validateForm = (args) => {
         }
     }
 }
+
