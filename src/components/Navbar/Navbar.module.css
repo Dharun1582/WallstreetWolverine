@@ -19,10 +19,11 @@
   }
   
   .nav > .nav_header > .nav_title {
-    display: inline-block;
+    /* display: inline-block; */
     font-size: 22px;
     color: #fff;
     padding: 1px 10px 10px 10px;
+    
   }
   
   .nav > .nav_btn {
@@ -52,6 +53,7 @@
   .logo{
     margin-top: 0cm;
     height: 60px;
+    /* width: ; */
 }
   @media (max-width:600px) {
     .nav > .nav_btn {
