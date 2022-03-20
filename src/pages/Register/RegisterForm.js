@@ -2,39 +2,117 @@ import React, { useState, useRef } from "react";
 import Button from "../../components/Button/Button";
 import FormField from "../../components/FormField/FormField";
 import { REGISTER_FORM_FIELDS, LOGIN_FORM_FIELDS } from "../../data/RegisterDetails";
-import styles from "./Register.module.css"; // ContactUs
+import styles from "./Register.module.css"; 
 import ReCAPTCHA from "react-google-recaptcha";
 import SimpleLoader from "../../components/SimpleLoader/SimpleLoader";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import Heading from "../../components/Heading/Heading";
 import Popup from "../../components/Popup/Popup";
-const contactDetailsFormat = {
+import { validateForm  } from "../../validators/registerFormValidator";
+import { ReactNotifications, Store } from 'react-notifications-component'
+import 'react-notifications-component/dist/theme.css'
+import "animate.css"
+import { useNavigate } from "react-router-dom";
+const registerDetailsFormat = {
     name: "",
+    kId: "",
+    number: "",
     email: "",
-    message: "",
+    college: "",
+    department: "",
+    password: "",
+    confirmPassword: "",
+
 };
 
-function RegisterForm({ pageType }) {
+const loginDetailsFormat = {
+    kId: "",
+    password: ""
+}
 
+function RegisterForm({ pageType }) {
+    const navigate = useNavigate()
     const [checked, setChecked] = useState(false);
     const [isDisabled, setIsDisabled] = useState(true);
     let reCaptchaRef = useRef(null);
 
-    const [contactDetails, setcontactDetails] = useState(contactDetailsFormat);
+    const [registerDetails, setRegisterDetails] = useState(registerDetailsFormat);
+    const [loginDetails, setLoginDetails] = useState(loginDetailsFormat);
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [loader, setloader] = useState(false);
 
-    const changeContactFormState = (args) => {
-        let prevState = contactDetails;
+    const changeRegisterFormState = (args) => {
+        let prevState = registerDetails;
         prevState[args.key] = args.value;
-        setcontactDetails({ ...prevState });
+        setRegisterDetails({ ...prevState });
     };
 
-    const clickedSubmit = async () => {
+    const changeLoginFormState = (args) => {
+        let prevState = loginDetails
+        prevState[args.key] = args.value
+        setLoginDetails({ ...prevState })
+    }
+
+    const clickedSubmit = async (pageType) => {
         // Form Validation
-        setIsModalOpen(true)
+        if (pageType === 'Register') {
+            let validation = validateForm({ ...registerDetails, pageType: pageType })
+
+            if (validation.status === false) {
+                Store.addNotification({
+                    title: "Note:",
+                    message: validation.message,
+                    type: "danger",
+                    insert: "bottom",
+                    container: "top-right",
+                    animationIn: ["animate__animated", "animate__fadeIn"],
+                    animationOut: ["animate__animated", "animate__fadeOut"],
+                    dismiss: {
+                        duration: 4000,
+                        onScreen: true
+                    }
+                })
+                return;
+            } else {
+                setIsModalOpen(true)    
+            }
+        } else if (pageType === 'Login') {
+            let validation = validateForm({ ...loginDetails, pageType: pageType })
+            if (validation.status === false) {                
+                Store.addNotification({
+                    title: "Note:",
+                    message: validation.message,
+                    type: "danger",
+                    insert: "bottom",
+                    container: "top-right",
+                    animationIn: ["animate__animated", "animate__fadeIn"],
+                    animationOut: ["animate__animated", "animate__fadeOut"],
+                    dismiss: {
+                        duration: 4000,
+                        onScreen: true
+                    }
+                })
+                return;
+            } else {
+                Store.addNotification({
+                    title: "Login successful!",
+                    type: "success",
+                    insert: "bottom",
+                    container: "top-right",
+                    animationIn: ["animate__animated", "animate__fadeIn"],
+                    animationOut: ["animate__animated", "animate__fadeOut"],
+                    dismiss: {
+                        duration: 3000,
+                        onScreen: true
+                    }
+                })
+                navigate('/profile')
+                return
+            }
+        }
     };
+
     if (isModalOpen) {
         document.body.style.overflowY = "hidden"
     } else {
@@ -57,22 +135,13 @@ function RegisterForm({ pageType }) {
                                 type={field.type}
                                 name={field.name}
                                 heading={field.heading}
-                                value={contactDetails}
-                                setter={changeContactFormState}
+                                value={registerDetails}
+                                setter={changeRegisterFormState}
                             />
                         );
                     })}
-                    {/* <div className={`${styles.recaptcha_container}`}>
-          <ReCAPTCHA
-            sitekey="6LcMoTUdAAAAAGFo2lgEFl5sIpitgdT-lExG05FL"
-            theme="dark"
-            size="compact"
-            className={`${styles.recaptcha}`}
-            ref={reCaptchaRef}
-          />
-        </div> */}
                     <div>
-                        <Button text={"Agree to rules and instructions"} onClickMethod={clickedSubmit} />
+                        <Button text={"Agree to rules and instructions"} onClickMethod={clickedSubmit} pageType="Register" />
                         <Modal showCloseIcon={false} open={isModalOpen} onClose={() => { setIsModalOpen(false) }} center autofocus={false} classNames={{
                             overlay: `${styles.customOverlay}`,
                             modal: `${styles.customModal}`,
@@ -83,7 +152,7 @@ function RegisterForm({ pageType }) {
                 </div>
             </>
         );
-    } else {
+    } else if (pageType === 'Login') {
         return (
             <>
                 {loader && <SimpleLoader message={"Logging in"} />}
@@ -99,30 +168,13 @@ function RegisterForm({ pageType }) {
                                 type={field.type}
                                 name={field.name}
                                 heading={field.heading}
-                                value={contactDetails}
-                                setter={changeContactFormState}
+                                value={loginDetails}
+                                setter={changeLoginFormState}
                             />
                         );
                     })}
-                    {/* <div className={`${styles.recaptcha_container}`}>
-          <ReCAPTCHA
-            sitekey="6LcMoTUdAAAAAGFo2lgEFl5sIpitgdT-lExG05FL"
-            theme="dark"
-            size="compact"
-            className={`${styles.recaptcha}`}
-            ref={reCaptchaRef}
-          />
-        </div> */}
                     <div>
-                        <Button text={"Login"} onClickMethod={clickedSubmit} />
-                        {/* a notif modal might come */}
-                        {/* change below modal fr that */}
-                        {/* <Modal showCloseIcon={false} open={isModalOpen} onClose={() => { setIsModalOpen(false) }} center autofocus={false} classNames={{
-              overlay: `${styles.customOverlay}`,
-              modal: `${styles.customModal}`,
-            }}>
-              <Popup funcToExec={setIsModalOpen} checked={checked} setChecked={setChecked} isDisabled={isDisabled} setIsDisabled={setIsDisabled} />
-            </Modal> */}
+                        <Button text={"Login"} onClickMethod={ clickedSubmit } pageType="Login" />
                     </div>
                 </div>
             </>

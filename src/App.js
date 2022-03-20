@@ -22,6 +22,9 @@ import Market from "./pages/Market/Market";
 import StockMain from "./pages/StockMain/StockMain";
 import Rules from './pages/Rules/Rules'
 import SimpleLoader from "./components/SimpleLoader/SimpleLoader";
+import { ReactNotifications, Store } from 'react-notifications-component'
+import 'react-notifications-component/dist/theme.css'
+import "animate.css"
 const StyledApp = styled.div``;
 
 function App() {
@@ -32,6 +35,7 @@ function App() {
         <div className="App">
           <Router>
             <Navbar />
+            <ReactNotifications />
             <AllRoutes />
           </Router>
         </div>
