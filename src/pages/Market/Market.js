@@ -49,7 +49,7 @@ function Market() {
 
   var nrows;
   console.log(window.innerWidth);
-  if(window.innerWidth > 1024){
+  if(window.innerWidth >= 1024){
     nrows=7;
   }else{
     nrows=2;

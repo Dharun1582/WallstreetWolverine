@@ -1,7 +1,5 @@
-import { timeHours } from 'd3';
 import React from 'react';
 import Plot from 'react-plotly.js';
-import Modal from '../Modal/Modal';
 import graph from './graph.json'
 
 class StockGraph extends React.Component {
@@ -44,14 +42,14 @@ class StockGraph extends React.Component {
           this.loadData();
         }
       });
-    // this.setState(
-    //   {
-    //     stockChartYValues: graph[this.state.index][this.state.company],
-    //     stockChartXLabels: graph[this.state.index].Time,
-    //     index: this.state.index + 1
-    //   },
-    // );
   }
+  // this.setState(
+  //   {
+  //     stockChartYValues: graph[this.state.index][this.state.company],
+  //     stockChartXLabels: graph[this.state.index].Time,
+  //     index: this.state.index + 1
+  //   },
+  // );
   // ["1.00-1.30", "1.30-2.00", "2.00-2.30", "2.30-3.00", "3.00-3.30", "3.30-4.00", "4.00-4.30", "4.30-5.00", "5.30-6.00", "6.30-7.00"]
   // [450, 350, 680, 770, 560, 450, 650, 430, 430, 340]
 
@@ -61,9 +59,10 @@ class StockGraph extends React.Component {
     // this.loadData();
     return (
       <div>
-        <button onClick={this.loadData}>Click</button>
+        {/* <button onClick={this.loadData}>Click</button> */}
         <h1>{this.state.company}</h1>
-        <Plot
+        <div>        
+          <Plot
           data={[
             {
               x: this.state.stockChartXValues,
@@ -111,13 +110,15 @@ class StockGraph extends React.Component {
               }
             },
           }}
-          useResizeHandler={true}
+          // useResizeHandler={true}
           style={{ widows: "100%", height: "100%" }}
           config={{
             displayModeBar: false,
             responsive: true,
           }}
         />
+        </div>
+
         <br />
         {/* <button>clickme</button> */}
         {/* <Modal name={this.state.company} /> */}
