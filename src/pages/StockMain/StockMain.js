@@ -21,7 +21,7 @@ function StockMain() {
 
   return (
     <>
-      <Heading text={"MARKET"} />
+      <Heading text={"Market"} />
       <div className={`${styles.outercontainer}`}>
         <div className={`${styles.item}`}>
           <NewsFeed nrows={nrows} />

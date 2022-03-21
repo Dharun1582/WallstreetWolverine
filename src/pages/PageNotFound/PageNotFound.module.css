@@ -1,0 +1,74 @@
+.mainbox{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    animation-duration: 2s;
+    animation-name: slideup;
+    animation-fill-mode: backwards;
+    margin-top: 40px;
+}
+.errbox{
+    font-size: 14rem;
+    font-weight: bold;
+}
+.errmsg{
+    margin-top: 10px;
+    font-size: 1.3rem;
+}
+.btn{
+    margin-top: 20px;
+}
+.home_btn{
+    padding: 20px;
+    font-size: 1.4rem;
+    background-color: transparent;
+    border: 2px solid #e1e2e2;
+    color: #e1e2e2;
+}
+.home_btn:hover{
+    background-color: #e1e2e2;
+    color: #474b4f;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.home_btn a{
+    text-decoration: none;
+    color: #e1e2e2;
+}
+.home_btn:hover a{
+    color: #474b4f;
+}
+@keyframes slideup {
+    from {
+      margin-top: 200%;
+    }
+    to {
+      margin-top: 40px;
+    }
+}
+/* Media Queries */
+
+/* Above Tablet */
+@media only screen and (min-width: 1024px) {
+}
+
+/* Both Tablet and Mobile */
+@media only screen and (max-width: 1023px) {
+}
+
+/* Tablet only */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* Mobile only */
+@media only screen and (max-width: 767px) {
+    .errbox{
+        font-size: 10rem;
+    }
+    .errmsg{
+        font-size: 1rem;
+    }
+    .home_btn{
+        font-size: 1.2rem;
+    }
+}

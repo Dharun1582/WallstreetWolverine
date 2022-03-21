@@ -5,7 +5,7 @@ const IconPath = `${process.env.PUBLIC_URL}/assets/images/Instructions/`;
 
 function Rules() {
   return (
-    <div className={styles.mainbox}>  
+    <div className={styles.mainbox}> 
       <Heading text={"RULES"}/>
       <div className={styles.contentbox}>
         <div className={styles.subcontentbox} tabIndex="-1">
