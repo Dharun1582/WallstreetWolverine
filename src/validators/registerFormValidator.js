@@ -5,7 +5,7 @@ export const validateForm = (args) => {
     let pageType = args.pageType
     let name = args.name
     let email = args.email
-    let kId = args.kId
+    let kid = args.kid
     if (pageType === 'Register') {
         if (!validateName(name)) {
             return {
@@ -13,13 +13,13 @@ export const validateForm = (args) => {
                 message: "Invalid Name",
             };
         }
-        if (!validateKID(kId)) {
+        if (!validateKID(kid)) {
             return {
                 status: false,
                 message: "Invalid K! ID",
             };
         }
-        if (!validateContact(args.number)) {
+        if (!validateContact(args.phone)) {
             return {
                 status: false,
                 message: "Invalid contact number"
@@ -38,7 +38,7 @@ export const validateForm = (args) => {
                 message: "Invalid institution name"
             }
         }
-        if (!validateDept(args.department)) {
+        if (!validateDept(args.dept)) {
             return {
                 status: false,
                 message: "Invalid department type"
@@ -64,7 +64,7 @@ export const validateForm = (args) => {
             }
         }
     } else if (pageType === 'Login') {
-        if (!validateKID(kId)) {
+        if (!validateKID(kid)) {
             return {
                 status: false,
                 message: "Invalid K ID"
