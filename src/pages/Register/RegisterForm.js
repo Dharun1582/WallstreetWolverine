@@ -16,18 +16,18 @@ import "animate.css"
 import { useNavigate } from "react-router-dom";
 const registerDetailsFormat = {
     name: "",
-    kId: "",
-    number: "",
+    kid: "",
+    phone: "",
     email: "",
     college: "",
-    department: "",
+    dept: "",
     password: "",
     confirmPassword: "",
 
 };
 
 const loginDetailsFormat = {
-    kId: "",
+    kid: "",
     password: ""
 }
 

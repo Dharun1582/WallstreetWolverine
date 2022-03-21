@@ -7,12 +7,12 @@ export const REGISTER_FORM_FIELDS = [
     {
         type: "text",
         heading: "K! ID",
-        name: "kId"
+        name: "kid"
     },
     {
         type: "tel",
         heading: "Contact number",
-        name: "number"
+        name: "phone"
     },
     {
         type: "text",  // maybe change type to email later
@@ -27,7 +27,7 @@ export const REGISTER_FORM_FIELDS = [
     {
         type: "text",
         heading: "Department",
-        name: "department"
+        name: "dept"
     },
     {
         type: "password",
@@ -45,7 +45,7 @@ export const LOGIN_FORM_FIELDS = [
     {
         type: "text",
         heading: "K! ID",
-        name: "kId"
+        name: "kid"
     },
     {
         type: "password",
