@@ -1,0 +1,109 @@
+/* * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0px;
+    font-family: 'segoe ui';
+  } */
+  
+  .nav {
+    height: 70px;
+    width: 100%;
+    background-color: #4d4d4d;
+    position: relative;
+  }
+  
+  .nav > .nav_header {
+    display: inline;
+  }
+  
+  .nav > .nav_header > .nav_title {
+    /* display: inline-block; */
+    font-size: 22px;
+    color: #fff;
+    padding: 1px 10px 10px 10px;
+    
+  }
+  
+  .nav > .nav_btn {
+    display: none;
+  }
+  
+  .nav > .nav_links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+  }
+  
+  .nav > .nav_links > a {
+    display: inline-block;
+    padding: 25px 15px 25px 15px;
+    text-decoration: none;
+    color: #efefef;
+  }
+  
+  .nav > .nav_links > a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .nav > #nav-check {
+    display: none;
+  }
+  .logo{
+    margin-top: 0cm;
+    height: 60px;
+    /* width: ; */
+}
+  @media (max-width:600px) {
+    .nav > .nav_btn {
+      display: inline-block;
+      position: absolute;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      right: 0px;
+      top: 0px;
+    }
+    .nav > .nav_btn > label {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 13px;
+    }
+    .nav > .nav_btn > label:hover,.nav  #nav-check:checked ~ .nav_btn > label {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .nav > .nav_btn > label > span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 2px solid #eee;
+    }
+    .nav > .nav_links {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: #333;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 50px;
+      left: 0px;
+    }
+    .nav > .nav_links > a {
+      display: block;
+      width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav_links {
+      height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav_links {
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+
+    .logo{
+        margin-top: 0cm;
+        height: 50px;
+    }
+  }
