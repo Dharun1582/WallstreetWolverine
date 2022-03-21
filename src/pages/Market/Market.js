@@ -54,6 +54,7 @@ function Market() {
   }else{
     nrows=2;
   }
+  // console.log(localStorage.getItem('email'))
 
   return (
     <>

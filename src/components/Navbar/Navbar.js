@@ -39,6 +39,7 @@ function Navbar() {
     <a href="/contact" target="_blank">Contacts</a>
     <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=target@email.com" target="_blank">Feedback</a>
     <a href="/login">Login</a>
+    
 
   </div>
 </div> 

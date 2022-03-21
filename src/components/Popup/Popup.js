@@ -24,7 +24,7 @@ const Popup = (props) => {
         // console.log(props.details);
         axios.post('http://localhost:3001/register',props.details).then(res=>{
             // console.log('jsdcnidnc');
-            console.log(res.data);
+            console.log(res);
             if(res.status >=200 && res.status<=299){
                 // console.log();
                 navigate('/login');
