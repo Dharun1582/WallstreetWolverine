@@ -2,8 +2,9 @@ import React, {useState} from 'react'
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import styles from "./Popup.module.css";
+import {useNavigate} from 'react-router-dom';
 
-const Popup = () => {
+const Popup = (props) => {
     const [open, setOpen] = useState(false);
     const onOpenModal = () => {setOpen(true);}
     const [checked, setChecked] = React.useState(false);
@@ -15,6 +16,33 @@ const Popup = () => {
         setChecked(!checked);
         return canBeSubmitted();
     };
+
+    const axios=require('axios');
+    let navigate=useNavigate();
+
+    function store(){
+        // console.log(props.details);
+        axios.post('http://localhost:3001/register',props.details).then(res=>{
+            // console.log('jsdcnidnc');
+            console.log(res);
+            if(res.status >=200 && res.status<=299){
+                console.log("registration Success");
+                navigate('/login');
+            }else{
+                // console.log("Error");
+                throw Error(res.statusText);
+            }
+        }).catch(err=>{
+            if(err){
+                // console.log("ERROR");
+                console.log(err);
+                navigate('/register');
+            }
+        })
+        
+
+    }
+
     return (
       <div>
         <button onClick={onOpenModal} className={styles.button}>Register</button>
@@ -114,7 +142,7 @@ const Popup = () => {
                     value={checked}
                     onChange={handleChange}
                 /><br></br>
-                <button type="submit" disabled={isDisabled} className={styles.sub_button}>
+                <button type="submit" disabled={isDisabled} className={styles.sub_button} onClick={store}>
                     Register
                 </button> 
             </div>

@@ -146,7 +146,7 @@ function RegisterForm({ pageType }) {
                             overlay: `${styles.customOverlay}`,
                             modal: `${styles.customModal}`,
                         }}>
-                            <Popup funcToExec={setIsModalOpen} checked={checked} setChecked={setChecked} isDisabled={isDisabled} setIsDisabled={setIsDisabled} />
+                            <Popup funcToExec={setIsModalOpen} checked={checked} setChecked={setChecked} isDisabled={isDisabled} setIsDisabled={setIsDisabled} details={registerDetails} />
                         </Modal>
                     </div>
                 </div>
