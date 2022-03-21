@@ -12,8 +12,8 @@ class StockGraph extends React.Component {
       stockChartXValues: [1, 2, 3, 4, 5, 6],
       stockChartXLabels: [1, 2, 3, 4, 5, 6],
       stockChartYValues: [],
+      min: 0,
     }
-
   }
 
 
@@ -23,100 +23,118 @@ class StockGraph extends React.Component {
         {
           stockChartYValues: graph[this.state.index][this.state.company],
           stockChartXLabels: graph[this.state.index].Time,
-          index: this.state.index + 1
+          // index: this.state.index + 1,
+          // min: 0
         },
       );
     }
   }
 
-  componentDidMount() {
-    fetch('http://localhost:3000/users')
+  fetchData = async () => {
+    await fetch('http://localhost:3001/users')
       .then(response => response.json())
       .then(res => {
         if (res && res.i) {
           console.log(res);
-          console.log(res.i);
           this.setState(
-            { index: res.i },
+            {
+              index: res.i,
+              min: res.time
+            },
           );
           this.loadData();
         }
       });
   }
-  // this.setState(
-  //   {
-  //     stockChartYValues: graph[this.state.index][this.state.company],
-  //     stockChartXLabels: graph[this.state.index].Time,
-  //     index: this.state.index + 1
-  //   },
-  // );
-  // ["1.00-1.30", "1.30-2.00", "2.00-2.30", "2.30-3.00", "3.00-3.30", "3.30-4.00", "4.00-4.30", "4.30-5.00", "5.30-6.00", "6.30-7.00"]
-  // [450, 350, 680, 770, 560, 450, 650, 430, 430, 340]
 
-  // ["05.30-06.00","06.00-06.30","06.30-07.00","07.00-07.30","07.30-08.00","08.00-08.30","08.30-09.00","09.00-09.30","09.30-10.00","10.00-10.30",""]
+  componentDidMount() {
+    this.fetchData().then(res => {
+      console.log('first');
+      var sec = 0;
+      var min = this.state.min;
+      const fetchId = setInterval(() => {
+        sec += 10;
+        console.log(min, this.state.index);
+        if (sec >= 60) {
+          min += 1;
+          sec = 0;
+        }
+        if (min >= 3) {
+          this.fetchData().then(res => {
+            min = this.state.min;
+          });
+        }
 
+        if (this.state.index >= 13) {
+          console.log("Hi");
+          clearInterval(fetchId);
+        }
+      }, 10000);
+    });
+
+  }
   render() {
     // this.loadData();
     return (
       <div>
         {/* <button onClick={this.loadData}>Click</button> */}
         <h1>{this.state.company}</h1>
-        <div>        
+        <div>
           <Plot
-          data={[
-            {
-              x: this.state.stockChartXValues,
-              y: this.state.stockChartYValues,
-              type: 'scatter',
-              mode: 'lines',
-              marker: { color: '#17BECF' },
-            }
-          ]}
-          layout={{
-            autosize: true,
-            margin: {
-              l: 65,
-              r: 55,
-              b: 70,
-              t: 30,
-              pad: 3,
-            },
-            paper_bgcolor: "#3f3f3f",
-            plot_bgcolor: "#3f3f3f",
-            xaxis: {
-              title: "Time",
-              titlefont: {
-                size: 13,
-              },
-              type: '',
-              // type: timeHours,
-              // range: [this.state.stockChartXValues[0], this.state.stockChartXValues[5], ],
-              color: "white",
-              tickmode: "array",
-              tickvals: [1, 2, 3, 4, 5, 6],
-              ticktext: this.state.stockChartXLabels,
-              tickfont: {
-                size: 10,
+            data={[
+              {
+                x: this.state.stockChartXValues,
+                y: this.state.stockChartYValues,
+                type: 'scatter',
+                mode: 'lines',
+                marker: { color: '#17BECF' },
               }
-            },
-            yaxis: {
-              title: "Stock Price",
-              titlefont: {
-                size: 14,
+            ]}
+            layout={{
+              autosize: true,
+              margin: {
+                l: 65,
+                r: 55,
+                b: 70,
+                t: 30,
+                pad: 3,
               },
-              color: "white",
-              tickfont: {
-                size: 10,
-              }
-            },
-          }}
-          // useResizeHandler={true}
-          style={{ widows: "100%", height: "100%" }}
-          config={{
-            displayModeBar: false,
-            responsive: true,
-          }}
-        />
+              paper_bgcolor: "#3f3f3f",
+              plot_bgcolor: "#3f3f3f",
+              xaxis: {
+                title: "Time",
+                titlefont: {
+                  size: 13,
+                },
+                type: '',
+                // type: timeHours,
+                // range: [this.state.stockChartXValues[0], this.state.stockChartXValues[5], ],
+                color: "white",
+                tickmode: "array",
+                tickvals: [1, 2, 3, 4, 5, 6],
+                ticktext: this.state.stockChartXLabels,
+                tickfont: {
+                  size: 10,
+                }
+              },
+              yaxis: {
+                title: "Stock Price",
+                titlefont: {
+                  size: 14,
+                },
+                color: "white",
+                tickfont: {
+                  size: 10,
+                }
+              },
+            }}
+            // useResizeHandler={true}
+            style={{ widows: "100%", height: "100%" }}
+            config={{
+              displayModeBar: false,
+              responsive: true,
+            }}
+          />
         </div>
 
         <br />
