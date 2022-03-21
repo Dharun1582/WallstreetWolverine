@@ -8,28 +8,20 @@ import Heading from "../../components/Heading/Heading.js";
 
 function Header(){
   return(
-    <Heading text={"MARKET"}/>
+    <Heading text={"Market"}/>
   )
 }
 
-
-
-
 function Card(props){
   return(
-    
     <a href={`/stock/${props.name}`}>
       <div className={`${styles.card}`}>
       <img src='images/logos/filler.jpg' alt=''/>
       <h3>{props.name}</h3>
       <p>{props.stockPrice}</p>
       </div>      
-    
-
-    </a>
-   
+    </a> 
   )
-
 }
 
 function CardList(){
@@ -46,9 +38,7 @@ function CardList(){
 
 
 function Market() {
-
   var nrows;
-  console.log(window.innerWidth);
   if(window.innerWidth >= 1024){
     nrows=7;
   }else{
@@ -63,8 +53,8 @@ function Market() {
         <div className={`${styles.item}`}>
           <NewsFeed nrows={nrows} />
         </div>
-        <div>
-          <h2 className={`${styles.stocksheading}`}>Stocks</h2><br /> 
+        <div className={`${styles.item}`}>
+          <h1 className={`${styles.stocksheading}`}>Stocks</h1><br /> 
         <div className={`${styles.container}`}>
           <CardList />
         </div>

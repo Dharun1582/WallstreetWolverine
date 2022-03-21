@@ -1,16 +1,7 @@
-/* * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0px;
-    font-family: 'segoe ui';
-  } */
-  
   .nav {
     height: 75px;
     width: 100%;
-    background-color: #4d4d4d;
+    background-color: #383737;
     position: relative;
   }
   
@@ -20,11 +11,13 @@
   
   .nav > .nav-header > .nav-title {
     /* display: inline-block; */
-    width: 223px;
+    width :250px;
+    height: 80px;
     float: left;
     font-size: 22px;
     color: #fff;
-    padding: 0px;
+    margin-left: 20px;
+    position: relative;
   }
   
   .nav > .nav-btn {
@@ -54,16 +47,18 @@
     display: none;
   }
   .logo{
-    padding-top: 0px;
-    padding-left: 1 0px;
+    padding-left: 5px;
     margin-top: 10px;
+    width: 90%;
     height: 60px;
-}
+    position: absolute;
+    top: 0px;
+  }
 
 
 
 
-@media only screen and (max-width: 955px) {
+@media only screen and (max-width: 1010px) {
   .nav{
     width: 100%;
   }
@@ -89,6 +84,9 @@
     width: 25px;
     height: 10px;
     border-top: 2px solid #eee;
+  }
+  .nav > .nav-header > .nav-title{
+    margin-left: 5px;
   }
   .nav > .nav-links {
     position: absolute;
@@ -116,7 +114,9 @@
 
   .logo{
       margin-top: 0cm;
-      height: 60px;
+      height: 45px;
+      width: 70%;
+      top: 10px;
   }
 }
 
