@@ -1,0 +1,118 @@
+.contentbox {
+  margin-top: 2rem;
+  line-height: 1.5rem;
+  text-align: left;
+  font-size: 1rem;
+}
+
+/*right content*/
+
+.rightcont {
+  width: 50%;
+  position: absolute;
+  margin-left: 50%;
+  padding: 4% 6% 4% 3%;
+}
+
+.reachus {
+  margin-top: 1rem;
+}
+
+.loc_link {
+  display: flex;
+  align-items: "center";
+  height: "100%";
+}
+
+.loc_icon {
+  color: grey;
+  transition: 0.2s all !important;
+  animation: addressIconAnimate 1.3s infinite ease-out;
+}
+
+.loc_icon:hover {
+  color: white;
+  transform: scale(1.5);
+  animation: none;
+}
+
+.location {
+  padding: 1.5% 2%;
+}
+
+.contact {
+  margin-top: 3rem;
+}
+
+.ph_number {
+  margin: 1rem 0;
+}
+
+/*left content*/
+.leftcont {
+  width: 50%;
+  position: absolute;
+  margin-left: 0;
+}
+
+.formbox {
+  margin: 2rem 5rem;
+  /* background-color: grey; */
+  border-radius: 0.8rem;
+  padding: 2rem 1.5rem;
+  background-color: rgb(83, 83, 83);
+  line-height: 3.8rem;
+  text-align: center;
+  border: 1px solid rgb(83, 83, 83);
+  box-shadow: 0 1px 5px 5px rgba(252, 245, 245, 0.5);
+}
+.formmessage,
+.forminput {
+  width: 100%;
+  padding:0.5rem;
+  /* width: 26rem; */
+  height: 2.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid white;
+  border-radius: 0.3rem;
+  background-color: rgb(202, 202, 202);
+}
+
+.formmessage {
+  margin: 1.5rem 0 0 0;
+  height: 7rem;
+}
+
+@media only screen and (max-width: 1023px) {
+  .formbox{
+    margin: 2rem 2rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .rightcont {
+    position: relative;
+    margin: 0 0 30rem 0;
+    width: 100%;
+    padding-top: 2rem;
+  }
+
+  .leftcont {
+    position: relative;
+    width: 100%;
+  }
+
+  .formbox {
+    margin: 1rem 2rem;
+    padding: 0.8rem;
+  }
+
+  .formmessage,
+  .forminput {
+    margin: 0.5rem 0 0 0;
+  }
+
+  .location{
+    text-align: center;
+  }
+}
