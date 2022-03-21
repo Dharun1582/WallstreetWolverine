@@ -78,6 +78,7 @@ function RegisterForm({ pageType }) {
                 setIsModalOpen(true)    
             }
         } else if (pageType === 'Login') {
+            const axios=require('axios');
             let validation = validateForm({ ...loginDetails, pageType: pageType })
             if (validation.status === false) {                
                 Store.addNotification({
@@ -95,19 +96,24 @@ function RegisterForm({ pageType }) {
                 })
                 return;
             } else {
-                Store.addNotification({
-                    title: "Login successful!",
-                    type: "success",
-                    insert: "bottom",
-                    container: "top-right",
-                    animationIn: ["animate__animated", "animate__fadeIn"],
-                    animationOut: ["animate__animated", "animate__fadeOut"],
-                    dismiss: {
-                        duration: 3000,
-                        onScreen: true
-                    }
+
+                axios.post('http://localhost:3001/login',loginDetails).then((res)=>{
+                    console.log(res.data);
                 })
-                navigate('/profile')
+
+                // Store.addNotification({
+                //     title: "Login successful!",
+                //     type: "success",
+                //     insert: "bottom",
+                //     container: "top-right",
+                //     animationIn: ["animate__animated", "animate__fadeIn"],
+                //     animationOut: ["animate__animated", "animate__fadeOut"],
+                //     dismiss: {
+                //         duration: 3000,
+                //         onScreen: true
+                //     }
+                // })
+                // navigate('/profile')
                 return
             }
         }
