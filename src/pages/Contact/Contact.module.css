@@ -57,14 +57,12 @@
 
 .formbox {
   margin: 2rem 5rem;
-  /* background-color: grey; */
   border-radius: 0.8rem;
-  padding: 2rem 1.5rem;
-  background-color: rgb(83, 83, 83);
+  padding: 1rem 1.5rem;
+  background-image: linear-gradient(to bottom right, #440bd4be, #ff2079c7);
   line-height: 3.8rem;
   text-align: center;
-  border: 1px solid rgb(83, 83, 83);
-  box-shadow: 0 1px 5px 5px rgba(252, 245, 245, 0.5);
+  box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
 }
 .formmessage,
 .forminput {
@@ -76,17 +74,17 @@
   border: 1px solid white;
   border-radius: 0.3rem;
   background-color: rgb(202, 202, 202);
+  outline: none;
 }
-
+.forminput:focus,.formmessage:focus{
+    border: 2px solid rgb(0, 0, 0);
+}
 .formmessage {
   margin: 1.5rem 0 0 0;
   height: 7rem;
 }
 
 @media only screen and (max-width: 1023px) {
-  .formbox{
-    margin: 2rem 2rem;
-  }
 }
 
 @media only screen and (max-width: 767px) {

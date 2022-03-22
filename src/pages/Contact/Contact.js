@@ -55,9 +55,9 @@ function Contact() {
                 return {...prev, message: e.target.value}
             })}
             />
-            <center>
+            <div>
               <ContactButton text="SUBMIT" />
-            </center>
+            </div>
           </form>
         </div>
       </div>
