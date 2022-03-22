@@ -97,15 +97,22 @@ function RegisterForm() {
                     // showErrorToastNotification(<p>Please try again after sometime</p>);
                   } else {
                     if (resp.status === 200) {
+                        //  setAuth(true);
                         console.log(resp.data.message);
                         Store.addNotification({...toastNotification,message:resp.data.message})
 
                     //   Success
-                        //  setAuth(true);
                 //       showSuccessToastNotification(<p>Logged in!</p>)
                     //   localStorage.setItem("details", stringifyUserDetails(resp.data));
                       localStorage.setItem("token", resp.data.token);
                       localStorage.setItem("email", resp.data.email);
+                      localStorage.setItem("kid",resp.data.kid);
+                      localStorage.setItem("firstname",resp.data.firstname);
+                      localStorage.setItem("lastname",resp.data.lastname);
+                      localStorage.setItem("phone",resp.data.phone)
+                      localStorage.setItem("dept",resp.data.dept)
+
+                      console.log(resp.data)
                       navigate("/");
                     } else if (resp.status >= 400 && resp.status < 500) {
                         console.log(resp.data.message);
@@ -117,7 +124,7 @@ function RegisterForm() {
                     //   showErrorToastNotification(<p>{resp.data.message}</p>);
                     }
                   }
-           
+                //   window.location.href="/";
                 return
             }  
 
