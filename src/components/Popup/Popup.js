@@ -3,6 +3,7 @@ import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import styles from "./Popup.module.css";
 import {useNavigate} from 'react-router-dom';
+import { apiPostRegisterDetails } from '../../auth/auth';
 
 const Popup = (props) => {
     const [open, setOpen] = useState(false);
@@ -20,25 +21,32 @@ const Popup = (props) => {
     const axios=require('axios');
     let navigate=useNavigate();
 
-    function store(){
+    async function store(){
         // console.log(props.details);
-        axios.post('http://localhost:3001/register',props.details).then(res=>{
-            // console.log('jsdcnidnc');
-            console.log(res);
-            if(res.status >=200 && res.status<=299){
+        const res = await apiPostRegisterDetails(props.details);
+
+        try {if (res === undefined) {
+            console.log("Error");
+          }
+          else {
+            if (res.status >=200 && res.status<=299) {
                 console.log("registration Success");
                 navigate('/login');
-            }else{
-                // console.log("Error");
+            }
+            else if (res.status >= 400 && res.status < 500) {
                 throw Error(res.statusText);
             }
-        }).catch(err=>{
+            else if (res.status >= 500 && res.status < 600) {
+              console.log("Server Side Error");
+              throw Error(res.statusText);
+            }
+          }} catch(err){
             if(err){
                 // console.log("ERROR");
                 console.log(err);
                 navigate('/register');
             }
-        })
+        }
         
 
     }
