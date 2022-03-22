@@ -44,6 +44,12 @@ function Market() {
   }else{
     nrows=2;
   }
+    console.log(localStorage.getItem("email"));
+    console.log(localStorage.getItem("kid"));
+    console.log(localStorage.getItem("firstname"));
+    console.log(localStorage.getItem("lastname"));
+    console.log(localStorage.getItem("phone"));
+    console.log(localStorage.getItem("dept"));
 
   return (
     <>

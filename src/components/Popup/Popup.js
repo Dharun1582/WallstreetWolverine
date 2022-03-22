@@ -23,6 +23,7 @@ const Popup = (props) => {
 
     async function store(){
         // console.log(props.details);
+<<<<<<< HEAD
         const res = await apiPostRegisterDetails(props.details);
 
         try {if (res === undefined) {
@@ -31,6 +32,13 @@ const Popup = (props) => {
           else {
             if (res.status >=200 && res.status<=299) {
                 console.log("registration Success");
+=======
+        axios.post('http://localhost:3001/register',props.details).then(res=>{
+            // console.log('jsdcnidnc');
+            console.log(res);
+            if(res.status >=200 && res.status<=299){
+                // console.log();
+>>>>>>> 626e57535eb8ca89a51300126c6729485b2a6300
                 navigate('/login');
             }
             else if (res.status >= 400 && res.status < 500) {
