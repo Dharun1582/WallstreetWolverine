@@ -7,11 +7,10 @@
     background-image: linear-gradient(to bottom right, #440bd48e, #ff207991);
     box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
     border-radius: 20px;
-    margin: 30px 0px;
-    
+    margin-top: 15px;
 }
 .subcontentbox{
-  height: 60vh;
+  height: 50vh;
   overflow-y: scroll;
   display:inline-flex;
   flex-direction: column;
