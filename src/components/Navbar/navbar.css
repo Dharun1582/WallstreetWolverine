@@ -3,6 +3,7 @@
     width: 100%;
     background-color: #383737;
     position: relative;
+    border-bottom: 1px solid ;
   }
   
   .nav > .nav-header {
