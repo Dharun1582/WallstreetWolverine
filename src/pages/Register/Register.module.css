@@ -8,7 +8,6 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
 
 .register_wrapper {
@@ -23,13 +22,13 @@
 
 .login_wrapper {  
   width: 100%;
-  height: 100%;
+  min-height: 86vh;
   display: flex;
   justify-content: center;
   padding: var(--mb-6) 0;
-  background-image: url(../../assets/images/bg/try.png);
+  /*background-image: url(../../assets/images/bg/try.png);
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover;*/
 }
 
 .customOverlay {
@@ -51,6 +50,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  
 }
 
 .boldText {
@@ -70,14 +70,18 @@
 
 .registerFormContainer {
   flex-basis: 50%;
+  border-radius: 20px;
   justify-content: center;
+  /*background-image: linear-gradient(to bottom right, #440bd48e, #ff207991);*/
+  background-image: linear-gradient(to bottom right, #440bd4be, #ff2079c7);
+  box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
 }
 
 .formWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #000;
+  /*background-color: #000;*/
   border-radius: 1rem;
   padding: var(--mb-4) var(--mb-4);
 }

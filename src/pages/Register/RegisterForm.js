@@ -127,7 +127,7 @@ function RegisterForm({ pageType }) {
                     style={{ display: loader ? "none" : "flex" }}
                     className={`${styles.formWrapper}`}
                 >
-                    <Heading text='Register' />
+                    <Heading text='REGISTER' />
                     {REGISTER_FORM_FIELDS.map((field, key) => {
                         return (
                             <FormField
@@ -160,7 +160,7 @@ function RegisterForm({ pageType }) {
                     style={{ display: loader ? "none" : "flex" }}
                     className={`${styles.formWrapper}`}
                 >
-                    <Heading text='Login' />
+                    <Heading text='LOGIN' />
                     {LOGIN_FORM_FIELDS.map((field, key) => {
                         return (
                             <FormField
