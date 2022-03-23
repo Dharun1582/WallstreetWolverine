@@ -1,5 +1,7 @@
 import "./App.css";
 import "./fonts.css";
+//Page Transition
+import { AnimatePresence } from "framer-motion";
 import {
   BrowserRouter as Router,
   Navigate,
@@ -45,8 +47,10 @@ function App() {
 }
 
 const AllRoutes = () => {
+  const location = useLocation();
   return (
-    <Routes>
+    <AnimatePresence exitBeforeEnter initial={false}>
+      <Routes location={location} key={location.pathname} initial={false}>
       <Route path="/" element={<Landing />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/instructions" element={<Instructions />} />
@@ -59,6 +63,7 @@ const AllRoutes = () => {
       <Route path="/rules" element={<Rules />} />
       <Route path="/*" element={<PageNotFound />} />
     </Routes>
+    </AnimatePresence>
   );
 };
 

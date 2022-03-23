@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import companies from "./companies.json"
 import NewsFeed from '../../components/NewsFeed/NewsFeed';
 import Heading from "../../components/Heading/Heading.js";
-
+import Page_transition from "../../components/Animation/Transition";
 
 function Header(){
   return(
@@ -46,6 +46,7 @@ function Market() {
   }
 
   return (
+    <Page_transition>
     <>
       <Header />
       <div className={`${styles.uppercontainer}`}>
@@ -62,7 +63,7 @@ function Market() {
       </div>
       
     </>
-
+    </Page_transition>
   )
 }
 
