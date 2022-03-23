@@ -1,0 +1,16 @@
+.headbox{
+    display: flex;
+    justify-content: center;
+    min-height: 10wh;
+  }
+
+  .headsmall{
+    color: #fa5f22;
+    font-size: 2rem;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .headsmall{
+      font-size: 1.3rem;
+    }
+  }
