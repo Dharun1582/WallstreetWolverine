@@ -1,0 +1,15 @@
+.footerbox{
+    padding: 2rem 10rem;
+    background-color: rgb(56, 55, 55);
+}
+
+a{
+    color: #e92efb;
+}
+
+@media only screen and (max-width: 767px) {
+    .footerbox{
+        padding: 2rem;
+    }
+  }
+  
