@@ -1,17 +1,21 @@
 import { useState, createContext, useEffect, useRef } from "react";
 import styles from './../Register/Register.module.css'
 import RegisterForm from "./../Register/RegisterForm";
+import Page_transition from "../../components/Animation/Transition";
+
 const Login = () => {
   return (
-    <div className={`${styles.login_wrapper_main}`}>
-      <div className={`${styles.login_wrapper}`}>
-        <div className={`${styles.register_container}`}>
-          <div className={`${styles.registerFormContainer}`}>
-            <RegisterForm pageType="Login" />
+    <Page_transition>
+      <div className={`${styles.login_wrapper_main}`}>
+        <div className={`${styles.login_wrapper}`}>
+          <div className={`${styles.register_container}`}>
+            <div className={`${styles.registerFormContainer}`}>
+              <RegisterForm pageType="Login" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Page_transition>
   )
 }
 
