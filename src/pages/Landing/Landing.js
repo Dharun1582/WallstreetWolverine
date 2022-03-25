@@ -1,10 +1,8 @@
 import React from 'react'
 import styles from "./Landing.module.css"
-import Page_transition from "../../components/Animation/Transition";
 
 function Landing() {
   return (
-    <Page_transition>
     <div className={styles.mainbox}>
       <div className={styles.wel_text}>WELCOME TO</div>
         <div className={styles.event_tit1}>
@@ -31,7 +29,6 @@ function Landing() {
           <h1 className={styles.a}>E</h1>
         </div>
     </div>
-    </Page_transition>
   )
 }
 
