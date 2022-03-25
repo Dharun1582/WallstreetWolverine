@@ -1,127 +1,159 @@
-.customOverlay{
-    color: transparent;
-}
-.customModal {
-    width: 90%;
-    background-color: #230374;
-    border-radius: 20px;
-    border: 1px solid #e1e2e2;
-    scroll-behavior: smooth;
-}
-.head{
-  text-align: center;
-  padding-bottom: 7px;
-  border-bottom: 1px solid white;
-  margin-bottom: 5px;
-  letter-spacing: 0.2rem;
-}
-.contentbox{
-    display:inline-flex;
-    flex-direction: column;
-    align-self: center;
-    width: auto;  
-    height: 64vh;
-    overflow-y: scroll;
-}
-.contentbox::-webkit-scrollbar
-{
-  width: 10px;
-  background-color: rgba(218, 224, 224, 0.274);
-  border-radius: 5px;
-}
+  .customOverlay{
+      color: transparent;
+  }
+  .customModal {
+      width: 90%;
+      background-color: #230374;
+      border-radius: 20px;
+      border: 1px solid #e1e2e2;
+      scroll-behavior: smooth;
+  }
+  .regButton {
+    background-color: rgb(0, 156, 222); 
+      border: none;
+      color: white;
+      padding: 15px 35px;
+      margin-top: 10px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      border-radius: 20px;
+  }
 
-.contentbox::-webkit-scrollbar-thumb
-{
-	border-radius: 5px;
-  background-color: rgb(211, 201, 201);
-}
-.subcontentbox{
-  padding:0px 20px;
-  border: none;
-  outline: none;
-}
-.instructionbox{
-    margin: 0px 5px;
-    padding: 8px 0px;
-    display: inline-flex;
+  .regButton:hover {
+    font-weight: bolder;
+      cursor: pointer;
+  }
+
+  .buttonContainer {
+    display: flex;
     flex-direction: row;
-    align-self: flex-start;
+    justify-content: space-evenly;
     align-items: center;
-}
-.instruction{
-    text-align: left;
-    color: var(--text);
-    font-size: 1rem;
-    letter-spacing: 0.07rem;
-}
+  }
 
-.instructionbox span{
-  font-size: 1.3rem;
-  padding-right: 5px;
-}
-.instructionbox:nth-child(odd) span{
-  color:rgb(0, 231, 0);
-}
-.instructionbox:nth-child(even) span{
-  color:rgb(231, 15, 0);
-}
-.lastbox{
-  text-align: center;
-  margin-top: 20px;
-  font-size: 0.9rem;
-}
-.checkbox{
-  height: 16px;
-  width: 16px;
-  margin-right: 5px;
-}
-.chklabel{
-  font-size: 0.9 rem;
-}
-.sub_button{
-  font-size: 1.3rem;
-  letter-spacing: 0.1rem;
-  background-color: rgba(2, 41, 2, 0.178) ;
-  margin-top: 20px;
-  width:200px;
-  padding: 10px;
-  outline: none;
-  border: none;
-  border-radius: 25px;
-  border: 1px solid rgb(2, 41, 2);
-  color:#e1e2e2;
-}
-.sub_button:hover{
-  background-color: rgb(2, 41, 2) ;
-  cursor: pointer;
-  box-shadow:0 4px 4px 2px rgba(255, 245, 245, 0.5) ;
-}
-.sub_button:disabled{
-  cursor: not-allowed;
-  box-shadow: none;
-  background-color: rgba(2, 41, 2, 0.178);
-}
-/* Above Tablet */
-@media only screen and (min-width: 1024px) {
-}
+  .regButton:disabled {
+    cursor: not-allowed;
+  }
 
-/* Both Tablet and Mobile */
-@media only screen and (max-width: 1023px) {
-}
+  .regButton:enabled {
+    cursor: pointer;
+  }
 
-/* Tablet only */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-}
-
-/* Mobile only */
-@media only screen and (max-width: 767px) {
-  .subcontentbox{
-    padding-left: 0px;
+  .head{
+    text-align: center;
+    padding-bottom: 7px;
+    border-bottom: 1px solid white;
+    margin-bottom: 5px;
+    letter-spacing: 0.2rem;
   }
   .contentbox{
-    width: 100%;
+      display:inline-flex;
+      flex-direction: column;
+      align-self: center;
+      width: auto;  
+      height: 64vh;
+      overflow-y: scroll;
   }
-  .head{
-    font-size: 1.4rem;
+  .contentbox::-webkit-scrollbar
+  {
+    width: 10px;
+    background-color: rgba(218, 224, 224, 0.274);
+    border-radius: 5px;
   }
-}
+
+  .contentbox::-webkit-scrollbar-thumb
+  {
+    border-radius: 5px;
+    background-color: rgb(211, 201, 201);
+  }
+  .subcontentbox{
+    padding:0px 20px;
+    border: none;
+    outline: none;
+  }
+  .instructionbox{
+      margin: 0px 5px;
+      padding: 8px 0px;
+      display: inline-flex;
+      flex-direction: row;
+      align-self: flex-start;
+      align-items: center;
+  }
+  .instruction{
+      text-align: left;
+      color: var(--text);
+      font-size: 1rem;
+      letter-spacing: 0.07rem;
+  }
+
+  .instructionbox span{
+    font-size: 1.3rem;
+    padding-right: 5px;
+  }
+  .instructionbox:nth-child(odd) span{
+    color:rgb(0, 231, 0);
+  }
+  .instructionbox:nth-child(even) span{
+    color:rgb(231, 15, 0);
+  }
+  .lastbox{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+  .checkbox{
+    height: 16px;
+    width: 16px;
+    margin-right: 5px;
+  }
+  .chklabel{
+    font-size: 0.9 rem;
+  }
+  .sub_button{
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    background-color: rgba(2, 41, 2, 0.178) ;
+    margin-top: 20px;
+    width:200px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    border: 1px solid rgb(2, 41, 2);
+    color:#e1e2e2;
+  }
+  .sub_button:hover{
+    background-color: rgb(2, 41, 2) ;
+    cursor: pointer;
+    box-shadow:0 4px 4px 2px rgba(255, 245, 245, 0.5) ;
+  }
+  .sub_button:disabled{
+    cursor: not-allowed;
+    box-shadow: none;
+    background-color: rgba(2, 41, 2, 0.178);
+  }
+  /* Above Tablet */
+  @media only screen and (min-width: 1024px) {
+  }
+
+  /* Both Tablet and Mobile */
+  @media only screen and (max-width: 1023px) {
+  }
+
+  /* Tablet only */
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  }
+
+  /* Mobile only */
+  @media only screen and (max-width: 767px) {
+    .subcontentbox{
+      padding-left: 0px;
+    }
+    .contentbox{
+      width: 100%;
+    }
+    .head{
+      font-size: 1.4rem;
+    }
+  }
