@@ -29,13 +29,10 @@ function CardList(){
   var cardComps=companies.map((item,i)=>{
     return <Card name={item.name} stockPrice={item.stockPrice} key={item.id} id={item.id} />
   })
-
   return(
     cardComps
   )
 }
-
-
 
 function Market() {
   var nrows;

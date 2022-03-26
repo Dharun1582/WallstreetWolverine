@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef,createContext, useContext, useEffect } from "react";
+
 import Button from "../../components/Button/Button";
 import FormField from "../../components/FormField/FormField";
 import { LOGIN_FORM_FIELDS } from "../../data/RegisterDetails";
@@ -13,6 +14,7 @@ import { validateForm  } from "../../validators/registerFormValidator";
 import { ReactNotifications, Store } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
 import "animate.css"
+// import googleIcon from "/";
 import { useNavigate } from "react-router-dom";
 const axios=require('axios');
 
@@ -21,13 +23,20 @@ const loginDetailsFormat = {
     pwd: ""
 }
 
+
+
 const k_api = axios.create({
     // baseURL: "http://localhost:3001/",
     baseURL: "https://api.kurukshetraceg.org.in/",
   });
   
   const url_login = "api/user/login";
-  
+const url_googleSignin = "api/auth/googlesignin";
+
+//   export const Auth = createContext();
+// export const SetAuth = createContext();
+
+
   const apiLogin = async (data) => {
     try {
       const response = await k_api.post(`${url_login}`, data);
@@ -37,10 +46,42 @@ const k_api = axios.create({
     }
   };
 
+  export const apiGoogleSignin = () => {
+    // window.location = "http://localhost:3001/" + url_googleSignin;
+    window.location = "https://api.sherlock.kurukshetraceg.org.in/" + url_googleSignin;
+    // window.location = "https://localhost:3000/" + url_googleSignin;
+
+  };
+  
+
+  // const apiGoogleSignin = () => {
+  //   // window.location = "http://localhost:3001/" + url_googleSignin;
+  //   window.location = "https://api.kurukshetraceg.org.in/" + url_googleSignin;
+  //   // window.location.href="/";
+  // };
+  
 function RegisterForm() {
+
+    useEffect(() => {
+      const script = document.createElement('script');
+    
+      script.src = "https://apis.google.com/js/platform.js";
+      script.async = true;
+    
+      document.body.appendChild(script);
+    
+      return () => {
+        document.body.removeChild(script);
+      }
+    }, []);
+
+    
+
     const navigate = useNavigate()
     const [checked, setChecked] = useState(false);
     const [isDisabled, setIsDisabled] = useState(true);
+    // const auth = useContext(Auth);
+    // const setAuth = useContext(SetAuth);
     let reCaptchaRef = useRef(null);
 
     // const [registerDetails, setRegisterDetails] = useState(registerDetailsFormat);
@@ -72,9 +113,6 @@ function RegisterForm() {
     const clickedSubmit = async () => {
   
             const axios=require('axios');
- 
-
-
 
                 if (reCaptchaRef.current.getValue() === "") {
                     // showErrorToastNotification(<p>reCaptcha verification failed</p>);
@@ -97,12 +135,12 @@ function RegisterForm() {
                     // showErrorToastNotification(<p>Please try again after sometime</p>);
                   } else {
                     if (resp.status === 200) {
-                        //  setAuth(true);
+                        // setAuth(true);
                         console.log(resp.data.message);
                         Store.addNotification({...toastNotification,message:resp.data.message})
 
                     //   Success
-                //       showSuccessToastNotification(<p>Logged in!</p>)
+                    //  showSuccessToastNotification(<p>Logged in!</p>)
                     //   localStorage.setItem("details", stringifyUserDetails(resp.data));
                       localStorage.setItem("token", resp.data.token);
                       localStorage.setItem("email", resp.data.email);
@@ -134,6 +172,7 @@ function RegisterForm() {
     } else {
         document.body.style.overflowY = "visible"
     }
+
    
         return (
             <>
@@ -142,7 +181,18 @@ function RegisterForm() {
                     style={{ display: loader ? "none" : "flex" }}
                     className={`${styles.formWrapper}`}
                 >
-                    <Heading text='Login' />
+                     <Heading text='Login' />
+                    {/* <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                    <a href="#" onClick={signOut}>Sign out</a>  */}
+
+                     <img
+                onClick={() =>apiGoogleSignin()}
+                src='assets/images/google.png'
+                className={`${styles.googleIcon}`}
+                alt="Google Icon"
+              /> 
+              <p className={`${styles.divider}`}>or use your email to login</p>
+
                     {LOGIN_FORM_FIELDS.map((field, key) => {
                         return (
                             <>
