@@ -1,6 +1,7 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
-import graph from './graph.json'
+import graph from '../../data/graph.json';
+import { apiFetchGraphData } from '../../auth/auth';
 
 class StockGraph extends React.Component {
 
@@ -31,11 +32,15 @@ class StockGraph extends React.Component {
   }
 
   fetchData = async () => {
-    await fetch('http://localhost:3001/users')
-      .then(response => response.json())
-      .then(res => {
-        if (res && res.i) {
-          console.log(res);
+    const response = await apiFetchGraphData();
+    if (response === undefined) {
+      console.log("Error");
+    }
+    else {
+      if (response.status >=200 && response.status<=299) {
+        const res = response.data;
+        if (res) {
+          // console.log(res);
           this.setState(
             {
               index: res.i,
@@ -44,17 +49,24 @@ class StockGraph extends React.Component {
           );
           this.loadData();
         }
-      });
+      }
+      else if (response.status >= 400 && response.status < 500) {
+        //about to fill
+      }
+      else if (response.status >= 500 && response.status < 600) {
+        console.log("Server Side Error");
+      }
+    }
+
   }
 
   componentDidMount() {
     this.fetchData().then(res => {
-      console.log('first');
       var sec = 0;
       var min = this.state.min;
       const fetchId = setInterval(() => {
         sec += 10;
-        console.log(min, this.state.index);
+        // console.log(min, this.state.index);
         if (sec >= 60) {
           min += 1;
           sec = 0;
@@ -64,9 +76,12 @@ class StockGraph extends React.Component {
             min = this.state.min;
           });
         }
+        // if (min >= 2){
+        //   buttonState = false;
+        // }
 
         if (this.state.index >= 13) {
-          console.log("Hi");
+          console.log("End");
           clearInterval(fetchId);
         }
       }, 10000);
