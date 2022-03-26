@@ -20,7 +20,9 @@ import Login from "./pages/Login/Login";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Market from "./pages/Market/Market";
 import StockMain from "./pages/StockMain/StockMain";
+import Footer from "./components/Footer/Footer"
 import Rules from './pages/Rules/Rules'
+import Developer from "./pages/Developer/Developer";
 import SimpleLoader from "./components/SimpleLoader/SimpleLoader";
 import { ReactNotifications, Store } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
@@ -37,6 +39,7 @@ function App() {
             <Navbar />
             <ReactNotifications />
             <AllRoutes />
+            <Footer />
           </Router>
         </div>
       </StyledApp>
@@ -58,6 +61,7 @@ const AllRoutes = () => {
       {/* <Route path="/register" element={<Register />} /> */}
       <Route path="/rules" element={<Rules />} />
       <Route path="/*" element={<PageNotFound />} />
+      <Route path="/developer" element={<Developer />} />
     </Routes>
   );
 };
