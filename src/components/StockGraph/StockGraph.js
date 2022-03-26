@@ -1,6 +1,6 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
-import graph from '../../../public/data/graph.json';
+import graph from '../../data/graph.json';
 import { apiFetchGraphData } from '../../auth/auth';
 
 class StockGraph extends React.Component {
@@ -76,6 +76,9 @@ class StockGraph extends React.Component {
             min = this.state.min;
           });
         }
+        // if (min >= 2){
+        //   buttonState = false;
+        // }
 
         if (this.state.index >= 13) {
           console.log("End");

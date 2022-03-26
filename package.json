@@ -21,6 +21,7 @@
     "plotly.js": "~1.45.3",
     "react": "^17.0.2",
     "react-advanced-news-ticker": "^1.0.1",
+    "react-async": "^10.0.1",
     "react-dom": "^17.0.2",
     "react-google-recaptcha": "^2.1.0",
     "react-icons": "^4.3.1",
