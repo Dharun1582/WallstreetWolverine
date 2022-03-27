@@ -3,6 +3,74 @@ import styles from "./Profile.module.css";
 import Heading from "../../components/Heading/Heading.js";
 import { apigetProfile } from '../../auth/auth';
 
+function Profilebox(props){
+  return(
+    <>
+      <div className={`${styles.itemRow}`}>
+        <p className={`${styles.itemHeader}`}>K! ID</p>
+        <p className={`${styles.itemContent}`}>{props.kid}</p>
+      </div>
+      <div className={`${styles.itemRow}`}>
+        <p className={`${styles.itemHeader}`}>Name</p>
+        <p className={`${styles.itemContent}`}>{props.name}</p>
+      </div>
+      <div className={`${styles.itemRow}`}>
+        <p className={`${styles.itemHeader}`}>College</p>
+        <p className={`${styles.itemContent}`}>{props.college}</p>
+      </div>
+      <div className={`${styles.itemRow}`}>
+        <p className={`${styles.itemHeader}`}>Department</p>
+        <p className={`${styles.itemContent}`}>{props.department}</p>
+      </div>
+      <div className={`${styles.itemRow}`}>
+        <p className={`${styles.itemHeader}`}>Email</p>
+        <p className={`${styles.itemContent}`}>{props.email}</p>
+      </div>
+    </>
+  )
+}
+
+function Stocktable(props){
+  return(
+    <table className={`${styles.stocktable}`}>
+      <thead>
+        <tr>
+          <th>List of companies</th>
+          <th>Number of stocks</th>
+        </tr>
+      </thead>
+        <tr>
+          <td>CokaCula</td>
+          <td>{props.cokacula}</td>
+        </tr>
+        <tr>
+          <td>Hettan</td>
+          <td>{props.hettan}</td>
+        </tr>
+        <tr>
+          <td>Vedophene</td>
+          <td>{props.vedophene}</td>
+        </tr>
+        <tr>
+          <td>Abibas</td>
+          <td>{props.abibas}</td>
+        </tr>
+        <tr>
+          <td>LycaLabs</td>
+          <td>{props.lycalabs}</td>
+        </tr>
+        <tr>
+          <td>Yechier</td>
+          <td>{props.yechier}</td>
+        </tr>
+        <tr>
+          <td>Wallet</td>
+          <td>{props.wallet}</td>
+        </tr>
+    </table>
+  )
+}
+
 class Profile extends React.Component {
   constructor(props) {
     super(props);
@@ -11,6 +79,7 @@ class Profile extends React.Component {
       kid: '',
       email: '',
       college: '',
+      department:'',
       cokacula: 0,
       hettan: 0,
       vedophene: 0,
@@ -20,8 +89,6 @@ class Profile extends React.Component {
       wallet: 0,
     }
   }
-
-
 
   fetchProfile = async (config) => {
     const profile = await apigetProfile(config);
@@ -61,7 +128,6 @@ class Profile extends React.Component {
     }
   }
 
-
   componentDidMount() {
     const config = {
       headers: {
@@ -70,11 +136,24 @@ class Profile extends React.Component {
     };
     this.fetchProfile(config);
   }
-
-
   render() {
     return (
-      <h1>Profile</h1>
+      <>
+        <Heading text="PROFILE"/>
+        <div className={`${styles.maincontainer}`}>
+          <div className={`${styles.profilecontainer}`}>
+            <Profilebox name={this.state.name} kid={this.state.kid} email={this.state.email} college={this.state.college} department={this.state.department}/>
+          </div>
+          <Stocktable cokacula={this.state.cokacula}
+                      hettan={this.state.hettan}
+                      vedophene={this.state.vedophene}
+                      abibas={this.state.abibas}
+                      lycalabs={this.state.lycalabs}
+                      yechier={this.state.yechier}
+                      wallet={this.state.wallet}
+          />
+        </div>
+      </>
     )
   }
 }
