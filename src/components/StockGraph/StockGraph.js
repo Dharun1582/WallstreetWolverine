@@ -88,8 +88,11 @@ class StockGraph extends React.Component {
     });
 
   }
+  
   render() {
     // this.loadData();
+// console.log("ASD"+graph);
+
     return (
       <div>
         {/* <button onClick={this.loadData}>Click</button> */}
