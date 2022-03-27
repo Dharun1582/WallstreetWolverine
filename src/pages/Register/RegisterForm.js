@@ -16,6 +16,8 @@ import "animate.css"
 // import googleIcon from "/";
 import { useNavigate } from "react-router-dom";
 import { apicheckUser } from "../../auth/auth";
+import {apiGoogleSignin} from "../../auth/auth"
+
 const axios = require('axios');
 
 const loginDetailsFormat = {
@@ -130,7 +132,11 @@ function RegisterForm() {
                   headers:{
                     authorization:localStorage.getItem("token"),
                   }
-                }
+                };
+
+                const loginRes = await apicheckUser(config);
+                console.log(loginRes);                
+
                 if (localStorage.getItem("firstTimeLogin") === null) {
                     setIsModalOpen(true);
                 } else {
@@ -164,6 +170,10 @@ function RegisterForm() {
                 className={`${styles.formWrapper}`}
             >
                 <Heading text='Login' />
+                <div className={`${styles.googleIcon}`}>
+                  <img src='assets/images/google.png' onClick={()=>{apiGoogleSignin()}} alt="gimage" />
+                </div>
+
                 {LOGIN_FORM_FIELDS.map((field, key) => {
                     return (
                         <>

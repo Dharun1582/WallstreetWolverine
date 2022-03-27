@@ -5,7 +5,7 @@ import RoomIcon from "@mui/icons-material/Room";
 import PhoneIcon from "@mui/icons-material/Phone";
 import ReCAPTCHA from "react-google-recaptcha";
 import ContactButton from "../../components/Button/ContactButton";
-import { apisendMail } from "../../api/api"
+import { apisendMail } from "../../auth/auth"
 
 
 function Contact() {

@@ -18,7 +18,7 @@ function Card(props){
       <div className={`${styles.card}`}>
       <img src='images/logos/filler.jpg' alt=''/>
       <h3>{props.name}</h3>
-      <p>{props.stockPrice}</p>
+
       </div>      
     </a> 
   )

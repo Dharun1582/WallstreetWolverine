@@ -1,32 +1,27 @@
 [
     {
         "id": 1,
-        "name": "CokaCula",
-        "stockPrice": 2345
+        "name": "VocaCola"
     },
     {
         "id": 2,
-        "name": "HettanPetroleum",
-        "stockPrice": 2345
+        "name": "Yecher"
+     
     },
     {
         "id": 3,
-        "name": "Vedophene",
-        "stockPrice": 2345
+        "name": "HindPetroleum"
     },
     {
         "id": 4,
-        "name": "Abibas",
-        "stockPrice": 2345
+        "name": "VI"
     },
     {
         "id": 5,
-        "name": "LycaLabs",
-        "stockPrice": 2345
+        "name": "LyccaLabs"
     },
     {
         "id": 6,
-        "name": "Yechier",
-        "stockPrice": 2345
+        "name": "Abibas"
     }
 ]
