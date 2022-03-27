@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import Button from "../../components/Button/Button";
 import FormField from "../../components/FormField/FormField";
 import { LOGIN_FORM_FIELDS } from "../../data/RegisterDetails";
@@ -13,6 +13,7 @@ import { ReactNotifications, Store } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
 import "animate.css"
 import { useNavigate } from "react-router-dom";
+import { SetAuth } from '../../App'
 const axios = require('axios');
 
 const loginDetailsFormat = {
@@ -52,6 +53,7 @@ const showMessage = (title, type) => {
 }
 
 function RegisterForm() {
+    const setAuth = useContext(SetAuth);
     const navigate = useNavigate()
     let reCaptchaRef = useRef(null);
     const [checked, setChecked] = useState(false);
@@ -90,7 +92,7 @@ function RegisterForm() {
                 //  setAuth(true);
                 console.log(resp.data.message);
                 showMessage("Login successful!", "success")
-
+                setAuth(true)
                 //   Success
                 //       showSuccessToastNotification(<p>Logged in!</p>)
                 //   localStorage.setItem("details", stringifyUserDetails(resp.data));

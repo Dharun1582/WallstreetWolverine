@@ -45,11 +45,13 @@ export const LOGIN_FORM_FIELDS = [
     {
         type: "text",
         heading: "Mail",
-        name: "email"
+        name: "email",
+        id: 0
     },
     {
         type: "password",
         heading: "Password",
-        name: "pwd"
+        name: "pwd",
+        id: 1
     },
 ]
