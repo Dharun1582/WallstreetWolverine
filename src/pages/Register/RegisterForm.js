@@ -101,6 +101,8 @@ function RegisterForm() {
                 // localStorage.setItem("lastname", resp.data.lastname);
                 // localStorage.setItem("phone", resp.data.phone)
                 // localStorage.setItem("dept", resp.data.dept)
+
+                // firstTimeLogin set to false inside Popup.js
                 if (localStorage.getItem("firstTimeLogin") === null) {
                     setIsModalOpen(true);
                 } else {

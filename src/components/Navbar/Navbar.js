@@ -41,16 +41,17 @@ function Navbar() {
     <a href="/rules" target="_blank">Rules</a>
     <a href="/contact" target="_blank">Contacts</a>
     <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=target@email.com" target="_blank">Feedback</a>
-    {/* <a href="/login">Login</a> */}
 
-    {localStorage.getItem('email') === null && <a href="/login" onClick={() => setState(!val)}>Login</a>}
+    {localStorage.getItem('email') === null && <a href="/login" onClick={() => setState(!val)} id="navbarLoginButton">Login</a>}
     {!(localStorage.getItem('email') === null) && <a href="/" onClick={() => {
       setState(!val);
       Object.keys(localStorage).forEach(function(key) {
+      if (key !== 'firstTimeLogin') {
+        localStorage.removeItem(key)
+      }
       console.log(key)
       })
-      localStorage.clear()
-    }}>Logout</a>}
+    }} id="navbarLoginButton">Logout</a>}
 
 
   </div>
