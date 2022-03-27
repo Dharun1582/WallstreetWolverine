@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./Modal.module.css";
 import Button from "../Button/Button";
 import graph from "../../data/graph.json";
-import { apiGetWallet, apiFetchGraphData, apiBuyStock, apiSellStock } from "../../auth/auth";
+import { apiGetWallet, apiFetchGraphData, apiBuyStock, apiSellStock, apicheckRecord } from "../../auth/auth";
 
 function Modal(props) {
     const [modal, setModal] = useState(false);
@@ -40,22 +40,36 @@ function Modal(props) {
                                 if (flag == 1) {
                                     if (res.Wallet >= ((graph[graphresp.i][company][5]) * nos)) {
                                         //do call transaction
-                                        const buyStock = await apiBuyStock(company, res.Wallet - ((graph[graphresp.i][company][5]) * nos), nos, config);
-                                        if (buyStock === undefined) {
+                                        const checkRecord = await apicheckRecord(config);
+                                        if (checkRecord === undefined) {
                                             console.log("Error");
-                                        }
-                                        else {
-                                            if (buyStock.status >= 200 && buyStock.status <= 299) {
-                                                //transaction successful;
-                                                console.log('transaction success')
+                                          }
+                                          else {
+                                            if (checkRecord.status >=200 && checkRecord.status<=299) {
+                                                const buyStock = await apiBuyStock(company, res.Wallet - ((graph[graphresp.i][company][5]) * nos), nos, config);
+                                                if (buyStock === undefined) {
+                                                    console.log("Error");
+                                                }
+                                                else {
+                                                    if (buyStock.status >= 200 && buyStock.status <= 299) {
+                                                        //transaction successful;
+                                                        console.log('transaction success')
+                                                    }
+                                                    else if (buyStock.status >= 400 && buyStock.status < 500) {
+                                                        //about to fill
+                                                    }
+                                                    else if (buyStock.status >= 500 && buyStock.status < 600) {
+                                                        console.log("Server Side Error");
+                                                    }
+                                                }
                                             }
-                                            else if (buyStock.status >= 400 && buyStock.status < 500) {
-                                                //about to fill
+                                            else if (checkRecord.status >= 400 && checkRecord.status < 500) {
+                                              //about to fill
                                             }
-                                            else if (buyStock.status >= 500 && buyStock.status < 600) {
-                                                console.log("Server Side Error");
+                                            else if (checkRecord.status >= 500 && checkRecord.status < 600) {
+                                              console.log("Server Side Error");
                                             }
-                                        }
+                                          }
                                     }
                                     else {
                                         console.log("Insufficient amount");
@@ -63,22 +77,36 @@ function Modal(props) {
                                 }
                                 else if (flag == 2) {
                                     if (res[company] >= nos) {
-                                        const buyStock = await apiSellStock(company, res.Wallet + ((graph[graphresp.i][company][5]) * nos), nos, config);
-                                        if (buyStock === undefined) {
+                                        const checkRecord = await apicheckRecord(config);
+                                        if (checkRecord === undefined) {
                                             console.log("Error");
-                                        }
-                                        else {
-                                            if (buyStock.status >= 200 && buyStock.status <= 299) {
-                                                //transaction successful;
-                                                console.log('transaction success')
+                                          }
+                                          else {
+                                            if (checkRecord.status >=200 && checkRecord.status<=299) {
+                                                const buyStock = await apiSellStock(company, res.Wallet + ((graph[graphresp.i][company][5]) * nos), nos, config);
+                                                if (buyStock === undefined) {
+                                                    console.log("Error");
+                                                }
+                                                else {
+                                                    if (buyStock.status >= 200 && buyStock.status <= 299) {
+                                                        //transaction successful;
+                                                        console.log('transaction success')
+                                                    }
+                                                    else if (buyStock.status >= 400 && buyStock.status < 500) {
+                                                        //about to fill
+                                                    }
+                                                    else if (buyStock.status >= 500 && buyStock.status < 600) {
+                                                        console.log("Server Side Error");
+                                                    }
+                                                }
                                             }
-                                            else if (buyStock.status >= 400 && buyStock.status < 500) {
-                                                //about to fill
+                                            else if (checkRecord.status >= 400 && checkRecord.status < 500) {
+                                              //about to fill
                                             }
-                                            else if (buyStock.status >= 500 && buyStock.status < 600) {
-                                                console.log("Server Side Error");
+                                            else if (checkRecord.status >= 500 && checkRecord.status < 600) {
+                                              console.log("Server Side Error");
                                             }
-                                        }
+                                          }
                                     }
                                     else {
                                         console.log("Insufficient stocks");
