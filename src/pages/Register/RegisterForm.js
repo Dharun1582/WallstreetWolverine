@@ -134,7 +134,12 @@ function RegisterForm() {
                 };
 
                 const loginRes = await apicheckUser(config);
-                console.log(loginRes);                
+                // console.log(loginRes);
+                // if ((loginRes === undefined) || !(response.status >= 200 && response.status <= 299)) {
+                //     localStorage.clear();
+                //     window.location.href = "/login";
+                // }
+
 
                 if (localStorage.getItem("firstTimeLogin") === null) {
                     setIsModalOpen(true);

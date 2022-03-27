@@ -47,6 +47,15 @@ export const apiPostRegisterDetails = async (details,config) => {
     }
   };
 
+  export const apicheckRecord = async (config) => {
+    try {
+      const response = await api.get("checkRecord",config);
+      return response;
+    } catch (error) {
+      return error.response;
+    }
+  };
+
   export const apigetProfile = async (config) => {
     try {
       const response = await api.get("profile",config);

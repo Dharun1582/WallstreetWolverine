@@ -36,11 +36,11 @@ function Navbar() {
   
   <div className="nav-links">
     <a href="/market">Market</a>
-    <a href="/profile">Check Credit</a>
+    <a href="/profile">Profile</a>
     <a href="/instructions">Instructions</a>
     <a href="/rules" target="_blank">Rules</a>
     <a href="/contact">Contacts</a>
-    <a href="mailto:someone@example.com" target="_blank">Feedback</a>
+    {/* <a href="mailto:someone@example.com" target="_blank">Feedback</a> */}
     {/* <a href="/login">Login</a> */}
 
     {localStorage.getItem('email') === null && <a href="/login" onClick={() => setState(!val)} id="navbarLoginButton">Login</a>}
