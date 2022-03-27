@@ -1,5 +1,4 @@
 import React, { useState, useRef,createContext, useContext, useEffect } from "react";
-
 import Button from "../../components/Button/Button";
 import FormField from "../../components/FormField/FormField";
 import { LOGIN_FORM_FIELDS } from "../../data/RegisterDetails";
