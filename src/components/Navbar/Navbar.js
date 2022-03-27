@@ -43,12 +43,16 @@ function Navbar() {
     <a href="mailto:someone@example.com" target="_blank">Feedback</a>
     {/* <a href="/login">Login</a> */}
 
-    {localStorage.getItem('email')==null && <a href="/login" onClick={()=>setState(!val)}>Login</a>}
-    {!(localStorage.getItem('email')==null) && <a href="/" onClick={()=>{
+    {localStorage.getItem('email') === null && <a href="/login" onClick={() => setState(!val)} id="navbarLoginButton">Login</a>}
+    {!(localStorage.getItem('email') === null) && <a href="/" onClick={() => {
       setState(!val);
-      localStorage.clear();
-      console.log("skdclsvhldbvlsuvusvbudhfv");
-    }}>Logout</a>}
+      Object.keys(localStorage).forEach(function(key) {
+      if (key !== 'firstTimeLogin') {
+        localStorage.removeItem(key)
+      }
+      console.log(key)
+      })
+    }} id="navbarLoginButton">Logout</a>}
 
 
   </div>

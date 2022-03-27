@@ -119,7 +119,7 @@ function RegisterForm() {
                 //   Success
                 //       showSuccessToastNotification(<p>Logged in!</p>)
                 //   localStorage.setItem("details", stringifyUserDetails(resp.data));
-                localStorage.setItem("token", resp.data.token);
+                // localStorage.setItem("token", resp.data.token);
                 localStorage.setItem("email", resp.data.email);
                 localStorage.setItem("kid", resp.data.kid);
                 localStorage.setItem("firstname", resp.data.firstname);
@@ -140,7 +140,8 @@ function RegisterForm() {
                 if (localStorage.getItem("firstTimeLogin") === null) {
                     setIsModalOpen(true);
                 } else {
-                    navigate("/profile");
+                    // navigate("/profile");
+                    window.location.href = '/profile'
                 }
                 console.log(resp.data)
             } else if (resp.status >= 400 && resp.status < 500) {

@@ -7,7 +7,7 @@ const Login = () => {
       <div className={`${styles.login_wrapper}`}>
         <div className={`${styles.register_container}`}>
           <div className={`${styles.registerFormContainer}`}>
-            <RegisterForm  />
+            <RegisterForm />
           </div>
         </div>
       </div>

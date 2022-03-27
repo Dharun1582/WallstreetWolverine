@@ -162,14 +162,14 @@ const Popup = (props) => {
                         {/*onclick wont work when button is disabled */}
                         <button type={'submit'} disabled={isDisabled} className={styles.regButton} onClick={() => {
                             localStorage.setItem('firstTimeLogin', 'false')
-                            navigate('/profile')
+                        window.location.href = '/profile'
                         }}>Register for Wall Street Wolverine</button>
-                    </div>
-                    {/* <div style={{ width: '50%', display: 'inline' }}>
+                </div>
+                {/* <div style={{ width: '50%', display: 'inline' }}>
                         <button type={'submit'} className={styles.regButton} onClick={() => { funcToExec(false) }}>Back to form</button>
                     </div> */}
-                </div>
             </div>
+        </div>
         </>
     );
 };
