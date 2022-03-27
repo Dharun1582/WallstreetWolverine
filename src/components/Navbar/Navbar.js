@@ -43,11 +43,13 @@ function Navbar() {
     <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=target@email.com" target="_blank">Feedback</a>
     {/* <a href="/login">Login</a> */}
 
-    {localStorage.getItem('email')==null && <a href="/login" onClick={()=>setState(!val)}>Login</a>}
-    {!(localStorage.getItem('email')==null) && <a href="/" onClick={()=>{
+    {localStorage.getItem('email') === null && <a href="/login" onClick={() => setState(!val)}>Login</a>}
+    {!(localStorage.getItem('email') === null) && <a href="/" onClick={() => {
       setState(!val);
-      localStorage.clear();
-      console.log("skdclsvhldbvlsuvusvbudhfv");
+      Object.keys(localStorage).forEach(function(key) {
+      console.log(key)
+      })
+      localStorage.clear()
     }}>Logout</a>}
 
 

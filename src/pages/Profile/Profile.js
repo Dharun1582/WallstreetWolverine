@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from "./Profile.module.css";
 import Heading from "../../components/Heading/Heading.js";
-
+import Navbar from "./../../components/Navbar/Navbar"
 function Profile() {
+  
   return (
     <div className={styles.mainbox}>
       <Heading text={"PROFILE"}/>
