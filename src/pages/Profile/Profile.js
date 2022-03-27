@@ -75,11 +75,11 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'Srishti',
-      kid: '12444321',
-      email: 'xyz@gmail.com',
-      college: 'College of Engineering',
-      department:'IT',
+      name: '',
+      kid: '',
+      email: '',
+      college: '',
+      department:'',
       cokacula: 0,
       hettan: 0,
       vedophene: 0,
