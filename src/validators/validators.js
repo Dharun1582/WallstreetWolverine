@@ -20,8 +20,8 @@ export const validateInstitute = (instituteName) => {
     return true;
 };
 
-export const validateKID = (kId) => {
-    if (kId.length === 0) return false
+export const validateKID = (kid) => {
+    if (kid.length === 0) return false
     return true
 }
 

@@ -15,16 +15,19 @@ import Navbar from "./components/Navbar/Navbar";
 import Profile from "./pages/Profile/Profile";
 import Instructions from "./pages/Instructions/Instructions";
 import Contact from "./pages/Contact/Contact";
-import Register from "./pages/Register/Register";
+import Register from "./pages/Register/Register"
 import Login from "./pages/Login/Login";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Market from "./pages/Market/Market";
 import StockMain from "./pages/StockMain/StockMain";
+import Footer from "./components/Footer/Footer"
 import Rules from './pages/Rules/Rules'
+import Developer from "./pages/Developer/Developer";
 import SimpleLoader from "./components/SimpleLoader/SimpleLoader";
 import { ReactNotifications, Store } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
 import "animate.css"
+
 const StyledApp = styled.div``;
 
 function App() {
@@ -37,6 +40,7 @@ function App() {
             <Navbar />
             <ReactNotifications />
             <AllRoutes />
+            <Footer />
           </Router>
         </div>
       </StyledApp>
@@ -56,9 +60,10 @@ const AllRoutes = () => {
       <Route path="/market" element={<Market />} />
       <Route path="/stock/:name" element={<StockMain />} />
       <Route path="/stock" element={<StockMain />} />
-      <Route path="/register" element={<Register />} />
+      {/* <Route path="/register" element={<Register />} /> */}
       <Route path="/rules" element={<Rules />} />
       <Route path="/*" element={<PageNotFound />} />
+      <Route path="/developer" element={<Developer />} />
     </Routes>
   );
 };

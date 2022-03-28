@@ -18,7 +18,7 @@ function Card(props){
       <div className={`${styles.card}`}>
       <img src='images/logos/filler.jpg' alt=''/>
       <h3>{props.name}</h3>
-      <p>{props.stockPrice}</p>
+
       </div>      
     </a> 
   )
@@ -29,13 +29,10 @@ function CardList(){
   var cardComps=companies.map((item,i)=>{
     return <Card name={item.name} stockPrice={item.stockPrice} key={item.id} id={item.id} />
   })
-
   return(
     cardComps
   )
 }
-
-
 
 function Market() {
   var nrows;
@@ -44,6 +41,12 @@ function Market() {
   }else{
     nrows=2;
   }
+    console.log(localStorage.getItem("email"));
+    console.log(localStorage.getItem("kid"));
+    console.log(localStorage.getItem("firstname"));
+    console.log(localStorage.getItem("lastname"));
+    console.log(localStorage.getItem("phone"));
+    console.log(localStorage.getItem("dept"));
 
   return (
     <Page_transition>

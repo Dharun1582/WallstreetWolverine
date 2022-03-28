@@ -5,6 +5,7 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .profilecontainer{
@@ -48,6 +49,7 @@
   padding: 0;
   border-spacing: 0;
   width: 40%;
+  font-size: 1.1rem;
 }
 
 .stocktable tr:nth-child(even){
@@ -73,6 +75,14 @@
 
 .stocktable thead th:last-child{
   border-top-right-radius: 20px;
+}
+
+.stocktable tr:last-child td:last-child{
+  border-bottom-right-radius: 20px;
+}
+
+.stocktable tr:last-child td:first-child{
+  border-bottom-left-radius: 20px;
 }
 
 .stocktable td{

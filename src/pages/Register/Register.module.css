@@ -94,10 +94,41 @@
   display: inline-block !important;
 }
 
+.btn_s {
+  margin-top: 18px;
+  width: 100%;
+  background-color: #191970;
+  color: whitesmoke;
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+
+.googleIcon {
+  border: 0.5px solid transparent;
+  border-radius: 50%;
+  padding: var(--mb-1);
+  width: 50px;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s all;
+  background: linear-gradient(var(--bg), var(--bg)) padding-box,
+    linear-gradient(to right, var(--purple1), var(--orange1)) border-box;
+}
+
+
 /* Media Queries */
 
 /* Above Tablet */
 @media only screen and (min-width: 1024px) {
+  .googleIcon:hover {
+    transform: scale(1.2);
+  }
+
 }
 
 /* Both Tablet and Mobile */
