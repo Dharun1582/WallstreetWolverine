@@ -1,0 +1,12 @@
+.googleIcon {
+    border: 0.5px solid transparent;
+    border-radius: 50%;
+  padding: var(--mb-1);
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s all;
+  background: linear-gradient(var(--bg), var(--bg)) padding-box,
+    linear-gradient(to right, var(--purple1), var(--orange1)) border-box;
+}
