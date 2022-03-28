@@ -1,7 +1,10 @@
 import React from "react";
 
-function History(){
-    return (<>history</>)
-}
+// function History(){
+//     return (<>history</>)
+// }
 
-export default History;
+// export default History;
+
+
+class History extends
