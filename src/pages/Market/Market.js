@@ -8,7 +8,7 @@ import Page_transition from "../../components/Animation/Transition";
 
 function Header(){
   return(
-    <Heading text={"Market"}/>
+    <Heading text={"MARKET"}/>
   )
 }
 
