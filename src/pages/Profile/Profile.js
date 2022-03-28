@@ -182,10 +182,11 @@ class Profile extends React.Component {
           console.log(userData)
           console.log(stockData)
           this.setState({
-            name: userData.firstname + userData.lastname,
+            name: userData.firstname + " " + userData.lastname,
             kid: userData.kid,
             email: userData.email,
             college: userData.college,
+            department: userData.dept,
             VocaCola: stockData.VocaCola,
             HindPetroleum: stockData.HindPetroleum,
             VI: stockData.VI,
