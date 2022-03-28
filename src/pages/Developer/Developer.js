@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import styles from "./Developer.module.css";
 import Heading from "../../components/Heading/Heading";
+import Page_transition from "../../components/Animation/Transition";
 
 import { Grid, Card } from "@mui/material";
 
 function Developer() {
   return (
-    <>
-      <div className={styles.body}>
-        <Heading text="Developers" />
-        <div className={styles.mainbox}>
-          <div className={styles.container}>
+    <Page_transition>
+      <div className={styles.mainbox}>
+        <Heading text="DEVELOPERS" />
+        <div className={styles.contentbox}>
+          <div className={styles.subcontentbox}>
             <Grid container spacing={2} sx={{ padding: "2rem" }}>
               <Grid className={styles.gridbox} item xs={12} sm={6}>
                 <h2>Varadharaj Palani</h2>
@@ -88,7 +89,7 @@ function Developer() {
           </div>
         </div>
       </div>
-    </>
+    </Page_transition>
   );
 }
 
