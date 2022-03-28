@@ -80,7 +80,7 @@ class StockGraph extends React.Component {
         //   buttonState = false;
         // }
 
-        if (this.state.index >= 13) {
+        if (this.state.index >= 61) {
           console.log("End");
           clearInterval(fetchId);
         }
