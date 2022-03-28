@@ -37,6 +37,15 @@ export const apiPostRegisterDetails = async (details,config) => {
       return error.response;
     }
   };
+
+  export const apiGetHistory = async (config) => {
+    try {
+      const response = await api.get("history",config);
+      return response;
+    } catch (error) {
+      return error.response;
+    }
+  };
   
   export const apicheckUser = async (config) => {
     try {
