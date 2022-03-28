@@ -1,10 +1,12 @@
 import React from 'react'
 import styles from "../Instructions/Instructions.module.css"
 import Heading from "../../components/Heading/Heading.js";
+import Page_transition from '../../components/Animation/Transition';
 const IconPath = `${process.env.PUBLIC_URL}/assets/images/Instructions/`;
 
 function Rules() {
   return (
+    <Page_transition>
     <div className={styles.mainbox}> 
       <Heading text={"RULES"}/>
       <div className={styles.contentbox}>
@@ -96,6 +98,7 @@ function Rules() {
         </div>
       </div>
     </div>
+    </Page_transition>
   )
 }
 

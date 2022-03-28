@@ -2,8 +2,10 @@ import React from 'react';
 import styles from "./Profile.module.css";
 import Heading from "../../components/Heading/Heading.js";
 import Navbar from "./../../components/Navbar/Navbar"
+import Page_transition from '../../components/Animation/Transition';
 function Profile() {
   return (
+    <Page_transition>
     <div className={styles.mainbox}>
       <Heading text={"PROFILE"}/>
       <div className={styles.contentbox}>
@@ -46,6 +48,7 @@ function Profile() {
       </div>
       </div>
     </div>
+    </Page_transition>
   )
 }
 

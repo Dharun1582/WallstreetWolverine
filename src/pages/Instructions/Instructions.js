@@ -1,10 +1,14 @@
 import React from 'react'
 import styles from "./Instructions.module.css"
 import Heading from "../../components/Heading/Heading.js";
+import Page_transition from '../../components/Animation/Transition';
 const IconPath = `${process.env.PUBLIC_URL}/assets/images/Instructions/`;
 
 function Instructions() {
   return (
+    <Page_transition>
+
+    
     <div className={styles.mainbox}>    
       <Heading text={"INSTRUCTIONS"}/>
       <div className={styles.contentbox}>
@@ -72,6 +76,7 @@ function Instructions() {
         </div>
       </div>
     </div>
+    </Page_transition>
   )
 }
 

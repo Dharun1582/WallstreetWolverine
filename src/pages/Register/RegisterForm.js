@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from "react";
+import React, { useState, useRef, useContext, useEffect } from "react";
 import Button from "../../components/Button/Button";
 import FormField from "../../components/FormField/FormField";
 import { LOGIN_FORM_FIELDS } from "../../data/RegisterDetails";
@@ -14,6 +14,9 @@ import 'react-notifications-component/dist/theme.css'
 import "animate.css"
 import { useNavigate } from "react-router-dom";
 import { SetAuth } from '../../App'
+import { apiGoogleSignin } from "../../auth/auth"
+
+
 const axios = require('axios');
 
 const loginDetailsFormat = {
@@ -53,6 +56,16 @@ const showMessage = (title, type) => {
 }
 
 function RegisterForm() {
+    // useEffect(() => {
+    //     const script = document.createElement('script')    
+    //     script.src = "https://apis.google.com/js/platform.js";
+    //     script.async = true
+
+    //     document.body.appendChild(script)
+    //     return () => {
+    //         document.body.removeChild(script)
+    //     }
+    // }, [])
     const setAuth = useContext(SetAuth);
     const navigate = useNavigate()
     let reCaptchaRef = useRef(null);
@@ -139,6 +152,11 @@ function RegisterForm() {
                 className={`${styles.formWrapper}`}
             >
                 <Heading text='Login' />
+                <div className={`${styles.googleIcon}`}>
+                    <img src='assets/images/google.png' onClick={() => { apiGoogleSignin() 
+                    }} alt="gimage" />
+                </div>
+
                 {LOGIN_FORM_FIELDS.map((field, key) => {
                     return (
                         <>
@@ -150,7 +168,6 @@ function RegisterForm() {
                                 value={loginDetails}
                                 setter={changeLoginFormState}
                             />
-
                         </>
                     );
                 })}
