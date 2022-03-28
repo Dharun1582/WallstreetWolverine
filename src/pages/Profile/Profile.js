@@ -174,7 +174,7 @@ class Profile extends React.Component {
     }
     else {
       if (profile.status >= 200 && profile.status <= 299) {
-        console.log(profile.data);
+        // console.log(profile.data);
         const res = profile.data;
         if (res) {
           const userData = res.userTable;
