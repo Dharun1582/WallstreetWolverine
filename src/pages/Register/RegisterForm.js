@@ -1,20 +1,20 @@
 import React, { useState, useRef, useContext, useEffect } from "react";
-import Button from "../../components/Button/Button";
-import FormField from "../../components/FormField/FormField";
+import Button from "./../../components/Button/Button";
+import FormField from "./../../components/FormField/FormField";
 import { LOGIN_FORM_FIELDS } from "../../data/RegisterDetails";
 import styles from "./Register.module.css";
 import ReCAPTCHA from "react-google-recaptcha";
 import SimpleLoader from "../../components/SimpleLoader/SimpleLoader";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
-import Heading from "../../components/Heading/Heading";
-import Popup from "../../components/Popup/Popup";
+import Heading from "./../../components/Heading/Heading";
+import Popup from "./../../components/Popup/Popup";
 import { ReactNotifications, Store } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
 import "animate.css"
 import { useNavigate } from "react-router-dom";
-import { SetAuth } from '../../App'
-import { apiGoogleSignin } from "../../auth/auth"
+import { SetAuth } from './../../App'
+import { apiGoogleSignin } from "./../../auth/auth"
 
 
 const axios = require('axios');

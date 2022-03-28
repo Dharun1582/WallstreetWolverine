@@ -1,11 +1,11 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import styles from "./StockMain.module.css"
-import Modal from '../../components/Modal/Modal';
-import StockGraph from '../../components/StockGraph/StockGraph';
-import Heading from "../../components/Heading/Heading.js";
-import NewsFeed from '../../components/NewsFeed/NewsFeed';
-import Page_transition from '../../components/Animation/Transition';
+import Modal from './../../components/Modal/Modal';
+import StockGraph from './../../components/StockGraph/StockGraph';
+import Heading from "./../../components/Heading/Heading.js";
+import NewsFeed from './../../components/NewsFeed/NewsFeed';
+import Page_transition from './../../components/Animation/Transition';
 
 function StockMain() {
 

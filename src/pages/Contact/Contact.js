@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./Contact.module.css"
-import Page_transition from '../../components/Animation/Transition'
+import Page_transition from './../../components/Animation/Transition'
 
 function Contact() {
   return (

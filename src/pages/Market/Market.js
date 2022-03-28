@@ -2,9 +2,9 @@ import React from 'react'
 import styles from "./Market.module.css"
 import {Link} from 'react-router-dom';
 import companies from "./companies.json"
-import NewsFeed from '../../components/NewsFeed/NewsFeed';
-import Heading from "../../components/Heading/Heading.js";
-import Page_transition from '../../components/Animation/Transition';
+import NewsFeed from './../../components/NewsFeed/NewsFeed';
+import Heading from "./../../components/Heading/Heading.js";
+import Page_transition from './../../components/Animation/Transition';
 
 function Header(){
   return(
