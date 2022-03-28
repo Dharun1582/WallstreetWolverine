@@ -117,6 +117,7 @@ class Profile extends React.Component {
             yechier: stockData.Yechier,
             wallet: stockData.Wallet,
           });
+          
         }
       }
       else if (profile.status >= 400 && profile.status < 500) {
