@@ -4,11 +4,14 @@ import Button from "../Button/Button";
 import graph from "../../data/graph.json";
 import { apiGetWallet, apiFetchGraphData, apiBuyStock, apiSellStock, apicheckRecord } from "../../auth/auth";
 import { ReactNotifications, Store } from 'react-notifications-component'
+import { useNavigate } from "react-router-dom";
+
 
 function Modal(props) {
     const [modal, setModal] = useState(false);
     const [modal2, setModal2] = useState(false);
     const company = props.name;
+    const navigate = useNavigate()
 
     const showMessage = (title, type) => {
         Store.addNotification({
@@ -170,6 +173,11 @@ function Modal(props) {
 
     //     var buttonState = 1;
     // console.log(buttonState);
+
+    const historyredirect= () =>{
+        navigate('/history');
+    }
+
     const buySell = async (flag) => {
         localStorage.setItem('buttonState', flag);
         setModal(!modal);
@@ -238,8 +246,13 @@ function Modal(props) {
                     <Button text='Buy' onClickMethod={() => buySell(1)} color={"#70AD47"} />
                     {/* #00FF01 */}
                 </div>
-                <div className={`${styles.rbtn}`}>
+                <div className={`${styles.mbtn}`}>
                     <Button text='Sell' onClickMethod={() => buySell(2)} color={"#C00000"} />
+                    {/* #FE0000 */}
+                </div>
+
+                <div className={`${styles.rbtn}`}>
+                    <Button text='History' onClickMethod={() => historyredirect()} color={"#F5C73E"} />
                     {/* #FE0000 */}
                 </div>
                 

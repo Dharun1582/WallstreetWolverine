@@ -13,6 +13,11 @@
     justify-content: flex-start;
 }
 
+.mbtn{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
 
 .rbtn {
     display: flex;
