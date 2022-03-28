@@ -40,28 +40,28 @@ function Stocktable(props){
         </tr>
       </thead>
         <tr>
-          <td>CokaCula</td>
-          <td>{props.cokacula}</td>
+          <td>VocaCola</td>
+          <td>{props.VocaCola}</td>
         </tr>
         <tr>
-          <td>Hettan</td>
-          <td>{props.hettan}</td>
+          <td>HindPetroleum</td>
+          <td>{props.HindPetroleum}</td>
         </tr>
         <tr>
-          <td>Vedophene</td>
-          <td>{props.vedophene}</td>
+          <td>VI</td>
+          <td>{props.VI}</td>
         </tr>
         <tr>
           <td>Abibas</td>
           <td>{props.abibas}</td>
         </tr>
         <tr>
-          <td>LycaLabs</td>
-          <td>{props.lycalabs}</td>
+          <td>LyccaLabs</td>
+          <td>{props.LyccaLabs}</td>
         </tr>
         <tr>
-          <td>Yechier</td>
-          <td>{props.yechier}</td>
+          <td>Yecher</td>
+          <td>{props.Yecher}</td>
         </tr>
         <tr>
           <td>Wallet</td>
@@ -70,8 +70,7 @@ function Stocktable(props){
     </table>
   )
 }
-
-class Profile extends React.Component {
+/*class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -89,6 +88,8 @@ class Profile extends React.Component {
       wallet: 0,
     }
   }
+
+
 
   fetchProfile = async (config) => {
     const profile = await apigetProfile(config);
@@ -129,6 +130,81 @@ class Profile extends React.Component {
     }
   }
 
+
+  componentDidMount() {
+    const config = {
+      headers: {
+        authorization: localStorage.getItem("token"),
+      },
+    };
+    this.fetchProfile(config);
+  }
+
+
+  render() {
+    return (
+      <h1>Profile</h1>
+    )
+  }
+}*/
+
+class Profile extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      kid: '',
+      email: '',
+      college: '',
+      department:'',
+      VocaCola: 0,
+      HindPetroleum: 0,
+      VI: 0,
+      abibas: 0,
+      LyccaLabs: 0,
+      Yecher: 0,
+      wallet: 0,
+    }
+  }
+
+  fetchProfile = async (config) => {
+    const profile = await apigetProfile(config);
+    if (profile === undefined) {
+      console.log("Error");
+    }
+    else {
+      if (profile.status >= 200 && profile.status <= 299) {
+        console.log(profile.data);
+        const res = profile.data;
+        if (res) {
+          const userData = res.userTable;
+          const stockData = res.stockTable;
+          console.log(userData)
+          console.log(stockData)
+          this.setState({
+            name: userData.firstname + userData.lastname,
+            kid: userData.kid,
+            email: userData.email,
+            college: userData.college,
+            VocaCola: stockData.VocaCola,
+            HindPetroleum: stockData.HindPetroleum,
+            VI: stockData.VI,
+            abibas: stockData.Abibas,
+            LyccaLabs: stockData.LyccaLabs,
+            Yecher: stockData.Yecher,
+            wallet: stockData.Wallet,
+          });
+        }
+      }
+      else if (profile.status >= 400 && profile.status < 500) {
+        //about to fill
+      }
+      else if (profile.status >= 500 && profile.status < 600) {
+        console.log("Server Side Error");
+      }
+    }
+  }
+
   componentDidMount() {
     const config = {
       headers: {
@@ -145,12 +221,12 @@ class Profile extends React.Component {
           <div className={`${styles.profilecontainer}`}>
             <Profilebox name={this.state.name} kid={this.state.kid} email={this.state.email} college={this.state.college} department={this.state.department}/>
           </div>
-          <Stocktable cokacula={this.state.cokacula}
-                      hettan={this.state.hettan}
-                      vedophene={this.state.vedophene}
+          <Stocktable VocaCola={this.state.VocaCola}
+                      HindPetroleum={this.state.HindPetroleum}
+                      VI={this.state.VI}
                       abibas={this.state.abibas}
-                      lycalabs={this.state.lycalabs}
-                      yechier={this.state.yechier}
+                      LyccaLabs={this.state.LyccaLabs}
+                      Yecher={this.state.Yecher}
                       wallet={this.state.wallet}
           />
         </div>

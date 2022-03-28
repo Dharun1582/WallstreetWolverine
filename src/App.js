@@ -23,6 +23,7 @@ import StockMain from "./pages/StockMain/StockMain";
 import Footer from "./components/Footer/Footer"
 import Rules from './pages/Rules/Rules'
 import Developer from "./pages/Developer/Developer";
+import History from "./pages/History/History";
 import SimpleLoader from "./components/SimpleLoader/SimpleLoader";
 import { ReactNotifications, Store } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
@@ -49,8 +50,9 @@ function App() {
 }
 
 const AllRoutes = () => {
+  const location = useLocation();
   return (
-    <Routes>
+      <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/instructions" element={<Instructions />} />
@@ -59,6 +61,7 @@ const AllRoutes = () => {
       <Route path="/market" element={<Market />} />
       <Route path="/stock/:name" element={<StockMain />} />
       <Route path="/stock" element={<StockMain />} />
+      <Route path="/history" element={<History />} />
       {/* <Route path="/register" element={<Register />} /> */}
       <Route path="/rules" element={<Rules />} />
       <Route path="/*" element={<PageNotFound />} />

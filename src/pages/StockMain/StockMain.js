@@ -5,7 +5,7 @@ import Modal from '../../components/Modal/Modal';
 import StockGraph from '../../components/StockGraph/StockGraph';
 import Heading from "../../components/Heading/Heading.js";
 import NewsFeed from '../../components/NewsFeed/NewsFeed';
-
+import Page_transition from "../../components/Animation/Transition";
 
 function StockMain() {
 
@@ -20,6 +20,7 @@ function StockMain() {
 
 
   return (
+    <Page_transition>
     <>
       <Heading text={"Market"} />
       <div className={`${styles.outercontainer}`}>
@@ -40,7 +41,7 @@ function StockMain() {
       </div>
 
     </>
-
+    </Page_transition>
 
   )
 }
