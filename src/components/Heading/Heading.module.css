@@ -1,9 +1,10 @@
 .headbox{
     display: flex;
     justify-content: center;
-    min-height: 10wh;
+    min-height: 10vh;
+
     width: 100%;
-    padding-top: 15px;
+    padding: 15px 0;
   }
 .insthead
 {

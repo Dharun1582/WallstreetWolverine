@@ -154,7 +154,7 @@ function RegisterForm() {
                 <Heading text='Login' />
                 <div className={`${styles.googleIcon}`}>
                     <img src='assets/images/google.png' onClick={() => { apiGoogleSignin() 
-                    }} alt="gimage" />
+                    }} alt="gimage" style={{height: '50px', width: '50px'}}/>
                 </div>
 
                 {LOGIN_FORM_FIELDS.map((field, key) => {

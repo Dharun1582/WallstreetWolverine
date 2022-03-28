@@ -14,7 +14,7 @@
 .googleIcon {
   border: 0.5px solid transparent;
   border-radius: 50%;
-  padding: var(--mb-1);
+  
   width: 50px;
   justify-content: center;
   cursor: pointer;
