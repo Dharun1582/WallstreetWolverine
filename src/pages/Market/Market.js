@@ -4,11 +4,11 @@ import {Link} from 'react-router-dom';
 import companies from "./companies.json"
 import NewsFeed from '../../components/NewsFeed/NewsFeed';
 import Heading from "../../components/Heading/Heading.js";
-
+import Page_transition from "../../components/Animation/Transition";
 
 function Header(){
   return(
-    <Heading text={"Market"}/>
+    <Heading text={"MARKET"}/>
   )
 }
 
@@ -49,23 +49,22 @@ function Market() {
     console.log(localStorage.getItem("dept"));
 
   return (
-    <>
-      <Header />
-      <div className={`${styles.uppercontainer}`}>
-
-        <div className={`${styles.item}`}>
-          <NewsFeed nrows={nrows} />
+    <Page_transition>
+      <>
+        <Header />
+        <div className={`${styles.uppercontainer}`}>
+          <div className={`${styles.item}`}>
+            <NewsFeed nrows={nrows} />
+          </div>
+          <div className={`${styles.item}`}>
+            <h1 className={`${styles.stocksheading}`}>Stocks</h1><br /> 
+          <div className={`${styles.container}`}>
+            <CardList />
+          </div>
+          </div>
         </div>
-        <div className={`${styles.item}`}>
-          <h1 className={`${styles.stocksheading}`}>Stocks</h1><br /> 
-        <div className={`${styles.container}`}>
-          <CardList />
-        </div>
-        </div>
-      </div>
-      
-    </>
-
+      </>
+    </Page_transition>
   )
 }
 

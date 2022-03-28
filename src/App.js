@@ -49,8 +49,9 @@ function App() {
 }
 
 const AllRoutes = () => {
+  const location = useLocation();
   return (
-    <Routes>
+      <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/instructions" element={<Instructions />} />
