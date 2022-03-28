@@ -40,28 +40,28 @@ function Stocktable(props){
         </tr>
       </thead>
         <tr>
-          <td>CokaCula</td>
-          <td>{props.cokacula}</td>
+          <td>VocaCola</td>
+          <td>{props.VocaCola}</td>
         </tr>
         <tr>
-          <td>Hettan</td>
-          <td>{props.hettan}</td>
+          <td>HindPetroleum</td>
+          <td>{props.HindPetroleum}</td>
         </tr>
         <tr>
-          <td>Vedophene</td>
-          <td>{props.vedophene}</td>
+          <td>VI</td>
+          <td>{props.VI}</td>
         </tr>
         <tr>
           <td>Abibas</td>
           <td>{props.abibas}</td>
         </tr>
         <tr>
-          <td>LycaLabs</td>
-          <td>{props.lycalabs}</td>
+          <td>LyccaLabs</td>
+          <td>{props.LyccaLabs}</td>
         </tr>
         <tr>
-          <td>Yechier</td>
-          <td>{props.yechier}</td>
+          <td>Yecher</td>
+          <td>{props.Yecher}</td>
         </tr>
         <tr>
           <td>Wallet</td>
@@ -80,12 +80,12 @@ class Profile extends React.Component {
       email: '',
       college: '',
       department:'',
-      cokacula: 0,
-      hettan: 0,
-      vedophene: 0,
+      VocaCola: 0,
+      HindPetroleum: 0,
+      VI: 0,
       abibas: 0,
-      lycalabs: 0,
-      yechier: 0,
+      LyccaLabs: 0,
+      Yecher: 0,
       wallet: 0,
     }
   }
@@ -109,12 +109,12 @@ class Profile extends React.Component {
             kid: userData.kid,
             email: userData.email,
             college: userData.college,
-            cokacula: stockData.CokaCula,
-            hettan: stockData.HettanPetroleum,
-            vedophene: stockData.Vedophene,
+            VocaCola: stockData.VocaCola,
+            HindPetroleum: stockData.HindPetroleum,
+            VI: stockData.VI,
             abibas: stockData.Abibas,
-            lycalabs: stockData.LycaLabs,
-            yechier: stockData.Yechier,
+            LyccaLabs: stockData.LyccaLabs,
+            Yecher: stockData.Yecher,
             wallet: stockData.Wallet,
           });
         }
@@ -144,12 +144,12 @@ class Profile extends React.Component {
           <div className={`${styles.profilecontainer}`}>
             <Profilebox name={this.state.name} kid={this.state.kid} email={this.state.email} college={this.state.college} department={this.state.department}/>
           </div>
-          <Stocktable cokacula={this.state.cokacula}
-                      hettan={this.state.hettan}
-                      vedophene={this.state.vedophene}
+          <Stocktable VocaCola={this.state.VocaCola}
+                      HindPetroleum={this.state.HindPetroleum}
+                      VI={this.state.VI}
                       abibas={this.state.abibas}
-                      lycalabs={this.state.lycalabs}
-                      yechier={this.state.yechier}
+                      LyccaLabs={this.state.LyccaLabs}
+                      Yecher={this.state.Yecher}
                       wallet={this.state.wallet}
           />
         </div>

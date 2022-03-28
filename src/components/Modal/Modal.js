@@ -242,6 +242,7 @@ function Modal(props) {
                     <Button text='Sell' onClickMethod={() => buySell(2)} color={"#C00000"} />
                     {/* #FE0000 */}
                 </div>
+                
             </div>
 
             {modal && (
