@@ -1,47 +1,64 @@
-.mainbox {
-  padding: 2rem;
+.contentbox{
+  display:inline-flex;
+  align-self: center;
+  width: auto;
+  max-width: 70%;
+  padding: 30px;
+  background-image: linear-gradient(to bottom right, #440bd4be, #ff2079c7);
+  box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.subcontentbox{
+height: 50vh;
+overflow-y: scroll;
+display:inline-flex;
+flex-direction: column;
+align-self: center;
+width: auto;
+padding-right: 20px ;
+border: none;
+outline: none;
+}
+.subcontentbox::-webkit-scrollbar
+{
+width: 10px;
+background-color: rgba(218, 224, 224, 0.274);
+border-radius: 5px;
 }
 
-.container {
-  overflow-y: scroll;
-  overflow-x: auto;
-  table-layout: fixed;
-  width: 100%;
-  height: 23rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  cursor: pointer;
+.subcontentbox::-webkit-scrollbar-thumb
+{
+border-radius: 5px;
+background-color: rgb(211, 201, 201);
 }
 
-h2 {
+.subcontentbox h2 {
   font-size: 20px;
   color: #fff;
   text-transform: uppercase;
   font-weight: 300;
   text-align: left;
-  /* padding-left: 2rem; */
   margin-bottom: 15px;
 }
 
-.body {
-  margin: 0;
-  background: -webkit-linear-gradient(45deg, #49a09d, #5f2c82);
-  background: linear-gradient(to right, #49a09d, #5f2c82);
-  font-family: sans-serif;
-  font-weight: 100;
-}
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-::-webkit-scrollbar-thumb {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
 
 @media only screen and (max-width: 767px) {
-  h2 {
+  .contentbox{
+    display:inline-flex;
+    align-self: center;
+    width: auto;
+    max-width: 85%;
+    padding: 10px;
+    background-image: linear-gradient(to bottom right, #440bd4be, #ff2079c7);
+    box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
+    border-radius: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .subcontentbox h2 {
     text-align: center;
     margin: 0;
     padding-bottom: 1rem;
@@ -49,9 +66,21 @@ h2 {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  h2 {
+  .contentbox{
+    display:inline-flex;
+    align-self: center;
+    width: auto;
+    max-width: 85%;
+    padding: 30px;
+    background-image: linear-gradient(to bottom right, #440bd4be, #ff2079c7);
+    box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
+    border-radius: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .subcontentbox h2 {
     text-align: left;
     padding: 0;
-    padding-bottom: 1rem;
+    padding-bottom: 1rem; 
   }
 }
