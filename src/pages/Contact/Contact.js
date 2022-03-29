@@ -1,31 +1,90 @@
-import React, {useState, useRef,useEffect} from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "./Contact.module.css";
 import Heading2 from "../../components/Heading/Heading2";
 import RoomIcon from "@mui/icons-material/Room";
 import PhoneIcon from "@mui/icons-material/Phone";
+import { validateContactForm } from "../../validators/contactValidator";
 import ReCAPTCHA from "react-google-recaptcha";
 import ContactButton from "../../components/Button/ContactButton";
 import { apisendMail } from "../../auth/auth"
 import Page_transition from "../../components/Animation/Transition";
 
 function Contact() {
-  const [formData,setFormdata] = useState({
+
+  const contactDetailsFormat = {
     name: "",
-    email:"",
+    email: "",
     message: "",
+  };
+
+  const [formData, setFormdata] = useState({
+    contactDetailsFormat
   });
- 
-  
+
+
+  const showMessage = (title, type = "danger") => {
+    Store.addNotification({
+      title: title,
+      type: type,
+      insert: "bottom",
+      container: "top-right",
+      animationIn: ["animate__animated", "animate__fadeIn"],
+      animationOut: ["animate__animated", "animate__fadeOut"],
+      dismiss: {
+        duration: 3000,
+        onScreen: true
+      }
+    })
+  }
+
+  const clickedSubmit = async () => {
+    // Form Validation
+    let validation = validateContactForm(contactDetails);
+
+    if (validation.status === false) {
+      showMessage(<p>{validation.message}</p>,"danger");
+      return;
+    }
+
+    // reCaptcha Validation
+    if (reCaptchaRef.current.getValue() === "") {
+      showMessage(<p>reCaptcha verification failed</p>);
+      return;
+    }
+
+    setloader(true);
+
+    const resp = await apisendMail({
+      ...contactDetails,
+      captcha: reCaptchaRef.current.getValue(),
+    });
+
+    reCaptchaRef.current.reset();
+
+    setloader(false);
+
+    if (resp === undefined) {
+      showMessage(<p>Please try again after sometime</p>);
+    } else {
+      if (resp.status === 200) {
+        showMessage(<p>{resp.data.message}</p>, "success");
+        setFormdata(contactDetailsFormat);
+      } else if (resp.status >= 400 && resp.status < 500) {
+        showMessage(<p>{resp.data.message}</p>);
+      } else if (resp.status >= 500 && resp.status < 600) {
+        showMessage(<p>{resp.data.message}</p>);
+      }
+    }
+  };
+
   return (
     <Page_transition>
       <section className={styles.contentbox}>
         <div className={styles.leftcont}>
           <Heading2 text="How Can We Help You?" />
           <div className={styles.formbox}>
-            <form onSubmit={(e) => {
-              // e.preventDefault();
-              apisendMail(formData)
-            }
+            <form onSubmit={
+              clickedSubmit
             }>
               <input
                 type="text"
@@ -34,7 +93,7 @@ function Contact() {
                 className={styles.forminput}
                 value={formData.name}
                 onChange={(e) => setFormdata((prev) => {
-                    return {...prev, name: e.target.value}
+                  return { ...prev, name: e.target.value }
                 })}
               />
               <input
@@ -44,8 +103,8 @@ function Contact() {
                 value={formData.email}
                 className={styles.forminput}
                 onChange={(e) => setFormdata((prev) => {
-                  return {...prev, email: e.target.value}
-              })}
+                  return { ...prev, email: e.target.value }
+                })}
               />
               <textarea
                 required
@@ -53,9 +112,19 @@ function Contact() {
                 value={formData.query}
                 className={styles.formmessage}
                 onChange={(e) => setFormdata((prev) => {
-                  return {...prev, message: e.target.value}
-              })}
+                  return { ...prev, message: e.target.value }
+                })}
               />
+              <div className={`${styles.recaptcha_container}`}>
+                <ReCAPTCHA
+                  sitekey="6LcMoTUdAAAAAGFo2lgEFl5sIpitgdT-lExG05FL"
+                  theme="dark"
+                  size="compact"
+                  className={`${styles.recaptcha}`}
+                  ref={reCaptchaRef}
+                />
+              </div>
+
               <div>
                 <ContactButton text="SUBMIT" />
               </div>
