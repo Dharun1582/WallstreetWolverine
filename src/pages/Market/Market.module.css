@@ -7,6 +7,7 @@
     padding-bottom: 20px;
 }
 .item{
+  width:50%;
   padding: 30px 20px 0;
 }
 
@@ -77,6 +78,9 @@
         width: 100%;
         /* flex-grow: 8; */
     }
+    .item{
+      width:100%;
+    }
 }
 
 /* Both Tablet and Mobile */
@@ -85,6 +89,9 @@
     grid-template-columns: auto;
     row-gap: 40px;
     /* column-gap: 10px; */
+}
+.item{
+  width:100%;
 }
   .uppercontainer{
     flex-direction: column;
@@ -103,6 +110,9 @@
         width: 70%;
         column-gap: 40px;
     }
+    .item{
+      width:100%;
+    }
 }
 
 /* Mobile only */
@@ -110,6 +120,9 @@
     .container{
         grid-template-columns: auto;
         row-gap: 50px;
+    }
+    .item{
+      width:100%;
     }
     img{
       max-height: 100px;
