@@ -53,7 +53,7 @@ function Stocktable(props){
         </tr>
         <tr>
           <td>Abibas</td>
-          <td>{props.abibas}</td>
+          <td>{props.Abibas}</td>
         </tr>
         <tr>
           <td>LyccaLabs</td>
@@ -82,7 +82,7 @@ function Stocktable(props){
       cokacula: 0,
       hettan: 0,
       vedophene: 0,
-      abibas: 0,
+      Abibas: 0,
       lycalabs: 0,
       yechier: 0,
       wallet: 0,
@@ -113,7 +113,7 @@ function Stocktable(props){
             cokacula: stockData.CokaCula,
             hettan: stockData.HettanPetroleum,
             vedophene: stockData.Vedophene,
-            abibas: stockData.Abibas,
+            Abibas: stockData.Abibas,
             lycalabs: stockData.LycaLabs,
             yechier: stockData.Yechier,
             wallet: stockData.Wallet,
@@ -160,7 +160,7 @@ class Profile extends React.Component {
       VocaCola: 0,
       HindPetroleum: 0,
       VI: 0,
-      abibas: 0,
+      Abibas: 0,
       LyccaLabs: 0,
       Yecher: 0,
       wallet: 0,
@@ -174,7 +174,7 @@ class Profile extends React.Component {
     }
     else {
       if (profile.status >= 200 && profile.status <= 299) {
-        console.log(profile.data);
+        // console.log(profile.data);
         const res = profile.data;
         if (res) {
           const userData = res.userTable;
@@ -190,7 +190,7 @@ class Profile extends React.Component {
             VocaCola: stockData.VocaCola,
             HindPetroleum: stockData.HindPetroleum,
             VI: stockData.VI,
-            abibas: stockData.Abibas,
+            Abibas: stockData.Abibas,
             LyccaLabs: stockData.LyccaLabs,
             Yecher: stockData.Yecher,
             wallet: stockData.Wallet,
@@ -225,7 +225,7 @@ class Profile extends React.Component {
           <Stocktable VocaCola={this.state.VocaCola}
                       HindPetroleum={this.state.HindPetroleum}
                       VI={this.state.VI}
-                      abibas={this.state.abibas}
+                      Abibas={this.state.Abibas}
                       LyccaLabs={this.state.LyccaLabs}
                       Yecher={this.state.Yecher}
                       wallet={this.state.wallet}

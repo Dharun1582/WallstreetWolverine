@@ -1,8 +1,173 @@
-{
-    "News1":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
-    "News2":"Curabitur porttitor ante eget hendrerit adipiscing.",
-    "News3":"Praesent ornare nisl lorem, ut condimentum lectus gravida ut.",
-    "News4":"Nunc ultrices tortor eu massa placerat posuere.",
-    "News5":"xcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "News6":"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-}
+[
+    {
+        
+    },
+    {
+        "news1":"No News Feed to show :( Please Stay Tuned!",
+        "news2":"",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"Portland beach ditches Voca cola for Repsi considering its plastic free nature.",
+        "news2":"",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"VI has a debt of around 4500 Crs reports financial times",
+        "news2":"Recent survey revealed that the famous sports brand Abibas was hit by supply chain disruptions , causing a year-over-year drop in operating income and a lower full-gear guidance",
+        "news3":"DGCI approves emergency use of COVID pill Molnupiravir",
+        "news4":"",
+        "news5":"" 
+    },
+    {
+        "news1":"Hind petroleum buys 2 Mn barrel of Russian Crude",
+        "news2":"VI has a debt of around 4500 Crs reports financial times ",
+        "news3":"Recent survey revealed that the famous sports brand Abibas was hit by supply chain disruptions , causing a year-over-year drop in operating income and a lower full-gear guidance",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"Prices of precious metals including rhodium, palladium and platinum have risen 30-45% from their recent lows in January 2022",
+        "news2":"",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"Prices of precious metals including rhodium, palladium and platinum have risen 30-45% from their recent lows in January 2022",
+        "news2":"",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"Vocaphone – Imea launches VI gaming ",
+        "news2":"Abibas faces colossal challenges to reshoring with 90% of its products manufactured in Asia",
+        "news3":"The lingering impacts of COVID-19 will continue to have a serious impact on the industry through the end of the year” says Lycca executive officer ",
+        "news4":"Prices of precious metals including rhodium, palladium and platinum have risen 30-45% from their recent lows in January 2022",
+        "news5":""
+    },
+    {
+        "news1":"Renowned football player Cristian Renaldo had removed Voca cola bottles during his press conference and urged people to drink healthy drinks instead.",
+        "news2":"Vocaphone – Imea launches VI gaming ",
+        "news3":"Abibas faces colossal challenges to reshoring with 90% of its products manufactured in Asia",
+        "news4":"The lingering impacts of COVID-19 will continue to have a serious impact on the industry through the end of the year” says Lycca executive officer ",
+        "news5":"Prices of precious metals including rhodium, palladium and platinum have risen 30-45% from their recent lows in January 2022"
+    },
+    {
+        "news1":"Hunda and Hind petroleum partner to set up battery swapping stations ",
+        "news2":"The viral blog about pharmaceutical fraud in 2021 increased distrust over people and adds pressure on the pharma companies",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"Hunda and Hind petroleum partner to set up battery swapping stations ",
+        "news2":"The viral blog about pharmaceutical fraud in 2021 increased distrust over people and adds pressure on the pharma companies",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"The new AI featured SUV model was highly welcomed by people and sold over 2000units within a day putting aside the surprise release",
+        "news2":"",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"The new AI featured SUV model was highly welcomed by people and sold over 2000units within a day putting aside the surprise release",
+        "news2":"",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"A Hind petrol station in Madurai caught up in fire",
+        "news2":"Abibas announced about sponsoring for Belgium Athlete Bashir Abdi (Olympic gold medalist)",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"A Hind petrol station in Madurai caught up in fire",
+        "news2":"Abibas announced about sponsoring for Belgium Athlete Bashir Abdi (Olympic gold medalist)",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"VI 4G network now offers faster 4G speeds in India ",
+        "news2":"Popular environmentalist and CEO of Yecher resigned after internal conflict increases",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"VI 4G network now offers faster 4G speeds in India ",
+        "news2":"Popular environmentalist and CEO of Yecher resigned after internal conflict increases",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"Voca Cola deemed new sponsor for Indian Cricket League 2022 ",
+        "news2":"",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"Voca Cola deemed new sponsor for Indian Cricket League 2022 ",
+        "news2":"",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"VI can only use 25% of its 2000 Crs infusion by its promoters",
+        "news2":"Government of India hired Yecher to manufacture highly protective school transport to sell all over India",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"Voca Cola face boycotts over continued operations in Russia",
+        "news2":"VI can only use 25% of its 2000 Crs infusion by its promoters",
+        "news3":"Government of India hired Yecher to manufacture highly protective school transport to sell all over India",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"No News Feed to show :( Please Stay Tuned!" ,
+        "news2":"",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"Hind petroleum reports to have a net loss of 1000 Cr in its Q4 results",
+        "news2":"",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"Abibas won for the BEST GLOBAL CULTURE 2021 based on the ratings under several factor",
+        "news2":"The Indian pharmaceuticals market is supported by the Production Linked Incentive Schemes to boost domestic manufacturing capacity, including high-value products across the global supply chain.",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    },
+    {
+        "news1":"Abibas won for the BEST GLOBAL CULTURE 2021 based on the ratings under several factor",
+        "news2":"The Indian pharmaceuticals market is supported by the Production Linked Incentive Schemes to boost domestic manufacturing capacity, including high-value products across the global supply chain.",
+        "news3":"",
+        "news4":"",
+        "news5":""
+    }
+]
