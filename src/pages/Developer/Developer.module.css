@@ -2,7 +2,7 @@
   display:inline-flex;
   align-self: center;
   width: auto;
-  max-width: 85%;
+  max-width: 70%;
   padding: 30px;
   background-image: linear-gradient(to bottom right, #440bd4be, #ff2079c7);
   box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
@@ -44,18 +44,40 @@ background-color: rgb(211, 201, 201);
 }
 
 
+
 @media only screen and (max-width: 767px) {
+  .contentbox{
+    display:inline-flex;
+    align-self: center;
+    width: auto;
+    max-width: 85%;
+    padding: 10px;
+    background-image: linear-gradient(to bottom right, #440bd4be, #ff2079c7);
+    box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
+    border-radius: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
   .subcontentbox h2 {
     text-align: center;
     margin: 0;
     padding-bottom: 1rem;
   }
-  .contentbox{
-    padding: 10px;
-  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .contentbox{
+    display:inline-flex;
+    align-self: center;
+    width: auto;
+    max-width: 85%;
+    padding: 30px;
+    background-image: linear-gradient(to bottom right, #440bd4be, #ff2079c7);
+    box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
+    border-radius: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
   .subcontentbox h2 {
     text-align: left;
     padding: 0;
