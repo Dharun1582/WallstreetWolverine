@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./Modal.module.css";
 import Button from "../Button/Button";
 import graph from "../../data/graph.json";
-import { apiGetWallet, apiFetchGraphData, apiBuyStock, apiSellStock, apicheckRecord } from "../../auth/auth";
+import { apiGetWallet, apiFetchGraphData, apiBuyStock, apiSellStock} from "../../auth/auth";
 import { ReactNotifications, Store } from 'react-notifications-component'
 import { useNavigate } from "react-router-dom";
 
@@ -62,88 +62,56 @@ function Modal(props) {
                                 if (flag == 1) {
                                     if (res.Wallet >= ((graph[graphresp.i][company][5]) * nos)) {
                                         //do call transaction
-                                        const checkRecord = await apicheckRecord(config);
-                                        if (checkRecord === undefined) {
+                                        const buyStock = await apiBuyStock(company, res.Wallet - ((graph[graphresp.i][company][5]) * nos), nos, config);
+                                        if (buyStock === undefined) {
                                             // console.log("Error");
                                             showMessage("Error Try Again", "danger")
-                                          }
-                                          else {
-                                            if (checkRecord.status >=200 && checkRecord.status<=299) {
-                                                const buyStock = await apiBuyStock(company, res.Wallet - ((graph[graphresp.i][company][5]) * nos), nos, config);
-                                                if (buyStock === undefined) {
-                                                    // console.log("Error");
-                                                    showMessage("Error Try Again", "danger")
-                                                }
-                                                else {
-                                                    if (buyStock.status >= 200 && buyStock.status <= 299) {
-                                                        // console.log('transaction success')
-                                                        showMessage(buyStock.data.message,'success');
-                                                    }
-                                                    else if (buyStock.status >= 400 && buyStock.status < 500) {
-                                                        showMessage(buyStock.data.message,'danger');
-                                                    }
-                                                    else if (buyStock.status >= 500 && buyStock.status < 600) {
-                                                        // console.log("Server Side Error");
-                                                        showMessage(buyStock.data.message,'danger');
+                                        }
+                                        else {
+                                            if (buyStock.status >= 200 && buyStock.status <= 299) {
+                                                // console.log('transaction success')
+                                                showMessage(buyStock.data.message, 'success');
+                                            }
+                                            else if (buyStock.status >= 400 && buyStock.status < 500) {
+                                                showMessage(buyStock.data.message, 'danger');
+                                            }
+                                            else if (buyStock.status >= 500 && buyStock.status < 600) {
+                                                // console.log("Server Side Error");
+                                                showMessage(buyStock.data.message, 'danger');
 
-                                                    }
-                                                }
                                             }
-                                            else if (checkRecord.status >= 400 && checkRecord.status < 500) {
-                                                showMessage(checkRecord.data.message,'danger');
-                                            }
-                                            else if (checkRecord.status >= 500 && checkRecord.status < 600) {
-                                                //   console.log("Server Side Error");
-                                                showMessage(checkRecord.data.message,'danger');
-                                            }
-                                          }
+                                        }
                                     }
                                     else {
                                         // console.log("Insufficient amount");
-                                        showMessage("Insufficient amount",'danger');
+                                        showMessage("Insufficient amount", 'danger');
 
                                     }
                                 }
                                 else if (flag == 2) {
                                     if (res[company] >= nos) {
-                                        const checkRecord = await apicheckRecord(config);
-                                        if (checkRecord === undefined) {
+                                        const sellStock = await apiSellStock(company, res.Wallet + ((graph[graphresp.i][company][5]) * nos), nos, config);
+                                        if (sellStock === undefined) {
                                             // console.log("Error");
                                             showMessage("Error Try Again", "danger");
-                                          }
-                                          else {
-                                            if (checkRecord.status >=200 && checkRecord.status<=299) {
-                                                const sellStock = await apiSellStock(company, res.Wallet + ((graph[graphresp.i][company][5]) * nos), nos, config);
-                                                if (sellStock === undefined) {
-                                                    // console.log("Error");
-                                                    showMessage("Error Try Again", "danger");
-                                                }
-                                                else {
-                                                    if (sellStock.status >= 200 && sellStock.status <= 299) {
-                                                        //transaction successful;
-                                                        // console.log('transaction success')
-                                                        showMessage(sellStock.data.message,'success');
-                                                    }
-                                                    else if (sellStock.status >= 400 && sellStock.status < 500) {
-                                                        showMessage(sellStock.data.message,'danger');
-                                                    }
-                                                    else if (sellStock.status >= 500 && sellStock.status < 600) {
-                                                        showMessage(sellStock.data.message,'danger');
-                                                    }
-                                                }
+                                        }
+                                        else {
+                                            if (sellStock.status >= 200 && sellStock.status <= 299) {
+                                                //transaction successful;
+                                                // console.log('transaction success')
+                                                showMessage(sellStock.data.message, 'success');
                                             }
-                                            else if (checkRecord.status >= 400 && checkRecord.status < 500) {
-                                                showMessage(checkRecord.data.message,'danger');
+                                            else if (sellStock.status >= 400 && sellStock.status < 500) {
+                                                showMessage(sellStock.data.message, 'danger');
                                             }
-                                            else if (checkRecord.status >= 500 && checkRecord.status < 600) {
-                                                //   console.log("Server Side Error");
-                                                showMessage(checkRecord.data.message,'danger');
+                                            else if (sellStock.status >= 500 && sellStock.status < 600) {
+                                                showMessage(sellStock.data.message, 'danger');
                                             }
-                                          }
+                                        }
                                     }
                                     else {
                                         // console.log("Insufficient stocks");
-                                        showMessage("Insufficient stocks",'danger')
+                                        showMessage("Insufficient stocks", 'danger')
 
                                     }
                                 }
@@ -151,20 +119,20 @@ function Modal(props) {
                             }
                         }
                         else if (graphData.status >= 400 && graphData.status < 500) {
-                            showMessage("Network error",'danger')
+                            showMessage("Network error", 'danger')
                         }
                         else if (graphData.status >= 500 && graphData.status < 600) {
                             // console.log("Server Side Error");
-                            showMessage("Server Side Error",'danger')
+                            showMessage("Server Side Error", 'danger')
                         }
                     }
                 }
                 else if (response.status >= 400 && response.status < 500) {
-                    showMessage("Unauthorized Access",'danger')
+                    showMessage("Unauthorized Access", 'danger')
                 }
                 else if (response.status >= 500 && response.status < 600) {
                     // console.log("Server Side Error");
-                    showMessage("Server Side Error",'danger')
+                    showMessage("Server Side Error", 'danger')
 
                 }
             }
@@ -174,7 +142,7 @@ function Modal(props) {
     //     var buttonState = 1;
     // console.log(buttonState);
 
-    const historyredirect= () =>{
+    const historyredirect = () => {
         navigate('/history');
     }
 
@@ -213,7 +181,7 @@ function Modal(props) {
             }
             else if (graphData.status >= 500 && graphData.status < 600) {
                 // console.log("Server Side Error");
-                showMessage("Server Side Error",'danger')
+                showMessage("Server Side Error", 'danger')
             }
         }
     }
@@ -255,7 +223,7 @@ function Modal(props) {
                     <Button text='History' onClickMethod={() => historyredirect()} color={"#F5C73E"} />
                     {/* #FE0000 */}
                 </div>
-                
+
             </div>
 
             {modal && (

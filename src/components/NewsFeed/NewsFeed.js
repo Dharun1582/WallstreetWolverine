@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./NewsFeed.module.css"
-// import NewsTicker from "react-advanced-news-ticker"
+import NewsTicker from "react-advanced-news-ticker"
 import News from "./News.json"
 import { apiFetchGraphData } from '../../auth/auth';
 
