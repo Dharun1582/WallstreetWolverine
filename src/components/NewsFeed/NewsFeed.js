@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./NewsFeed.module.css"
-// import NewsTicker from "react-advanced-news-ticker"
+import NewsTicker from "react-advanced-news-ticker"
 import News from "./News.json"
 import { apiFetchGraphData } from '../../auth/auth';
 
@@ -24,13 +24,17 @@ class NewsFeed extends React.Component {
       console.log(this.state.nIndex);
       this.setState( 
         {
+          nrows: 3,
           news_1: News[this.state.nIndex].news1,
           news_2: News[this.state.nIndex].news2,
           news_3: News[this.state.nIndex].news3,
           news_4: News[this.state.nIndex].news4,
           news_5: News[this.state.nIndex].news5
-        },
+        }, () => {
+          console.log(this.state);
+        }
       );
+      // this.forceUpdate();
       console.log(News[this.state.nIndex].news1);
     }
   }
@@ -93,14 +97,6 @@ class NewsFeed extends React.Component {
         <div className={styles.newsfeed}>
           <h1>News</h1>
         <div>
-        <NewsTicker
-          rowHeight = {60}
-          maxRows = {this.state.nrows}
-          speed = {600}
-          duration = {4000}
-          autoStart = {true}
-          pauseOnHover = {true}
-          style = {{marginTop: 34}}>
           <br />
           <div><h4>News1</h4>
           <br />
@@ -142,7 +138,6 @@ class NewsFeed extends React.Component {
           <hr></hr>
           </div>
           <br />
-        </NewsTicker>
         </div> 
       </div>
     );

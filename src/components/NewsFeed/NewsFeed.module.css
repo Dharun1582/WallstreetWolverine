@@ -9,7 +9,15 @@
 @media only screen and (min-width: 1024px) {
     .newsfeed{
         width: 80%;
+        height: 80%;
         margin: auto;
+        overflow-y: scroll;
+    }
+    .newsfeed::-webkit-scrollbar{
+        height: 50%;
+        width: 5px;
+        background-color: rgba(218, 224, 224, 0.116);
+        border-radius: 5px; 
     }
     .newsfeed h1{
         text-align: center;

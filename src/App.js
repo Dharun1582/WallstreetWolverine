@@ -20,18 +20,31 @@ import Login from "./pages/Login/Login";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Market from "./pages/Market/Market";
 import StockMain from "./pages/StockMain/StockMain";
-import Footer from "./components/Footer/Footer"
-import Rules from './pages/Rules/Rules'
+import Footer from "./components/Footer/Footer";
+import Rules from './pages/Rules/Rules';
 import Developer from "./pages/Developer/Developer";
 import History from "./pages/History/History";
 import SimpleLoader from "./components/SimpleLoader/SimpleLoader";
-import { ReactNotifications, Store } from 'react-notifications-component'
-import 'react-notifications-component/dist/theme.css'
-import "animate.css"
+import { ReactNotifications, Store } from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css';
+import "animate.css";
+import { isAuthDataStored } from "./utils/localStorageHelper";
+import AuthOnlyRoutes from "./AuthOnlyRoutes";
+
 
 const StyledApp = styled.div``;
 
 function App() {
+  const [auth, setauth] = useState(false);
+  useEffect(() => {
+    if (isAuthDataStored()) {
+      setauth(true);
+    } else {
+      setauth(false);
+    }
+    console.log("hiii");
+    return () => {};
+  }, []);
   return (
     <ThemeProvider theme={darkTheme}>
       <GlobalStyles />
@@ -40,7 +53,7 @@ function App() {
           <Router>
             <Navbar />
             <ReactNotifications />
-            <AllRoutes />
+            <AllRoutes auth={auth} />
             <Footer />
           </Router>
         </div>
@@ -49,12 +62,18 @@ function App() {
   );
 }
 
-const AllRoutes = () => {
+const AllRoutes = ({auth}) => {
   const location = useLocation();
   return (
       <Routes>
       <Route path="/" element={<Landing />} />
-      <Route path="/profile" element={<Profile />} />
+      {/* <Route element={<UnAuthOnlyRoutes auth={auth} />}> */}
+        {/* <Route path="/profile" element={<Profile />} /> */}
+      {/* </Route> */}
+
+      <Route element={<AuthOnlyRoutes auth={auth} />}>
+        <Route path="/profile" element={<Profile />} />    
+      </Route>
       <Route path="/instructions" element={<Instructions />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<Login />} />
