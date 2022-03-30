@@ -13,6 +13,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 import ContactButton from "../../components/Button/ContactButton";
 import { apisendMail } from "../../auth/auth"
 import Page_transition from "../../components/Animation/Transition";
+import { ReactNotifications, Store } from 'react-notifications-component'
+
 
 function Contact() {
 
@@ -34,6 +36,8 @@ function Contact() {
   const [formData, setFormdata] = useState({
     contactDetailsFormat
   });
+
+  
 
 
   const showMessage = (title, type = "danger") => {

@@ -24,13 +24,17 @@ class NewsFeed extends React.Component {
       console.log(this.state.nIndex);
       this.setState( 
         {
+          nrows: 3,
           news_1: News[this.state.nIndex].news1,
           news_2: News[this.state.nIndex].news2,
           news_3: News[this.state.nIndex].news3,
           news_4: News[this.state.nIndex].news4,
           news_5: News[this.state.nIndex].news5
-        },
+        }, () => {
+          console.log(this.state);
+        }
       );
+      // this.forceUpdate();
       console.log(News[this.state.nIndex].news1);
     }
   }
@@ -92,57 +96,43 @@ class NewsFeed extends React.Component {
     return (
         <div className={styles.newsfeed}>
           <h1>News</h1>
-        <div>
-        <NewsTicker
-          rowHeight = {60}
-          maxRows = {this.state.nrows}
-          speed = {600}
-          duration = {4000}
-          autoStart = {true}
-          pauseOnHover = {true}
-          style = {{marginTop: 34}}>
+        <div className={styles.newsfeedchild}>
           <br />
-          <div><h4>News1</h4>
           <br />
-          <p>{this.state.news_1}</p>
+          <div><h4>{this.state.news_1}</h4>
           <br />
           <br />
           <hr></hr>
           </div>
           <br />
-          <div><h4>News2</h4>
           <br />
-          <p>{this.state.news_2}</p>
-          <br />
-          <br />
-          <hr></hr>
-          </div>
-          <br />
-          <div><h4>News3</h4>
-          <br />
-          <p>{this.state.news_3}</p>
+          <div><h4>{this.state.news_2}</h4>
           <br />
           <br />
           <hr></hr>
           </div>
           <br />
-          <div><h4>News4</h4>
           <br />
-          <p>{this.state.news_4}</p>
-          <br />
-          <br />
-          <hr></hr>
-          </div>
-          <br />
-          <div><h4>News5</h4>
-          <br />
-          <p>{this.state.news_5}</p>
+          <div><h4>{this.state.news_3}</h4>
           <br />
           <br />
           <hr></hr>
           </div>
           <br />
-        </NewsTicker>
+          <br />
+          <div><h4>{this.state.news_4}</h4>
+          <br />
+          <br />
+          <hr></hr>
+          </div>
+          <br />
+          <br />
+          <div><h4>{this.state.news_5}</h4>
+          <br />
+          <br />
+          <hr></hr>
+          </div>
+          <br />
         </div> 
       </div>
     );

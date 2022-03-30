@@ -16,6 +16,8 @@ import "animate.css"
 import { useNavigate } from "react-router-dom";
 import { apicheckUser } from "../../auth/auth";
 import {apiGoogleSignin} from "../../auth/auth"
+import { Auth, SetAuth } from "../../App";
+
 
 const axios = require('axios');
 
@@ -74,7 +76,8 @@ function RegisterForm() {
       }
     }, []);
 
-    
+    const auth = React.useContext(Auth);
+    const setAuth = React.useContext(SetAuth);
 
     const navigate = useNavigate()
     let reCaptchaRef = useRef(null);
@@ -114,7 +117,6 @@ function RegisterForm() {
                 //  setAuth(true);
                 console.log(resp.data.message);
                 showMessage("Login successful!", "success")
-
                 //   Success
                 //       showSuccessToastNotification(<p>Logged in!</p>)
                 //   localStorage.setItem("details", stringifyUserDetails(resp.data));
@@ -126,7 +128,14 @@ function RegisterForm() {
                 // localStorage.setItem("phone", resp.data.phone);
                 // localStorage.setItem("dept", resp.data.dept);
                 localStorage.setItem('index',1);
+
+
                 navigate('/');
+                // console.log(auth);
+                setAuth(true);
+                // auth=true;
+                // console.log(auth);
+
                 const config={
                   headers:{
                     authorization:localStorage.getItem("token"),
