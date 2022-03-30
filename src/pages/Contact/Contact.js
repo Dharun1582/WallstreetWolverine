@@ -3,7 +3,15 @@ import styles from "./Contact.module.css";
 import Heading2 from "../../components/Heading/Heading2";
 import RoomIcon from "@mui/icons-material/Room";
 import PhoneIcon from "@mui/icons-material/Phone";
+<<<<<<< HEAD
 // import { ReactNotifications, Store } from 'react-notifications-component'
+=======
+import emailIcon from "@mui/icons-material/Email";
+import messageIcon from "@mui/icons-material/Message";
+import nameIcon from "@mui/icons-material/People";
+import FormField from "../../components/FormField/FormField";
+import { ReactNotifications, Store } from 'react-notifications-component'
+>>>>>>> c01e0cb6b82842afeb101991dbbeab95be043363
 import { validateContactForm } from "../../validators/contactValidator";
 import ReCAPTCHA from "react-google-recaptcha";
 import ContactButton from "../../components/Button/ContactButton";
@@ -19,6 +27,12 @@ function Contact() {
     email: "",
     message: "",
   };
+  const changeContactFormState = (args) => {
+    let prevState = formData;
+    prevState[args.key] = args.value;
+    setFormdata({ ...prevState });
+  };
+
 
   const [loader, setloader] = useState(false);
   let reCaptchaRef = useRef(null);
@@ -50,7 +64,7 @@ function Contact() {
     let validation = validateContactForm(formData);
 
     if (validation.status === false) {
-      showMessage(<p>{validation.message}</p>,"danger");
+      showMessage(<p>{validation.message}</p>, "danger");
       return;
     }
 
@@ -62,27 +76,16 @@ function Contact() {
 
     setloader(true);
 
-    const resp = await apisendMail({
-      ...formData,
-      captcha: reCaptchaRef.current.getValue(),
-    });
+    // const resp = await apisendMail({
+    //   ...formData,
+    //   captcha: reCaptchaRef.current.getValue(),
+    // });
 
     reCaptchaRef.current.reset();
 
-    // setloader(false);
+    setloader(false);
+    showMessage(<p>Our organizers will get back to you soon!.</p>, "success");
 
-    if (resp === undefined) {
-      showMessage(<p>Please try again after sometime</p>);
-    } else {
-      if (resp.status === 200) {
-        showMessage(<p>{resp.data.message}</p>, "success");
-        setFormdata(contactDetailsFormat);
-      } else if (resp.status >= 400 && resp.status < 500) {
-        showMessage(<p>{resp.data.message}</p>);
-      } else if (resp.status >= 500 && resp.status < 600) {
-        showMessage(<p>{resp.data.message}</p>);
-      }
-    }
   };
 
   return (
@@ -91,37 +94,34 @@ function Contact() {
         <div className={styles.leftcont}>
           <Heading2 text="How Can We Help You?" />
           <div className={styles.formbox}>
-            <form onSubmit={
-              clickedSubmit
-            }>
-              <input
-                type="text"
-                required
-                placeholder="Enter your name"
-                className={styles.forminput}
-                value={formData.name}
-                onChange={(e) => setFormdata((prev) => {
-                  return { ...prev, name: e.target.value }
-                })}
+
+            <div
+              style={{ display: loader ? "none" : "flex" }}
+              className={`${styles.formWrapper}`}
+            >
+              <FormField
+                type={"text"}
+                fieldIcon={nameIcon}
+                placeholder="Name"
+                name="name"
+                value={formData}
+                setter={changeContactFormState}
               />
-              <input
-                type="email"
-                required
-                placeholder="Enter your e-mail"
-                value={formData.email}
-                className={styles.forminput}
-                onChange={(e) => setFormdata((prev) => {
-                  return { ...prev, email: e.target.value }
-                })}
+              <FormField
+                type={"text"}
+                fieldIcon={emailIcon}
+                placeholder="Email"
+                name="email"
+                value={formData}
+                setter={changeContactFormState}
               />
-              <textarea
-                required
-                placeholder="Type your message"
-                value={formData.query}
-                className={styles.formmessage}
-                onChange={(e) => setFormdata((prev) => {
-                  return { ...prev, message: e.target.value }
-                })}
+              <FormField
+                type={"textarea"}
+                fieldIcon={messageIcon}
+                placeholder="Your Message"
+                name="message"
+                value={formData}
+                setter={changeContactFormState}
               />
               <div className={`${styles.recaptcha_container}`}>
                 <ReCAPTCHA
@@ -132,11 +132,11 @@ function Contact() {
                   ref={reCaptchaRef}
                 />
               </div>
+              {/* <div> */}
+              <ContactButton text="SUBMIT" onClickMethod={clickedSubmit}/>
+              {/* </div> */}
+            </div>
 
-              <div>
-                <ContactButton text="SUBMIT" />
-              </div>
-            </form>
           </div>
         </div>
         <div className={styles.rightcont}>

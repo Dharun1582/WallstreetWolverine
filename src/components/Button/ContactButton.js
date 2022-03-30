@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./ContactButton.module.css";
 
-function ContactButton({ text}) {
+function ContactButton({ text, onClickMethod}) {
   let contactRef = useRef();
 
   function changeBackground(e){
@@ -18,7 +18,7 @@ function ContactButton({ text}) {
 
   return (
     <div className={styles.buttonbox}>
-        <button type="submit" className={styles.btn_el} onMouseOver={changeBackground} onMouseLeave={returnBackground} data-text={text}>{text}</button>
+        <button type="submit" onClick={() => onClickMethod()} className={styles.btn_el} onMouseOver={changeBackground} onMouseLeave={returnBackground} data-text={text}>{text}</button>
     </div>
   );
 }
