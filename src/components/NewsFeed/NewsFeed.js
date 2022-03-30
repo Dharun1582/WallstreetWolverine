@@ -92,48 +92,24 @@ class NewsFeed extends React.Component {
   }
 
   render(){
-    console.log(this.state.news_1);
+    var n1 = (this.state.news_1==='') ? 'none' : 'block';
+    var n2 = (this.state.news_2==='') ? 'none' : 'block';
+    var n3 = (this.state.news_3==='') ? 'none' : 'block';
+    var n4 = (this.state.news_4==='') ? 'none' : 'block';
+    var n5 = (this.state.news_5==='') ? 'none' : 'block';
     return (
+      <div>
+        <h1>News</h1>
         <div className={styles.newsfeed}>
-          <h1>News</h1>
-        <div className={styles.newsfeedchild}>
-          <br />
-          <br />
-          <div><h4>{this.state.news_1}</h4>
-          <br />
-          <br />
-          <hr></hr>
+          <div className={styles.newsfeedchild}><br /><br />
+            <div style={{display:`${n1}`}}><h4>{this.state.news_1}</h4><br /><hr></hr></div><br />
+            <div style={{display:`${n2}`}}><h4>{this.state.news_2}</h4><br /><hr></hr></div><br />
+            <div style={{display:`${n3}`}}><h4>{this.state.news_3}</h4><br /><hr></hr></div><br />
+            <div style={{display:`${n4}`}}><h4>{this.state.news_4}</h4><br /><hr></hr></div><br />
+            <div style={{display:`${n5}`}}><h4>{this.state.news_5}</h4><br /><hr></hr></div><br />
+            <div><b>----- X -----</b></div>
           </div>
-          <br />
-          <br />
-          <div><h4>{this.state.news_2}</h4>
-          <br />
-          <br />
-          <hr></hr>
-          </div>
-          <br />
-          <br />
-          <div><h4>{this.state.news_3}</h4>
-          <br />
-          <br />
-          <hr></hr>
-          </div>
-          <br />
-          <br />
-          <div><h4>{this.state.news_4}</h4>
-          <br />
-          <br />
-          <hr></hr>
-          </div>
-          <br />
-          <br />
-          <div><h4>{this.state.news_5}</h4>
-          <br />
-          <br />
-          <hr></hr>
-          </div>
-          <br />
-        </div> 
+        </div>
       </div>
     );
   }

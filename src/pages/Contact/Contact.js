@@ -94,6 +94,7 @@ function Contact() {
               style={{ display: loader ? "none" : "flex" }}
               className={`${styles.formWrapper}`}
             >
+              <h4>Your Name:</h4>
               <FormField
                 className={styles.formField}
                 type={"text"}
@@ -103,6 +104,7 @@ function Contact() {
                 value={formData}
                 setter={changeContactFormState}
               />
+              <h4>Your Email:</h4>
               <FormField
                 className={styles.formField}
                 type={"text"}
@@ -112,6 +114,7 @@ function Contact() {
                 value={formData}
                 setter={changeContactFormState}
               />
+              <h4>Your Message:</h4>
               <FormField
                 className={styles.formField}
                 type={"textarea"}

@@ -155,7 +155,10 @@ function Stocktable(props){
 
 class Profile extends React.Component {
   constructor(props) {
-    
+    if(localStorage.getItem('token')==null){
+      window.location='/login';
+      // showMessage('Login to continue','danger')
+    }
     super(props);
     this.state = {
       name: '',
@@ -213,10 +216,7 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    if(localStorage.getItem('token')==null){
-      window.location='/login';
-      // showMessage('Login to continue','danger')
-    }
+
     const config = {
       headers: {
         authorization: localStorage.getItem("token"),

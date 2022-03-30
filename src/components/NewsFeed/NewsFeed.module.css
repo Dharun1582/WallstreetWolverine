@@ -1,8 +1,21 @@
+.news{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
 .newsfeed{
-    /* border:2px solid white; */
-    text-align: left;
-    height: 80%;
-    width: 80%;
+    display:inline-flex;
+    align-self: center;
+    width: 100%;
+    max-width: 85%;
+    padding: 20px;
+    background-image: linear-gradient(to bottom right, #d40b0b98, #ff8c209f);
+    box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
+    border-radius: 20px;
+    margin-top: 20px;
 }
 .newsfeed h1{
     text-align: center;
@@ -14,66 +27,51 @@ hr{
     margin: auto;
 }
 .newsfeedchild{
-    height: 80%;
-    background-image: linear-gradient(to bottom right, #d40b0b98, #ff8c209f);
-    box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
-    border-radius: 10px;
-    margin-top: 15px;
+    height: 78vh;
     overflow-y: scroll;
-    padding-left: 20px;
-    padding-right: 20px;
+    display:inline-flex;
+    flex-direction: column;
+    align-self: center;
+    width: 100%;
+    padding-right: 20px ;
     border: none;
     outline: none;
+    line-height: 2;
+    
 }
-.newsfeedchild::-webkit-scrollbar
+ .newsfeedchild::-webkit-scrollbar
 {
-  width: 10px;
-  background-color: rgba(218, 224, 224, 0.123);
-  border-radius: 30px;
+  width: 5px;
+  background-color: rgba(218, 224, 224, 0.13);
+  border-radius: 5px;
 }
 
 .newsfeedchild::-webkit-scrollbar-thumb
 {
-	border-radius: 30px;
-  background-color: rgba(211, 201, 201, 0.486);
-}
-
+  width:10px;
+  border-radius: 5px;
+  background-color: rgba(245, 194, 171, 0.479);
+} 
 .newsfeedchild div{
-    margin: 10px;
-    padding: 10px 30px;
-    align-items: center;
-    border-radius: 0 20px 20px 0;
+    margin-bottom: 5px;
+    font-size: large;
 }
 
 /* Media Queries */
 
 /* Above Tablet */
 @media only screen and (min-width: 1024px) {
-    .newsfeed{
-        width: 80%;
-        height: 80%;
-        margin: auto;
-    }
 }
 
 /* Both Tablet and Mobile */
 @media only screen and (max-width: 1023px) {
-    hr{
-        margin: auto;
-    }
-    .newsfeed{
-        text-align: center;
-        width: 90%;
-        height: 20%;
-        margin: auto;
+    .newsfeedchild{
+        height: 55vh;
     }
 }
 
 /* Tablet only */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    .newsfeed{
-        height: 50%;
-    }
 }
 
 /* Mobile only */

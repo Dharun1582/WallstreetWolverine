@@ -101,7 +101,7 @@
 .btn_s {
   margin-top: 25px;
   width: 70%;
-  background-color: #191970;
+  background-color: #f83606;
   color: whitesmoke;
   padding: 10px 0;
   font-size: 15px;
@@ -111,8 +111,14 @@
   text-transform: uppercase;
   outline: none;
   border: none;
+  box-shadow: 2px 2px #e1e2e2;
 }
 
+.btn_s:hover{
+  color:#f83606;
+  background-color: white;
+  box-shadow: 3px 3px #f83606;
+}
 
 .googleIcon {
   border: 0.5px solid transparent;

@@ -50,8 +50,7 @@
     margin:auto;
     padding: 20px;
     object-fit: cover;
-    max-height: 180px;
-    aspect-ratio: 1;
+    /* aspect-ratio: 1; */
   }
 
 
@@ -105,16 +104,19 @@
 .item{
   width:100%;
 }
-.itemN{
+/* .itemN{
   width:100%;
   height: 50%;
-}
+} */
   .uppercontainer{
     flex-direction: column;
   }
 
   .stocksheading{
     padding-top: 25px;
+  }
+  .card img{
+    height: 100%;
   }
 }
 
@@ -148,9 +150,7 @@
       width:100%;
       height: 50%;
     }
-    img{
-      max-height: 50px;
-    }
+
     .card{
       padding-bottom: 0.5rem;
     }
