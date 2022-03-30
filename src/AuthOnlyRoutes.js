@@ -26,10 +26,8 @@ function AuthOnlyRoutes({ auth }) {
 
   const handleRouteRender = () => {
     if (auth) {
-      // console.log("dckjbsd");
       return <Outlet />;
     } else {
-      console.log("dddd"+auth);
       return <Navigate to={"/login"} />;
     }
   };

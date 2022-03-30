@@ -25,7 +25,9 @@
   min-height: 86vh;
   display: flex;
   justify-content: center;
-  padding: var(--mb-6) 0;
+  /*padding: var(--mb-6) 0;*/
+  flex-direction: column;
+  align-items: center;
   /*background-image: url(../../assets/images/bg/try.png);
   background-attachment: fixed;
   background-size: cover;*/
@@ -72,8 +74,9 @@
   flex-basis: 50%;
   border-radius: 20px;
   justify-content: center;
+  margin-top: 20px;
   /*background-image: linear-gradient(to bottom right, #440bd48e, #ff207991);*/
-  background-image: linear-gradient(to bottom right, #440bd4be, #ff2079c7);
+  background-image: linear-gradient(to bottom right, #d40b0b98, #ff8c209f);
   box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
 }
 
@@ -88,6 +91,7 @@
 
 .recaptcha_container {
   margin: var(--mb-2);
+  margin-bottom: 20px;
 }
 
 .recaptcha {
@@ -95,8 +99,8 @@
 }
 
 .btn_s {
-  margin-top: 18px;
-  width: 100%;
+  margin-top: 25px;
+  width: 70%;
   background-color: #191970;
   color: whitesmoke;
   padding: 10px 0;
@@ -105,6 +109,8 @@
   border-radius: 5px;
   cursor: pointer;
   text-transform: uppercase;
+  outline: none;
+  border: none;
 }
 
 

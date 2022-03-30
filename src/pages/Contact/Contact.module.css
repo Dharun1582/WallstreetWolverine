@@ -3,16 +3,22 @@
   line-height: 1.5rem;
   text-align: left;
   font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+}
+
+.formField::placeholder{
+  background-color: aliceblue;
+  color: aliceblue;
 }
 
 /*right content*/
 
 .rightcont {
-  width: 50%;
-  position: absolute;
-  margin-left: 50%;
-  margin-top: -30rem;
-  padding: 4% 6% 4% 3%;
+  width: 40%;
+  padding-top: 10%;
 }
 
 .reachus {
@@ -51,9 +57,8 @@
 
 /*left content*/
 .leftcont {
-  width: 50%;
-  position: relative;
-  margin-left: 0;
+  width: 40%;
+  
 }
 
 .formbox {
@@ -61,7 +66,6 @@
   border-radius: 0.8rem;
   padding: 1rem 1.5rem;
   background-image: linear-gradient(to bottom right, #440bd4be, #ff2079c7);
-  line-height: 3.8rem;
   text-align: center;
   box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
 }
@@ -202,7 +206,10 @@
   align-items: center;
   border-radius: 1rem;
   padding: var(--mb-6) var(--mb-4);
-  background-color: #000;
+  background-image: linear-gradient(to bottom right, #d40b0b98, #ff8c209f);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /*background-color: #000;*/
 }
 
 .recaptcha_container {
@@ -231,10 +238,21 @@
   .formWrapper {
     padding: var(--mb-6) var(--mb-2);
   }
+  .rightcont{
+    margin-top: 2%;
+  }
+  
 }
 
 /* Tablet only */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .leftcont{
+    width: 60%;
+  }
+  .rightcont{
+    width: 60%;
+    margin-top: 2%;
+  }
 }
 
 /* Mobile only */
@@ -254,6 +272,13 @@
 
   .innerWrapper {
     margin-top: var(--mb-4);
+  }
+  .leftcont{
+    width: 90%;
+  }
+  .rightcont{
+    width: 90%;
+    margin-top: 2%;
   }
 }
 

@@ -1,5 +1,5 @@
 .container {
-    width: 80%;
+    width: 70%;
     margin: auto;
     padding-right: 50px;
     padding-top: 20px;
@@ -9,10 +9,13 @@
 }
 .item{
     padding: 20px 50px;
+    width: 50%;
 }
 
 .graph{
     height: 520px;
+    width:100%;
+    margin-top: 10px;
 }
 
 /* Media Queries */
@@ -25,6 +28,9 @@
 @media only screen and (max-width: 1023px) {
     .outercontainer{
         flex-direction: column;
+    }
+    .item{
+        width: 100%;
     }
     .container{
         padding-right: 10px;

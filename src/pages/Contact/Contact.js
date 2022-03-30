@@ -8,13 +8,12 @@ import emailIcon from "@mui/icons-material/Email";
 import messageIcon from "@mui/icons-material/Message";
 import nameIcon from "@mui/icons-material/People";
 import FormField from "../../components/FormField/FormField";
-// import { ReactNotifications, Store } from 'react-notifications-component'
+import { ReactNotifications, Store } from 'react-notifications-component'
 import { validateContactForm } from "../../validators/contactValidator";
 import ReCAPTCHA from "react-google-recaptcha";
 import ContactButton from "../../components/Button/ContactButton";
 import { apisendMail } from "../../auth/auth"
 import Page_transition from "../../components/Animation/Transition";
-import { ReactNotifications, Store } from 'react-notifications-component'
 
 
 function Contact() {
@@ -82,7 +81,7 @@ function Contact() {
 
     setloader(false);
     showMessage(<p>Our organizers will get back to you soon!.</p>, "success");
-
+    setFormdata(contactDetailsFormat);
   };
 
   return (
@@ -90,29 +89,31 @@ function Contact() {
       <section className={styles.contentbox}>
         <div className={styles.leftcont}>
           <Heading2 text="How Can We Help You?" />
-          <div className={styles.formbox}>
 
             <div
               style={{ display: loader ? "none" : "flex" }}
               className={`${styles.formWrapper}`}
             >
               <FormField
+                className={styles.formField}
                 type={"text"}
                 fieldIcon={nameIcon}
-                placeholder="Name"
+                placeholder="Enter Name"
                 name="name"
                 value={formData}
                 setter={changeContactFormState}
               />
               <FormField
+                className={styles.formField}
                 type={"text"}
                 fieldIcon={emailIcon}
-                placeholder="Email"
+                placeholder="Enter Email"
                 name="email"
                 value={formData}
                 setter={changeContactFormState}
               />
               <FormField
+                className={styles.formField}
                 type={"textarea"}
                 fieldIcon={messageIcon}
                 placeholder="Your Message"
@@ -135,7 +136,6 @@ function Contact() {
             </div>
 
           </div>
-        </div>
         <div className={styles.rightcont}>
           <Heading2 text="Reach Us" />
           <div
@@ -162,11 +162,11 @@ function Contact() {
             <center>
               <div className={styles.ph_number}>
                 <PhoneIcon fontSize="1rem" />
-                <span> Name - +91 99999 99999</span>
+                <span> Deepak - +91 79043 91142</span>
               </div>
               <div className={styles.ph_number}>
                 <PhoneIcon fontSize="1rem" />
-                <span> Name - +91 88888 88888</span>
+                <span> Sivadanus - +91 75500 35799</span>
               </div>
             </center>
           </div>

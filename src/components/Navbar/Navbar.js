@@ -13,7 +13,7 @@ function Navbar() {
   const[val,setState]=React.useState(true);
   const auth = React.useContext(Auth);
   const setAuth = React.useContext(SetAuth);  
-  console.log(auth);
+  // console.log(auth);
 
   var bool;
   if(localStorage.getItem('token')==null){

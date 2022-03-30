@@ -1,31 +1,61 @@
-
-
+/* Media Queries */
 .transactionTable{
-    background-image: linear-gradient(to bottom right, #440bd4be, #ff2079c7);
+    background-image: linear-gradient(to bottom right, #d40b0b98, #ff8c209f);
     box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
     border-radius: 20px;
     padding: 25px;
     /* border-spacing: 0; */
     width: 60%;
     font-size: 1.1rem;
-    margin: auto;
+    margin: 30px auto;
 }
 
 .transactionTable> thead{
     font-size: x-large;
-    background-color: rgba(0, 0, 0, 0.247);
-    padding: 0;
+    font-weight: 900;
+    /* background-color: rgba(0, 0, 0, 0.123); */
+    padding: 20px;
+    
     border-radius: 20px;
     border-bottom: 1px solid white;
+    text-shadow: 3px 3px black;
 }
-
+.transactionTable tr:nth-child(odd){
+    background-color: rgba(27, 2, 2, 0.082);
+}
 .transactionTable >thead >th{
     padding: 20px 30px;
-    border-bottom: 1px solid white;
+    margin-bottom: 20px;
+    border-bottom: 3px solid white;
     font-size: 1.2rem;
 }
 
 .transactionTable > tr >td{
-    padding: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+/* Above Tablet */
+@media only screen and (min-width: 1024px) {
 }
 
+/* Both Tablet and Mobile */
+@media only screen and (max-width: 1023px) {
+    .transactionTable> thead{
+        font-size:medium;
+        /* background-color: rgba(0, 0, 0, 0.123); */
+        padding: 20px;
+        border-radius: 20px;
+        border-bottom: 10px solid white;
+    }
+    .transactionTable > tr >td{
+       font-size: small;
+    }
+}
+
+/* Tablet only */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* Mobile only */
+@media only screen and (max-width: 767px) {
+}

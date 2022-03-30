@@ -2,6 +2,7 @@
     /* border:2px solid white; */
     text-align: left;
     height: 80%;
+    width: 80%;
 }
 .newsfeed h1{
     text-align: center;
@@ -13,27 +14,35 @@ hr{
     margin: auto;
 }
 .newsfeedchild{
+    height: 80%;
     background-image: linear-gradient(to bottom right, #d40b0b98, #ff8c209f);
     box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
-    border-radius: 20px;
+    border-radius: 10px;
     margin-top: 15px;
     overflow-y: scroll;
-    flex-direction: column;
-    align-self: center;
     padding-left: 20px;
     padding-right: 20px;
     border: none;
     outline: none;
 }
-.newsfeedchild::-webkit-scrollbar{
-    height: 50%;
-    width: 5px;
-    background-color: rgba(218, 224, 224, 0);
-    border-radius: 5px; 
+.newsfeedchild::-webkit-scrollbar
+{
+  width: 10px;
+  background-color: rgba(218, 224, 224, 0.123);
+  border-radius: 30px;
 }
-.newsfeedchild::-webkit-scrollbar-thumb{
-    background-color: aliceblue;
-    border-radius: 5px;
+
+.newsfeedchild::-webkit-scrollbar-thumb
+{
+	border-radius: 30px;
+  background-color: rgba(211, 201, 201, 0.486);
+}
+
+.newsfeedchild div{
+    margin: 10px;
+    padding: 10px 30px;
+    align-items: center;
+    border-radius: 0 20px 20px 0;
 }
 
 /* Media Queries */
@@ -45,28 +54,6 @@ hr{
         height: 80%;
         margin: auto;
     }
-    /* .newsfeedchild{
-        background-image: linear-gradient(to bottom right, #440bd4be, #ff2079c7);
-        box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
-        border-radius: 20px;
-        margin-top: 15px;
-        overflow-y: scroll;
-        flex-direction: column;
-        align-self: center;
-        padding-left: 20px;
-        border: none;
-        outline: none;
-    }
-    .newsfeedchild::-webkit-scrollbar{
-        height: 50%;
-        width: 5px;
-        background-color: rgba(218, 224, 224, 0);
-        border-radius: 5px; 
-    }
-    .newsfeedchild::-webkit-scrollbar-thumb{
-        background-color: aliceblue;
-        border-radius: 5px;
-    } */
 }
 
 /* Both Tablet and Mobile */
@@ -87,28 +74,6 @@ hr{
     .newsfeed{
         height: 50%;
     }
-    /* .newsfeedchild{
-        background-image: linear-gradient(to bottom right, #440bd4be, #ff2079c7);
-        box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
-        border-radius: 20px;
-        margin-top: 15px;
-        overflow-y: scroll;
-        flex-direction: column;
-        align-self: center;
-        padding-left: 20px;
-        border: none;
-        outline: none;
-    }
-    .newsfeedchild::-webkit-scrollbar{
-        height: 50%;
-        width: 5px;
-        background-color: rgba(218, 224, 224, 0);
-        border-radius: 5px; 
-    }
-    .newsfeedchild::-webkit-scrollbar-thumb{
-        background-color: aliceblue;
-        border-radius: 5px;
-    } */
 }
 
 /* Mobile only */

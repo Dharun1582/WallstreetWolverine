@@ -226,7 +226,7 @@ class Profile extends React.Component {
   }
   render() {
     return (
-      <>
+      <div className={`${styles.wrapper}`}>
         <Heading text="PROFILE"/>
         <div className={`${styles.maincontainer}`}>
           <div className={`${styles.profilecontainer}`}>
@@ -241,7 +241,7 @@ class Profile extends React.Component {
                       wallet={this.state.wallet}
           />
         </div>
-      </>
+      </div>
     )
   }
 }

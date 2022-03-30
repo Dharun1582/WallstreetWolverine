@@ -115,8 +115,8 @@ function RegisterForm() {
         } else {
             if (resp.status === 200) {
                 setAuth(true);
-                console.log(auth);
-                console.log(resp.data.message);
+                // console.log(auth);
+                // console.log(resp.data.message);
                 showMessage("Login successful!", "success")
                 // setAuth(true);
 
@@ -189,7 +189,6 @@ function RegisterForm() {
                 style={{ display: loader ? "none" : "flex" }}
                 className={`${styles.formWrapper}`}
             >
-                <Heading text='Login' />
                 <div className={`${styles.googleIcon}`}>
                   <img src='assets/images/google.png' onClick={()=>{apiGoogleSignin()}} alt="gimage" />
                 </div>
@@ -213,7 +212,7 @@ function RegisterForm() {
                     sitekey={"6LcMoTUdAAAAAGFo2lgEFl5sIpitgdT-lExG05FL"}
                     theme="dark"
                     size="normal"
-                    className="recaptcha"
+                    className={styles.recaptcha_container}
                     ref={reCaptchaRef}
                 />
                 <div>

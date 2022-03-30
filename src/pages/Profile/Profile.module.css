@@ -1,3 +1,6 @@
+.wrapper{
+  min-height: 86vh;
+}
 .maincontainer{
   margin-top: 20px;
   display: flex;
@@ -9,7 +12,7 @@
 }
 
 .profilecontainer{
-  background-image: linear-gradient(to bottom right, #440bd4be, #ff2079c7);
+  background-image: linear-gradient(to bottom right, #d40b0b98, #ff8c209f);
   box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
   border-radius: 20px;
   min-width: 40%;
@@ -43,7 +46,7 @@
 }
 
 .stocktable{
-  background-image: linear-gradient(to bottom right, #440bd4be, #ff2079c7);
+  background-image: linear-gradient(to bottom right, #d40b0b98, #ff8c209f);
   box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
   border-radius: 20px;
   padding: 0;
