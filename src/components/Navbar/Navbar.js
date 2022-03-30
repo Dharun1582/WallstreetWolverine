@@ -39,7 +39,7 @@ function Navbar() {
     <a href="/profile">Profile</a>
     <a href="/instructions">Instructions</a>
     <a href="/rules" target="_blank">Rules</a>
-    <a href="/contact">Contacts</a>
+    <a href="/contact">Contact</a>
     {/* <a href="mailto:someone@example.com" target="_blank">Feedback</a> */}
     {/* <a href="/login">Login</a> */}
 
