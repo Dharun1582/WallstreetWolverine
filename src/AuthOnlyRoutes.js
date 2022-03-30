@@ -23,14 +23,13 @@ const showMessage = (title, type) => {
 function AuthOnlyRoutes({ auth }) {
 
 
-  // showMessage("Login to view profile",'danger');
 
   const handleRouteRender = () => {
     if (auth) {
       // console.log("dckjbsd");
       return <Outlet />;
     } else {
-      console.log("dddd");
+      console.log("dddd"+auth);
       return <Navigate to={"/login"} />;
     }
   };
