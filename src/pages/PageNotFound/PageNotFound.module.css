@@ -6,6 +6,7 @@
     animation-name: slideup;
     animation-fill-mode: backwards;
     margin-top: 40px;
+    min-height: 86vh;
 }
 .errbox{
     font-size: 14rem;
