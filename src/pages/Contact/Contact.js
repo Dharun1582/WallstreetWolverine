@@ -7,7 +7,6 @@ import emailIcon from "@mui/icons-material/Email";
 import messageIcon from "@mui/icons-material/Message";
 import nameIcon from "@mui/icons-material/People";
 import FormField from "../../components/FormField/FormField";
-import { ReactNotifications, Store } from 'react-notifications-component'
 import { validateContactForm } from "../../validators/contactValidator";
 import ReCAPTCHA from "react-google-recaptcha";
 import ContactButton from "../../components/Button/ContactButton";
@@ -95,22 +94,25 @@ function Contact() {
               className={`${styles.formWrapper}`}
             >
               <FormField
+                className={styles.formField}
                 type={"text"}
                 fieldIcon={nameIcon}
-                placeholder="Name"
+                placeholder="Enter Name"
                 name="name"
                 value={formData}
                 setter={changeContactFormState}
               />
               <FormField
+                className={styles.formField}
                 type={"text"}
                 fieldIcon={emailIcon}
-                placeholder="Email"
+                placeholder="Enter Email"
                 name="email"
                 value={formData}
                 setter={changeContactFormState}
               />
               <FormField
+                className={styles.formField}
                 type={"textarea"}
                 fieldIcon={messageIcon}
                 placeholder="Your Message"

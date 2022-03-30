@@ -93,9 +93,9 @@ class History extends React.Component{
                 <table className={`${styles.transactionTable}`}>
                     <thead>
                     <tr>
-                        <th>Company</th>
-                        <th>Number of Stocks</th>
-                        <th>Flag</th>
+                        <th>COMPANY</th>
+                        <th>QUANTITY</th>
+                        <th>FLAG</th>
                     </tr>
                     </thead>
                     {this.state.datalist}

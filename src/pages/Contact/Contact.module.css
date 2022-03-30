@@ -9,10 +9,16 @@
   justify-content:space-evenly;
 }
 
+.formField::placeholder{
+  background-color: aliceblue;
+  color: aliceblue;
+}
+
 /*right content*/
 
 .rightcont {
   width: 40%;
+  padding-top: 10%;
 }
 
 .reachus {
@@ -232,6 +238,10 @@
   .formWrapper {
     padding: var(--mb-6) var(--mb-2);
   }
+  .rightcont{
+    margin-top: 2%;
+  }
+  
 }
 
 /* Tablet only */
@@ -241,6 +251,7 @@
   }
   .rightcont{
     width: 60%;
+    margin-top: 2%;
   }
 }
 
@@ -267,6 +278,7 @@
   }
   .rightcont{
     width: 90%;
+    margin-top: 2%;
   }
 }
 

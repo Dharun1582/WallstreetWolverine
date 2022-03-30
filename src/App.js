@@ -37,7 +37,7 @@ export const SetAuth = createContext();
 const StyledApp = styled.div``;
 
 function App() {
-  const [auth,setauth] = useState(false);
+  const [auth,setauth] = useState(true);
   
   useEffect(() => {
     if (isAuthDataStored()) {

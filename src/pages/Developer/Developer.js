@@ -23,10 +23,10 @@ function Developer() {
                 <h2>Dharun A</h2>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <h2>Vaalarivan P</h2>
+                <h2>Kavin Prasath K</h2>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <h2>Kavin Prasath K</h2>
+                <h2>Vaalarivan P</h2>
               </Grid>
               <Grid item xs={12} sm={6}>
                 <h2>Bava Viknesh R M G</h2>

@@ -10,22 +10,15 @@ import Page_transition from "../../components/Animation/Transition";
 function StockMain() {
 
   let { name } = useParams();
-  var nrows;
-  console.log(window.innerWidth);
-  if (window.innerWidth >= 1024) {
-    nrows = 7;
-  } else {
-    nrows = 2;
-  }
 
 
   return (
     <Page_transition>
     <>
-      <Heading text={"Market"} />
+      <Heading text={"MARKET"} />
       <div className={`${styles.outercontainer}`}>
         <div className={`${styles.item}`}>
-          <NewsFeed nrows={nrows} />
+          <NewsFeed />
         </div>
         <div className={`${styles.container}`}>
           <div className={`${styles.graph}`}>
