@@ -1,6 +1,13 @@
+.wrapper{
+    min-height: 86vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
 .mainbox{
     width: 100%;
-    padding-top: 70px;
 }
 .wel_text{
     font-size: 3rem;

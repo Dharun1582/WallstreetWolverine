@@ -1,3 +1,11 @@
+.mainbox{
+  min-height: 86vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
 .contentbox{
     display:inline-flex;
     align-self: center;
@@ -5,10 +13,11 @@
     max-width: 85%;
     padding: 30px;
     /*background-image: linear-gradient(to bottom right, #440bd48e, #ff207991);*/
-    background-image: linear-gradient(to bottom right, #440bd4be, #ff2079c7);
+    /*background-image: linear-gradient(to bottom right, #440bd4be, #ff2079c7);*/
+    background-image: linear-gradient(to bottom right, #d40b0b98, #ff8c209f);
     box-shadow: 0 4px 8px 5px rgba(255, 245, 245, 0.5), 0 6px 20px 3px rgba(245, 245, 245, 0.6);
     border-radius: 20px;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 .subcontentbox{
   height: 50vh;

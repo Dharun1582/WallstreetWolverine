@@ -3,6 +3,7 @@ import styles from "./Landing.module.css"
 
 function Landing() {
   return (
+    <div className={styles.wrapper}>
     <div className={styles.mainbox}>
       <div className={styles.wel_text}>WELCOME TO</div>
         <div className={styles.event_tit1}>
@@ -28,6 +29,7 @@ function Landing() {
           <h1 className={styles.e}>N</h1>
           <h1 className={styles.a}>E</h1>
         </div>
+    </div>
     </div>
   )
 }

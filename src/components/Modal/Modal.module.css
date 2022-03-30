@@ -44,12 +44,16 @@
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
-    background: #f1f1f1;
-    color: black;
+    background-image: linear-gradient(to bottom right, #d40b0b98, #ff8c209f);;
+    color: white;
     padding: 14px 28px;
     border-radius: 25px;
     max-width: 600px;
     min-width: 300px;
+}
+.modalContent label{
+    font-size:1.1rem;
+    margin: 20px 0px;
 }
 
 .closeModal {
@@ -58,8 +62,13 @@
     right: 10px;
     padding: 5px 7px;
     color: white;
-    background-color: red;
+    background-color: rgb(243, 2, 2);
     border-radius: 7px;
+    border: none;
+    outline: none;
+}
+.modalContent td{
+    padding: 10px 0px;
 }
 
 .closeModal:hover{
@@ -67,5 +76,18 @@
 }
 
 #stocks {
-    color:black;
+    padding: 10px;
+    height: 30px;
+    width: 70%;
+    background-color: black;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: white;
 }
+#stocks::-webkit-outer-spin-button,
+#stocks::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+

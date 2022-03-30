@@ -77,7 +77,7 @@ function Contact() {
 
     setloader(false);
     showMessage(<p>Our organizers will get back to you soon!.</p>, "success");
-
+    setFormdata(contactDetailsFormat);
   };
 
   return (
@@ -85,7 +85,6 @@ function Contact() {
       <section className={styles.contentbox}>
         <div className={styles.leftcont}>
           <Heading2 text="How Can We Help You?" />
-          <div className={styles.formbox}>
 
             <div
               style={{ display: loader ? "none" : "flex" }}
@@ -130,7 +129,6 @@ function Contact() {
             </div>
 
           </div>
-        </div>
         <div className={styles.rightcont}>
           <Heading2 text="Reach Us" />
           <div
@@ -157,11 +155,11 @@ function Contact() {
             <center>
               <div className={styles.ph_number}>
                 <PhoneIcon fontSize="1rem" />
-                <span> Name - +91 99999 99999</span>
+                <span> Deepak - +91 79043 91142</span>
               </div>
               <div className={styles.ph_number}>
                 <PhoneIcon fontSize="1rem" />
-                <span> Name - +91 88888 88888</span>
+                <span> Sivadanus - +91 75500 35799</span>
               </div>
             </center>
           </div>
