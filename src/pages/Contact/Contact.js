@@ -3,7 +3,7 @@ import styles from "./Contact.module.css";
 import Heading2 from "../../components/Heading/Heading2";
 import RoomIcon from "@mui/icons-material/Room";
 import PhoneIcon from "@mui/icons-material/Phone";
-import { ReactNotifications, Store } from 'react-notifications-component'
+// import { ReactNotifications, Store } from 'react-notifications-component'
 import { validateContactForm } from "../../validators/contactValidator";
 import ReCAPTCHA from "react-google-recaptcha";
 import ContactButton from "../../components/Button/ContactButton";
@@ -27,7 +27,7 @@ function Contact() {
     contactDetailsFormat
   });
 
-  let reCaptchaRef = useRef(null);
+  
 
 
   const showMessage = (title, type = "danger") => {

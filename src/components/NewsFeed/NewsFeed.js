@@ -96,43 +96,38 @@ class NewsFeed extends React.Component {
     return (
         <div className={styles.newsfeed}>
           <h1>News</h1>
-        <div>
-          <br />
-          <div><h4>News1</h4>
-          <br />
-          <p>{this.state.news_1}</p>
+        <div className={styles.newsfeedchild}>
           <br />
           <br />
-          <hr></hr>
-          </div>
-          <br />
-          <div><h4>News2</h4>
-          <br />
-          <p>{this.state.news_2}</p>
+          <div><h4>{this.state.news_1}</h4>
           <br />
           <br />
           <hr></hr>
           </div>
           <br />
-          <div><h4>News3</h4>
           <br />
-          <p>{this.state.news_3}</p>
-          <br />
-          <br />
-          <hr></hr>
-          </div>
-          <br />
-          <div><h4>News4</h4>
-          <br />
-          <p>{this.state.news_4}</p>
+          <div><h4>{this.state.news_2}</h4>
           <br />
           <br />
           <hr></hr>
           </div>
           <br />
-          <div><h4>News5</h4>
           <br />
-          <p>{this.state.news_5}</p>
+          <div><h4>{this.state.news_3}</h4>
+          <br />
+          <br />
+          <hr></hr>
+          </div>
+          <br />
+          <br />
+          <div><h4>{this.state.news_4}</h4>
+          <br />
+          <br />
+          <hr></hr>
+          </div>
+          <br />
+          <br />
+          <div><h4>{this.state.news_5}</h4>
           <br />
           <br />
           <hr></hr>

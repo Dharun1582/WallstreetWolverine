@@ -81,5 +81,6 @@ body {
   background-image: url(assets/images/bg/try.png);
   background-attachment: fixed;
   background-size: cover;
-  min-height: 86.8vh;
+  /* min-height: 86.8vh; */
+  height: 100%;
 }

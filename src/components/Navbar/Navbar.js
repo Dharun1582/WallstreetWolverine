@@ -1,6 +1,7 @@
 import { Container } from '@mui/material'
 import React from 'react'
 // import styles from './Navbar.module.css'
+import { Auth, SetAuth } from "../../App";
 import "./navbar.css"
 
 
@@ -9,7 +10,10 @@ import "./navbar.css"
 
 function Navbar() {
 
-  const[val,setState]=React.useState(true)
+  const[val,setState]=React.useState(true);
+  const auth = React.useContext(Auth);
+  const setAuth = React.useContext(SetAuth);  
+  console.log(auth);
 
   return (
       <div>
@@ -43,14 +47,20 @@ function Navbar() {
     {/* <a href="mailto:someone@example.com" target="_blank">Feedback</a> */}
     {/* <a href="/login">Login</a> */}
 
-    {localStorage.getItem('email') === null && <a href="/login" onClick={() => setState(!val)} id="navbarLoginButton">Login</a>}
-    {!(localStorage.getItem('email') === null) && <a href="/" onClick={() => {
+    {!(auth) && <a href="/login" onClick={() => {
+      
+      setState(!val)
+      
+      }} id="navbarLoginButton">Login</a>}
+    {(auth) && <a href="/" onClick={() => {
       setState(!val);
+      setAuth(false);
+      console.log(auth);
       Object.keys(localStorage).forEach(function(key) {
       if (key !== 'firstTimeLogin') {
         localStorage.removeItem(key)
       }
-      console.log(key)
+      // console.log(key)
       })
     }} id="navbarLoginButton">Logout</a>}
 

@@ -11,6 +11,11 @@
   padding: 30px 20px 0;
 }
 
+.itemN{
+  width:50%;
+  padding: 30px 20px 0;
+}
+
 .uppercontainer{
   display: flex;
   flex-direction: row;
@@ -38,12 +43,15 @@
   }
   
 
-  img {
+  .card img {
+    background-color: aliceblue;
     border-radius: 0.5rem 0.5rem 0 0;
     width: 100%;
+    margin:auto;
+    padding: 20px;
     object-fit: cover;
     max-height: 180px;
-    aspect-ratio: 4/3;
+    aspect-ratio: 1;
   }
 
 
@@ -81,6 +89,10 @@
     .item{
       width:100%;
     }
+    .itemN{
+      width:100%;
+      height: 50%;
+    }
 }
 
 /* Both Tablet and Mobile */
@@ -92,6 +104,10 @@
 }
 .item{
   width:100%;
+}
+.itemN{
+  width:100%;
+  height: 50%;
 }
   .uppercontainer{
     flex-direction: column;
@@ -113,6 +129,10 @@
     .item{
       width:100%;
     }
+    .itemN{
+      width:100%;
+      height: 50%;
+    }
 }
 
 /* Mobile only */
@@ -124,8 +144,12 @@
     .item{
       width:100%;
     }
+    .itemN{
+      width:100%;
+      height: 50%;
+    }
     img{
-      max-height: 100px;
+      max-height: 50px;
     }
     .card{
       padding-bottom: 0.5rem;
