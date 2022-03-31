@@ -1,11 +1,15 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "http://localhost:3001/",
-})
+// const api = axios.create({
+//   baseURL: "http://localhost:3001/",
+// })
 
-const api_k = axios.create({
-  baseURL: "https://api.kurukshetra.org.in/",
+// const api = axios.create({
+//   baseURL: "https://api.kurukshetra.org.in/",
+// });
+
+const api = axios.create({
+  baseURL: "https://api.srinathnow.tech/",
 });
 
 const url_sendMail = "api/user/query";
@@ -88,14 +92,14 @@ export const apiSellStock = async (column, value, nos, config) => {
 };
 
 
-export const apisendMail = async (data) => {
-  try {
-    const response = await api_k.post(`${url_contact}`, data);
-    return response;
-  } catch (error) {
-    return error.response;
-  }
-};
+// export const apisendMail = async (data) => {
+//   try {
+//     const response = await api_k.post(`${url_contact}`, data);
+//     return response;
+//   } catch (error) {
+//     return error.response;
+//   }
+// };
 
 
 

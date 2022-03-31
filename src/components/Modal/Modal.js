@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Modal.module.css";
 import Button from "../Button/Button";
-import graph from "../../data/graph.json";
-import { apiGetWallet, apiFetchGraphData, apiBuyStock, apiSellStock} from "../../auth/auth";
+import { apiGetWallet, apiFetchGraphData, apiBuyStock, apiSellStock } from "../../auth/auth";
 import { ReactNotifications, Store } from 'react-notifications-component'
 import { useNavigate } from "react-router-dom";
 
@@ -10,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 function Modal(props) {
     const [modal, setModal] = useState(false);
     const [modal2, setModal2] = useState(false);
+    const [i, setI] = useState(0);
     const company = props.name;
     const navigate = useNavigate()
 
@@ -59,10 +59,11 @@ function Modal(props) {
                             if (graphresp) {
 
                                 console.log(res.Wallet);
+                                const sValue = graphresp.gData[company][5];
                                 if (flag == 1) {
-                                    if (res.Wallet >= ((graph[graphresp.i][company][5]) * nos)) {
+                                    if (res.Wallet >= (sValue * nos)) {
                                         //do call transaction
-                                        const buyStock = await apiBuyStock(company, res.Wallet - ((graph[graphresp.i][company][5]) * nos), nos, config);
+                                        const buyStock = await apiBuyStock(company, sValue, nos, config);
                                         if (buyStock === undefined) {
                                             // console.log("Error");
                                             showMessage("Error Try Again", "danger")
@@ -90,7 +91,7 @@ function Modal(props) {
                                 }
                                 else if (flag == 2) {
                                     if (res[company] >= nos) {
-                                        const sellStock = await apiSellStock(company, res.Wallet + ((graph[graphresp.i][company][5]) * nos), nos, config);
+                                        const sellStock = await apiSellStock(company, sValue, nos, config);
                                         if (sellStock === undefined) {
                                             // console.log("Error");
                                             showMessage("Error Try Again", "danger");
@@ -172,7 +173,8 @@ function Modal(props) {
             if (graphData.status >= 200 && graphData.status <= 299) {
                 const graphresp = graphData.data;
                 if (graphresp) {
-                    return graphresp.i;
+                    console.log(graphresp.gData[company][5])
+                    return graphresp.gData[company][5];
                     // i = graphresp.i;
                 }
             }
@@ -192,19 +194,30 @@ function Modal(props) {
     } else {
         document.body.classList.remove('active-modal')
     }
-    var i;
+    var I = 0;
 
     useEffect(() => {
         //Runs only on the first render
         const setIndex = async () => {
-            i = await getIndex();
-            localStorage.setItem('index', i);
-            console.log(i);
-            setModal2(modal2);
+            I = await getIndex();
+            console.log(I);
+            setI(I);
+            // setModal2(modal2);
         };
 
         setIndex();
     }, [modal]);
+
+    const getnos = () => {
+        const n = document.getElementById(`${styles.stocks}`).value;
+        console.log(n);
+        if (n > 0) {
+            proceedTransaction(n);
+        }
+        else {
+            showMessage("Invalid Number", "danger");
+        }
+    }
 
 
     return (
@@ -239,7 +252,7 @@ function Modal(props) {
                                 <tr>
                                     <td><label>Price per stock:</label></td>
                                     {/* {console.log(i)} */}
-                                    <td>{graph[localStorage.getItem('index')][company][5]}</td>
+                                    <td>{i}</td>
                                 </tr>
                                 <tr>
                                     <td><label>Time:</label></td>
@@ -254,7 +267,7 @@ function Modal(props) {
                         {/* <p>Current price per stock : </p>
                         <p>Time :</p>
                         <p>No. of Stocks :</p> */}
-                        <Button text='Proceed' onClickMethod={() => { let n = document.getElementById(`${styles.stocks}`).value; console.log(n); proceedTransaction(n) }} />
+                        <Button text='Proceed' onClickMethod={getnos} />
                     </div>
                 </div>
             )}
