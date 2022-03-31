@@ -8,8 +8,8 @@
     display: flex;
 }
 .item{
-    padding: 20px 50px;
-    width: 50%;
+    padding: 20px 60px;
+    width: 70%;
 }
 
 .graph{
@@ -30,6 +30,7 @@
         flex-direction: column;
     }
     .item{
+        padding: 20px 10px;
         width: 100%;
     }
     .container{

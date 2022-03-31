@@ -76,7 +76,7 @@ function RegisterForm() {
       }
     }, []);
 
-    const auth = React.useContext(Auth);
+    const auth = React.useContext(Auth)
     const setAuth = React.useContext(SetAuth);
 
     const navigate = useNavigate()
@@ -114,9 +114,12 @@ function RegisterForm() {
             showMessage("Please try again after sometime", "danger")
         } else {
             if (resp.status === 200) {
-                //  setAuth(true);
-                console.log(resp.data.message);
+                setAuth(true);
+                // console.log(auth);
+                // console.log(resp.data.message);
                 showMessage("Login successful!", "success")
+                // setAuth(true);
+
                 //   Success
                 //       showSuccessToastNotification(<p>Logged in!</p>)
                 //   localStorage.setItem("details", stringifyUserDetails(resp.data));
@@ -129,10 +132,13 @@ function RegisterForm() {
                 // localStorage.setItem("dept", resp.data.dept);
                 localStorage.setItem('index',1);
 
+                // if(localStorage.getItem('token')!=null){
+                //     setAuth(true);
+                //     console.log(auth);
+                // }
 
-                navigate('/');
+                navigate('/profile');
                 // console.log(auth);
-                setAuth(true);
                 // auth=true;
                 // console.log(auth);
 
@@ -210,7 +216,7 @@ function RegisterForm() {
                     ref={reCaptchaRef}
                 />
                 <div>
-                    <Button text={"Login"} onClickMethod={clickedSubmit} />
+                    <Button text={"Login"} onClickMethod={clickedSubmit} color='rgb(255, 100, 0)'/>
                     <Modal showCloseIcon={false} open={isModalOpen} onClose={() => { setIsModalOpen(false) }} center autofocus={false} classNames={{
                         overlay: `${styles.customOverlay}`,
                         modal: `${styles.customModal}`,

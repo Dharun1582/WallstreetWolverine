@@ -3,11 +3,12 @@ import styles from "./Contact.module.css";
 import Heading2 from "../../components/Heading/Heading2";
 import RoomIcon from "@mui/icons-material/Room";
 import PhoneIcon from "@mui/icons-material/Phone";
+// import { ReactNotifications, Store } from 'react-notifications-component'
 import emailIcon from "@mui/icons-material/Email";
 import messageIcon from "@mui/icons-material/Message";
 import nameIcon from "@mui/icons-material/People";
 import FormField from "../../components/FormField/FormField";
-import { ReactNotifications, Store } from 'react-notifications-component';
+import { ReactNotifications, Store } from 'react-notifications-component'
 import { validateContactForm } from "../../validators/contactValidator";
 import ReCAPTCHA from "react-google-recaptcha";
 import ContactButton from "../../components/Button/ContactButton";
@@ -93,6 +94,7 @@ function Contact() {
               style={{ display: loader ? "none" : "flex" }}
               className={`${styles.formWrapper}`}
             >
+              <h4>Your Name:</h4>
               <FormField
                 className={styles.formField}
                 type={"text"}
@@ -102,6 +104,7 @@ function Contact() {
                 value={formData}
                 setter={changeContactFormState}
               />
+              <h4>Your Email:</h4>
               <FormField
                 className={styles.formField}
                 type={"text"}
@@ -111,6 +114,7 @@ function Contact() {
                 value={formData}
                 setter={changeContactFormState}
               />
+              <h4>Your Message:</h4>
               <FormField
                 className={styles.formField}
                 type={"textarea"}

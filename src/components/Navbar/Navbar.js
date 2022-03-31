@@ -13,7 +13,22 @@ function Navbar() {
   const[val,setState]=React.useState(true);
   const auth = React.useContext(Auth);
   const setAuth = React.useContext(SetAuth);  
-  console.log(auth);
+  // console.log(auth);
+
+  var bool;
+  if(localStorage.getItem('token')==null){
+    bool=false;
+  }else{
+    bool=true;
+  }
+
+  var prof;
+
+  if(bool){
+    prof='/profile';
+  }else{
+    prof='/login';
+  }
 
   return (
       <div>
@@ -40,7 +55,7 @@ function Navbar() {
   
   <div className="nav-links">
     <a href="/market">Market</a>
-    <a href="/profile">Profile</a>
+    <a href='/profile'>Profile</a>
     <a href="/instructions">Instructions</a>
     <a href="/rules" target="_blank">Rules</a>
     <a href="/contact">Contact</a>
@@ -54,8 +69,8 @@ function Navbar() {
       }} id="navbarLoginButton">Login</a>}
     {(auth) && <a href="/" onClick={() => {
       setState(!val);
-      setAuth(false);
-      console.log(auth);
+      // setAuth(false);
+      // console.log(auth);
       Object.keys(localStorage).forEach(function(key) {
       if (key !== 'firstTimeLogin') {
         localStorage.removeItem(key)

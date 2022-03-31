@@ -2,6 +2,11 @@ import React from 'react';
 import styles from "./Profile.module.css";
 import Heading from "../../components/Heading/Heading.js";
 import { apigetProfile } from '../../auth/auth';
+import { useNavigate } from "react-router-dom";
+// import { ReactNotifications, Store } from 'react-notifications-component'
+
+
+
 
 function Profilebox(props){
   return(
@@ -150,6 +155,10 @@ function Stocktable(props){
 
 class Profile extends React.Component {
   constructor(props) {
+    if(localStorage.getItem('token')==null){
+      window.location='/login';
+      // showMessage('Login to continue','danger')
+    }
     super(props);
     this.state = {
       name: '',
@@ -207,6 +216,7 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
+
     const config = {
       headers: {
         authorization: localStorage.getItem("token"),

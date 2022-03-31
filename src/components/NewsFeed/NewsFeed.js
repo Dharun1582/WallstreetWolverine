@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from "./NewsFeed.module.css"
-import NewsTicker from "react-advanced-news-ticker"
 import News from "./News.json"
 import { apiFetchGraphData } from '../../auth/auth';
 
@@ -24,7 +23,6 @@ class NewsFeed extends React.Component {
       console.log(this.state.nIndex);
       this.setState( 
         {
-          nrows: 3,
           news_1: News[this.state.nIndex].news1,
           news_2: News[this.state.nIndex].news2,
           news_3: News[this.state.nIndex].news3,
@@ -35,7 +33,7 @@ class NewsFeed extends React.Component {
         }
       );
       // this.forceUpdate();
-      console.log(News[this.state.nIndex].news1);
+      // console.log(News[this.state.nIndex].news1);
     }
   }
 
@@ -77,13 +75,13 @@ class NewsFeed extends React.Component {
           min += 1;
           sec = 0;
         }
-        if (min >= 2) {
+        if (min >= 3) {
           this.fetchData().then(res => {
             min = this.state.min;
           });
         }
 
-        if ((this.state.nIndex) >= 25) {
+        if ((this.state.nIndex) >= 153) {
           console.log("End");
           clearInterval(fetchId);
         }
@@ -92,48 +90,25 @@ class NewsFeed extends React.Component {
   }
 
   render(){
-    console.log(this.state.news_1);
+    var n1 = (this.state.news_1==='') ? 'none' : 'block';
+    var n2 = (this.state.news_2==='') ? 'none' : 'block';
+    var n3 = (this.state.news_3==='') ? 'none' : 'block';
+    var n4 = (this.state.news_4==='') ? 'none' : 'block';
+    var n5 = (this.state.news_5==='') ? 'none' : 'block';
     return (
+      <div>
+        <h1>News</h1>
         <div className={styles.newsfeed}>
-          <h1>News</h1>
-        <div className={styles.newsfeedchild}>
-          <br />
-          <br />
-          <div><h4>{this.state.news_1}</h4>
-          <br />
-          <br />
-          <hr></hr>
+          <div className={styles.newsfeedchild}><br /><br />
+            <div style={{display:`${n1}`}}><h4>{this.state.news_1}</h4><br /><hr></hr></div><br />
+            <div style={{display:`${n2}`}}><h4>{this.state.news_2}</h4><br /><hr></hr></div><br />
+            <div style={{display:`${n3}`}}><h4>{this.state.news_3}</h4><br /><hr></hr></div><br />
+            <div style={{display:`${n4}`}}><h4>{this.state.news_4}</h4><br /><hr></hr></div><br />
+            <div style={{display:`${n5}`}}><h4>{this.state.news_5}</h4><br /><hr></hr></div><br />
+            <div><b>----- X -----</b></div>
           </div>
-          <br />
-          <br />
-          <div><h4>{this.state.news_2}</h4>
-          <br />
-          <br />
-          <hr></hr>
-          </div>
-          <br />
-          <br />
-          <div><h4>{this.state.news_3}</h4>
-          <br />
-          <br />
-          <hr></hr>
-          </div>
-          <br />
-          <br />
-          <div><h4>{this.state.news_4}</h4>
-          <br />
-          <br />
-          <hr></hr>
-          </div>
-          <br />
-          <br />
-          <div><h4>{this.state.news_5}</h4>
-          <br />
-          <br />
-          <hr></hr>
-          </div>
-          <br />
-        </div> 
+        </div>
+        <div className={styles.scrollDiv}>Scroll Down For More News!</div>
       </div>
     );
   }

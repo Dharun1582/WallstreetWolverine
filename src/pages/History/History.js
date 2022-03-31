@@ -76,6 +76,10 @@ class History extends React.Component{
 
 
     componentDidMount() {
+      if(localStorage.getItem('token')==null){
+        window.location='/login';
+        // showMessage('Login to continue','danger')
+      }
         const config = {
           headers: {
             authorization: localStorage.getItem("token"),

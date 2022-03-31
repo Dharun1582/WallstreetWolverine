@@ -43,11 +43,10 @@ function App() {
     if (isAuthDataStored()) {
       setauth(true);
     } else {
-      console.log("asd");
       setauth(false);
-    };
-    console.log(auth);
-  },[]);
+    }
+    return () => {};
+  }, []);
   return (
     <ThemeProvider theme={darkTheme}>
       <GlobalStyles />
@@ -78,10 +77,10 @@ const AllRoutes = ({auth}) => {
         {/* <Route path="/profile" element={<Profile />} /> */}
       {/* </Route> */}
 
-      <Route element={<AuthOnlyRoutes auth={auth} />}>
+      {/* <Route element={<AuthOnlyRoutes auth={auth} />}> */}
         <Route path="/profile" element={<Profile />} />   
         <Route path="/stock/:name" element={<StockMain />} />
-      </Route>
+      {/* </Route> */}
       <Route path="/instructions" element={<Instructions />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<Login />} />
