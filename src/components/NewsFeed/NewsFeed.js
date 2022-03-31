@@ -7,7 +7,6 @@ class NewsFeed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      nrows: props.nrows,
       nIndex: 0,
       news_1:"",
       news_2:"",
@@ -18,24 +17,24 @@ class NewsFeed extends React.Component {
     }
   }
 
-  loadData = () => {
-    if (this.state.nIndex < News.length) {
-      console.log(this.state.nIndex);
-      this.setState( 
-        {
-          news_1: News[this.state.nIndex].news1,
-          news_2: News[this.state.nIndex].news2,
-          news_3: News[this.state.nIndex].news3,
-          news_4: News[this.state.nIndex].news4,
-          news_5: News[this.state.nIndex].news5
-        }, () => {
-          console.log(this.state);
-        }
-      );
-      // this.forceUpdate();
-      // console.log(News[this.state.nIndex].news1);
-    }
-  }
+  // loadData = () => {
+  //   if (this.state.nIndex < News.length) {
+  //     console.log(this.state.nIndex);
+  //     this.setState( 
+  //       {
+  //         news_1: News[this.state.nIndex].news1,
+  //         news_2: News[this.state.nIndex].news2,
+  //         news_3: News[this.state.nIndex].news3,
+  //         news_4: News[this.state.nIndex].news4,
+  //         news_5: News[this.state.nIndex].news5
+  //       }, () => {
+  //         console.log(this.state);
+  //       }
+  //     );
+  //     // this.forceUpdate();
+  //     // console.log(News[this.state.nIndex].news1);
+  //   }
+  // }
 
   fetchData = async () => {
     const response = await apiFetchGraphData();
@@ -50,10 +49,14 @@ class NewsFeed extends React.Component {
             {
               nIndex: res.ni,
               min: res.time,
-              
+              news_1: res.news.news1,
+              news_2: res.news.news2,
+              news_3: res.news.news3,
+              news_4: res.news.news4,
+              news_5: res.news.news5,
             },
           );
-          this.loadData();
+          // this.loadData();
         }
       }
       else if (response.status >= 400 && response.status < 500) {
