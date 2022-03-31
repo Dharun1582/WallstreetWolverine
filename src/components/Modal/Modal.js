@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Modal.module.css";
 import Button from "../Button/Button";
-// import graph from "../../data/graph.json";
 import { apiGetWallet, apiFetchGraphData, apiBuyStock, apiSellStock } from "../../auth/auth";
 import { ReactNotifications, Store } from 'react-notifications-component'
 import { useNavigate } from "react-router-dom";

@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from "./NewsFeed.module.css"
-import News from "./News.json"
 import { apiFetchGraphData } from '../../auth/auth';
 
 class NewsFeed extends React.Component {

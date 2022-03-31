@@ -1,6 +1,5 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
-// import graph from '../../data/graph.json';
 import Heading2 from '../Heading/Heading2';
 import { apiFetchGraphData } from '../../auth/auth';
 
