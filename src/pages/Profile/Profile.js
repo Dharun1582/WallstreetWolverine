@@ -1,14 +1,65 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from "./Profile.module.css";
 import Heading from "../../components/Heading/Heading.js";
 import { apigetProfile } from '../../auth/auth';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 // import { ReactNotifications, Store } from 'react-notifications-component'
+import { ReactNotifications, Store } from 'react-notifications-component'
 
 
+const showMessage = (title, type) => {
+  Store.addNotification({
+      title: title,
+      type: type,
+      insert: "bottom",
+      container: "top-right",
+      animationIn: ["animate__animated", "animate__fadeIn"],
+      animationOut: ["animate__animated", "animate__fadeOut"],
+      dismiss: {
+          duration: 3000,
+          onScreen: true
+      }
+  })
+}
 
 
 function Profilebox(props){
+
+
+  const [searchParams, setsearchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+
+  useEffect(() => {
+    console.log(searchParams.get("message"));
+    if (searchParams.get("message") === "Login Successful") {
+      // setAuth(true);
+      // localStorage.setItem(
+      //   "details",
+      //   stringifyUserDetails({
+      //     kid: searchParams.get("kid"),
+      //     email: searchParams.get("email"),
+      //     firstname: searchParams.get("firstname"),
+      //     lastname: searchParams.get("lastname"),
+      //     phone: searchParams.get("phone"),
+      //     college: searchParams.get("college"),
+      //     dept: searchParams.get("dept"),
+      //     year: searchParams.get("year"),
+      //     cegian: searchParams.get("cegian"),
+      //   })
+      // );
+  
+      localStorage.setItem("token", searchParams.get("token"));
+  
+      showMessage(searchParams.get("message"),'success');
+    } else if (searchParams.get("message") !== null) {
+      showMessage("Try again later.",'danger');
+      
+    }
+    return () => {};
+  }, []);
+  
+  
   return(
     <>
       <div className={`${styles.itemRow}`}>

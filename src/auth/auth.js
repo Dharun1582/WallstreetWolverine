@@ -103,7 +103,8 @@ export const apisendMail = async (data) => {
 export const apiGoogleSignin = () => {
   // window.location = "https://www.youtube.com/" + url_googleSignin;
   // window.location = "https://api.sherlock.kurukshetraceg.org.in/" + url_googleSignin;
-  window.location = "https://api.kurukshetraceg.org.in/" + url_googleSignin;
+  // window.location = "https://api.kurukshetraceg.org.in/" + url_googleSignin;
+  window.location = "https://api.srinathnow.tech/" + url_googleSignin;
 
   // window.location = "https://localhost:3000/login" + url_googleSignin;
 
