@@ -1,6 +1,7 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
-import graph from '../../data/graph.json';
+// import graph from '../../data/graph.json';
+import Heading2 from '../Heading/Heading2';
 import { apiFetchGraphData } from '../../auth/auth';
 
 class StockGraph extends React.Component {
@@ -18,18 +19,18 @@ class StockGraph extends React.Component {
   }
 
 
-  loadData = () => {
-    if (this.state.index < graph.length) {
-      this.setState(
-        {
-          stockChartYValues: graph[this.state.index][this.state.company],
-          stockChartXLabels: graph[this.state.index].Time,
-          // index: this.state.index + 1,
-          // min: 0
-        },
-      );
-    }
-  }
+  // loadData = () => {
+  //   if (this.state.index < graph.length) {
+  //     this.setState(
+  //       {
+  //         stockChartYValues: graph[this.state.index][this.state.company],
+  //         stockChartXLabels: graph[this.state.index].Time,
+  //         // index: this.state.index + 1,
+  //         // min: 0
+  //       },
+  //     );
+  //   }
+  // }
 
   fetchData = async () => {
     const response = await apiFetchGraphData();
@@ -41,13 +42,16 @@ class StockGraph extends React.Component {
         const res = response.data;
         if (res) {
           // console.log(res);
+          const gData = res.gData;
           this.setState(
             {
-              index: res.i,
+              // index: res.i,
+              stockChartXLabels: gData['Time'],
+              stockChartYValues: gData[this.state.company],
               min: res.time
             },
           );
-          this.loadData();
+          // this.loadData();
         }
       }
       else if (response.status >= 400 && response.status < 500) {
@@ -96,7 +100,9 @@ class StockGraph extends React.Component {
     return (
       <div>
         {/* <button onClick={this.loadData}>Click</button> */}
-        <h1>{this.state.company}</h1>
+        {/* <h1>{this.state.company}</h1> */}
+        <Heading2 text={this.state.company} />
+        <br/>
         <div>
           <Plot
             data={[
@@ -117,13 +123,14 @@ class StockGraph extends React.Component {
                 t: 30,
                 pad: 3,
               },
-              paper_bgcolor: "#3f3f3f",
-              plot_bgcolor: "#3f3f3f",
+              paper_bgcolor: "#292e42",
+              plot_bgcolor: "#292e42",
               xaxis: {
                 title: "Time",
                 titlefont: {
                   size: 13,
                 },
+                // rangeslider: {},
                 type: '',
                 // type: timeHours,
                 // range: [this.state.stockChartXValues[0], this.state.stockChartXValues[5], ],
@@ -144,6 +151,16 @@ class StockGraph extends React.Component {
                 tickfont: {
                   size: 10,
                 }
+              },
+              fill: {
+                type: 'gradient',
+                gradient: {
+                  shadeIntensity: 1,
+                  inverseColors: false,
+                  opacityFrom: 0.5,
+                  opacityTo: 0,
+                  stops: [0, 90, 100]
+                },
               },
             }}
             // useResizeHandler={true}

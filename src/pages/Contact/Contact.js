@@ -7,6 +7,7 @@ import emailIcon from "@mui/icons-material/Email";
 import messageIcon from "@mui/icons-material/Message";
 import nameIcon from "@mui/icons-material/People";
 import FormField from "../../components/FormField/FormField";
+import { ReactNotifications, Store } from 'react-notifications-component';
 import { validateContactForm } from "../../validators/contactValidator";
 import ReCAPTCHA from "react-google-recaptcha";
 import ContactButton from "../../components/Button/ContactButton";

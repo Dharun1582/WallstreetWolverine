@@ -5,6 +5,7 @@
 .btns {
     display: flex;
     justify-content: space-between;
+    /* padding: 5px 30px; */
 }
 
 .lbtn {
@@ -89,5 +90,30 @@
 #stocks::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+    .btns {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 30px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .btns {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 30px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .btns {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
