@@ -4,8 +4,12 @@ import axios from "axios";
 //   baseURL: "http://localhost:3001/",
 // })
 
+// const api = axios.create({
+//   baseURL: "https://api.kurukshetra.org.in/",
+// });
+
 const api = axios.create({
-  baseURL: "https://api.kurukshetra.org.in/",
+  baseURL: "https://api.srinathnow.tech/",
 });
 
 const url_sendMail = "api/user/query";
