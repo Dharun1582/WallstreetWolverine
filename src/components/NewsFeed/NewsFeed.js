@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from "./NewsFeed.module.css"
-import NewsTicker from "react-advanced-news-ticker"
 import News from "./News.json"
 import { apiFetchGraphData } from '../../auth/auth';
 
@@ -24,7 +23,6 @@ class NewsFeed extends React.Component {
       console.log(this.state.nIndex);
       this.setState( 
         {
-          nrows: 3,
           news_1: News[this.state.nIndex].news1,
           news_2: News[this.state.nIndex].news2,
           news_3: News[this.state.nIndex].news3,
@@ -35,7 +33,7 @@ class NewsFeed extends React.Component {
         }
       );
       // this.forceUpdate();
-      console.log(News[this.state.nIndex].news1);
+      // console.log(News[this.state.nIndex].news1);
     }
   }
 
@@ -77,13 +75,13 @@ class NewsFeed extends React.Component {
           min += 1;
           sec = 0;
         }
-        if (min >= 2) {
+        if (min >= 3) {
           this.fetchData().then(res => {
             min = this.state.min;
           });
         }
 
-        if ((this.state.nIndex) >= 25) {
+        if ((this.state.nIndex) >= 153) {
           console.log("End");
           clearInterval(fetchId);
         }
@@ -110,6 +108,7 @@ class NewsFeed extends React.Component {
             <div><b>----- X -----</b></div>
           </div>
         </div>
+        <div className={styles.scrollDiv}>Scroll Down For More News!</div>
       </div>
     );
   }
