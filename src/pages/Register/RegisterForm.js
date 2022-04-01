@@ -124,7 +124,7 @@ function RegisterForm() {
                 //       showSuccessToastNotification(<p>Logged in!</p>)
                 //   localStorage.setItem("details", stringifyUserDetails(resp.data));
                 localStorage.setItem("token", resp.data.token);
-                localStorage.setItem("email", resp.data.email);
+                // localStorage.setItem("email", resp.data.email);
                 // localStorage.setItem("kid", resp.data.kid);
                 // localStorage.setItem("firstname", resp.data.firstname);
                 // localStorage.setItem("lastname", resp.data.lastname);

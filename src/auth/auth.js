@@ -9,7 +9,8 @@ import axios from "axios";
 // });
 
 const api = axios.create({
-  baseURL: "https://api.srinathnow.tech/",
+  baseURL: "http://localhost:3001",
+  // baseURL: "https://api.srinathnow.tech/",
 });
 
 const url_sendMail = "api/user/query";
@@ -105,12 +106,12 @@ export const apiSellStock = async (column, value, nos, config) => {
 
 
 export const apiGoogleSignin = () => {
-  // window.location = "https://www.youtube.com/" + url_googleSignin;
   // window.location = "https://api.sherlock.kurukshetraceg.org.in/" + url_googleSignin;
   // window.location = "https://api.kurukshetraceg.org.in/" + url_googleSignin;
-  window.location = "https://api.srinathnow.tech/" + url_googleSignin;
+  // window.location = "https://api.srinathnow.tech/" + url_googleSignin;
+  window.location = "http://localhost:3001/" + url_googleSignin;
 
-  // window.location = "https://localhost:3000/login" + url_googleSignin;
+
 
 };
 
