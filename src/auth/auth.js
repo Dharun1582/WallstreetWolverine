@@ -10,7 +10,8 @@ import axios from "axios";
 
 const api = axios.create({
   // baseURL: "http://localhost:3001",
-  baseURL: "https://api.srinathnow.tech/",
+  // baseURL: "https://api.srinathnow.tech/",
+  baseURL:"https://api.wsw.kurukshetraceg.org.in/"
 });
 
 const url_sendMail = "api/user/query";
@@ -108,7 +109,7 @@ export const apiSellStock = async (column, value, nos, config) => {
 export const apiGoogleSignin = () => {
   // window.location = "https://api.sherlock.kurukshetraceg.org.in/" + url_googleSignin;
   // window.location = "https://api.kurukshetraceg.org.in/" + url_googleSignin;
-  window.location = "https://api.srinathnow.tech/" + url_googleSignin;
+  window.location = "https://api.wsw.kurukshetraceg.org.in/" + url_googleSignin;
   // window.location = "http://localhost:3001/" + url_googleSignin;
 
 
