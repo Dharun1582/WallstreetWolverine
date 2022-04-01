@@ -77,7 +77,7 @@ class NewsFeed extends React.Component {
           min += 1;
           sec = 0;
         }
-        if (min >= 3) {
+        if (min >= 15) {
           this.fetchData().then(res => {
             min = this.state.min;
           });

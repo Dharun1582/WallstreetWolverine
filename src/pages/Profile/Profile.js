@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from "./Profile.module.css";
 import Heading from "../../components/Heading/Heading.js";
-import { apigetProfile } from '../../auth/auth';
+import { apigetProfile, apicheckUser } from '../../auth/auth';
 import { useNavigate, useSearchParams } from "react-router-dom";
 // import { ReactNotifications, Store } from 'react-notifications-component'
 import { ReactNotifications, Store } from 'react-notifications-component'
@@ -9,58 +9,31 @@ import { ReactNotifications, Store } from 'react-notifications-component'
 
 const showMessage = (title, type) => {
   Store.addNotification({
-      title: title,
-      type: type,
-      insert: "bottom",
-      container: "top-right",
-      animationIn: ["animate__animated", "animate__fadeIn"],
-      animationOut: ["animate__animated", "animate__fadeOut"],
-      dismiss: {
-          duration: 3000,
-          onScreen: true
-      }
+    title: title,
+    type: type,
+    insert: "bottom",
+    container: "top-right",
+    animationIn: ["animate__animated", "animate__fadeIn"],
+    animationOut: ["animate__animated", "animate__fadeOut"],
+    dismiss: {
+      duration: 3000,
+      onScreen: true
+    }
   })
 }
 
 
-function Profilebox(props){
+function Profilebox(props) {
 
 
   const [searchParams, setsearchParams] = useSearchParams();
   const navigate = useNavigate();
 
 
-  useEffect(() => {
-    console.log(searchParams.get("message"));
-    if (searchParams.get("message") === "Login Successful") {
-      // setAuth(true);
-      // localStorage.setItem(
-      //   "details",
-      //   stringifyUserDetails({
-      //     kid: searchParams.get("kid"),
-      //     email: searchParams.get("email"),
-      //     firstname: searchParams.get("firstname"),
-      //     lastname: searchParams.get("lastname"),
-      //     phone: searchParams.get("phone"),
-      //     college: searchParams.get("college"),
-      //     dept: searchParams.get("dept"),
-      //     year: searchParams.get("year"),
-      //     cegian: searchParams.get("cegian"),
-      //   })
-      // );
-  
-      localStorage.setItem("token", searchParams.get("token"));
-  
-      showMessage(searchParams.get("message"),'success');
-    } else if (searchParams.get("message") !== null) {
-      showMessage("Try again later.",'danger');
-      
-    }
-    return () => {};
-  }, []);
-  
-  
-  return(
+
+
+
+  return (
     <>
       <div className={`${styles.itemRow}`}>
         <p className={`${styles.itemHeader}`}>K! ID</p>
@@ -86,8 +59,8 @@ function Profilebox(props){
   )
 }
 
-function Stocktable(props){
-  return(
+function Stocktable(props) {
+  return (
     <table className={`${styles.stocktable}`}>
       <thead>
         <tr>
@@ -95,34 +68,34 @@ function Stocktable(props){
           <th>Number of stocks</th>
         </tr>
       </thead>
-        <tr>
-          <td>VocaCola</td>
-          <td>{props.VocaCola}</td>
-        </tr>
-        <tr>
-          <td>HindPetroleum</td>
-          <td>{props.HindPetroleum}</td>
-        </tr>
-        <tr>
-          <td>VI</td>
-          <td>{props.VI}</td>
-        </tr>
-        <tr>
-          <td>Abibas</td>
-          <td>{props.Abibas}</td>
-        </tr>
-        <tr>
-          <td>LyccaLabs</td>
-          <td>{props.LyccaLabs}</td>
-        </tr>
-        <tr>
-          <td>Yecher</td>
-          <td>{props.Yecher}</td>
-        </tr>
-        <tr>
-          <td>Wallet</td>
-          <td>{props.wallet}</td>
-        </tr>
+      <tr>
+        <td>VocaCola</td>
+        <td>{props.VocaCola}</td>
+      </tr>
+      <tr>
+        <td>HindPetroleum</td>
+        <td>{props.HindPetroleum}</td>
+      </tr>
+      <tr>
+        <td>VI</td>
+        <td>{props.VI}</td>
+      </tr>
+      <tr>
+        <td>Abibas</td>
+        <td>{props.Abibas}</td>
+      </tr>
+      <tr>
+        <td>LyccaLabs</td>
+        <td>{props.LyccaLabs}</td>
+      </tr>
+      <tr>
+        <td>Yecher</td>
+        <td>{props.Yecher}</td>
+      </tr>
+      <tr>
+        <td>Wallet</td>
+        <td>{props.wallet}</td>
+      </tr>
     </table>
   )
 }
@@ -206,8 +179,8 @@ function Stocktable(props){
 
 class Profile extends React.Component {
   constructor(props) {
-    if(localStorage.getItem('token')==null){
-      window.location='/login';
+    if (localStorage.getItem('token') == null) {
+      window.location = '/login';
       // showMessage('Login to continue','danger')
     }
     super(props);
@@ -216,7 +189,7 @@ class Profile extends React.Component {
       kid: '',
       email: '',
       college: '',
-      department:'',
+      department: '',
       VocaCola: 0,
       HindPetroleum: 0,
       VI: 0,
@@ -278,18 +251,18 @@ class Profile extends React.Component {
   render() {
     return (
       <div className={`${styles.wrapper}`}>
-        <Heading text="PROFILE"/>
+        <Heading text="PROFILE" />
         <div className={`${styles.maincontainer}`}>
           <div className={`${styles.profilecontainer}`}>
-            <Profilebox name={this.state.name} kid={this.state.kid} email={this.state.email} college={this.state.college} department={this.state.department}/>
+            <Profilebox name={this.state.name} kid={this.state.kid} email={this.state.email} college={this.state.college} department={this.state.department} />
           </div>
           <Stocktable VocaCola={this.state.VocaCola}
-                      HindPetroleum={this.state.HindPetroleum}
-                      VI={this.state.VI}
-                      Abibas={this.state.Abibas}
-                      LyccaLabs={this.state.LyccaLabs}
-                      Yecher={this.state.Yecher}
-                      wallet={this.state.wallet}
+            HindPetroleum={this.state.HindPetroleum}
+            VI={this.state.VI}
+            Abibas={this.state.Abibas}
+            LyccaLabs={this.state.LyccaLabs}
+            Yecher={this.state.Yecher}
+            wallet={this.state.wallet}
           />
         </div>
       </div>
