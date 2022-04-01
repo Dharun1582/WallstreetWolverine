@@ -137,7 +137,7 @@ function RegisterForm() {
                 //     console.log(auth);
                 // }
 
-                navigate('/profile');
+               
                 // console.log(auth);
                 // auth=true;
                 // console.log(auth);
@@ -149,6 +149,7 @@ function RegisterForm() {
                 };
 
                 const loginRes = await apicheckUser(config);
+                navigate('/profile');
                 // console.log(loginRes);
                 // if ((loginRes === undefined) || !(response.status >= 200 && response.status <= 299)) {
                 //     localStorage.clear();

@@ -74,7 +74,7 @@ class StockGraph extends React.Component {
           min += 1;
           sec = 0;
         }
-        if (min >= 6) {
+        if (min >= 30) {
           this.fetchData().then(res => {
             min = this.state.min;
           });
