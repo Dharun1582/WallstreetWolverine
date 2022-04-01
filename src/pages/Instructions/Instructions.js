@@ -71,6 +71,12 @@ function Instructions() {
                 </div>
                 <p className={styles.instruction}><span>&#x25BC;</span>For any queries, kindly send them to the mail id on the website.</p>
             </div>
+            <div className={styles.instructionbox}>
+                <div>
+                  <img src={IconPath+'upicon.png'} className={styles.icon}></img>
+                </div>
+                <p className={styles.instruction}><span>&#x25BC;</span>All stocks are purely imaginary and any resemblance is only a coincidence.</p>
+            </div>
             </div>
           </div>
         </div>
